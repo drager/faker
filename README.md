@@ -14,7 +14,16 @@ A simple usage example:
 import 'package:faker/faker.dart';
 
 main() {
+  var faker = new Faker();
 
+  faker.internet.email();
+  // francisco_lebsack@buckridge.com
+
+  faker.internet.ipv6Address();
+  // 2450:a5bf:7855:8ce9:3693:58db:50bf:a105
+
+  faker.internet.userName();
+  // fiona-ward
 }
 ```
 
