@@ -23,3 +23,7 @@ main() {
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/drager/faker/issues
+
+## Copyright
+Copyright (c) 2015 Jesper Håkansson. See LICENSE for details. Copyright (c) 2013 Emmanuel Oga.
+Copyright (c) 2012 Daniele Faraglia. Copyright (c) 2007 Benjamin Curtis.
