@@ -134,4 +134,14 @@ class Internet {
   String macAddress() => randomNumber(0xff, 6)
       .map((number) => '${number.toRadixString(16).padLeft(2, '0')}')
       .join(':');
+
+  /// Generates a password with the given [length] if provided.
+  /// If not provided [length] is 10.
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.internet.password();
+  /// ```
+  String password({int length: 10}) => new String.fromCharCodes(
+      randomNumber(92, length).map((value) => value + 33));
 }

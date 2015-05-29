@@ -68,8 +68,12 @@ main() {
     });
 
     it('should be able to generate mac address', () {
-      expect(new RegExp(r'^([\w+a-f]{2}[:]){5}([\w+a-f]{2})$')
+      expect(new RegExp(r'^([\da-f]{2}[:]){5}([\da-f]{2})$')
           .hasMatch(faker.internet.macAddress())).toBeTrue();
+    });
+
+    it('should be able to generate password', () {
+      expect(faker.internet.password(length: 40).length).toEqual(40);
     });
   });
 }
