@@ -24,6 +24,15 @@ main() {
 
   faker.internet.userName();
   // fiona-ward
+
+  faker.person.name();
+  // Fiona Ward
+
+  faker.person.prefix();
+  // Mrs.
+
+  faker.person.suffix();
+  // Sr.
 }
 ```
 
