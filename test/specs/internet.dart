@@ -1,4 +1,4 @@
-library faker.test.faker.internet;
+library faker.test.internet;
 
 import 'package:guinness/guinness.dart';
 import 'package:faker/faker.dart';

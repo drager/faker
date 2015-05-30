@@ -5,6 +5,7 @@ import 'package:faker/src/random.dart';
 
 part 'src/faker.dart';
 part 'src/internet.dart';
+part 'src/person.dart';
 
 part 'src/data/firstnames.dart';
 part 'src/data/lastnames.dart';
