@@ -11,5 +11,5 @@ part 'src/person.dart';
 
 part 'src/data/currency/currency_names.dart';
 part 'src/data/currency/currency_codes.dart';
-part 'src/data/firstnames.dart';
-part 'src/data/lastnames.dart';
+part 'src/data/person/firstnames.dart';
+part 'src/data/person/lastnames.dart';
