@@ -41,7 +41,7 @@ class Internet {
   ///
   /// Example:
   /// ```dart
-  ///   faker.internet.disposableEmail();
+  ///   faker.internet.freeEmail();
   /// ```
   String freeEmail() => '${userName()}@${randomElement(_hosts)}';
 
