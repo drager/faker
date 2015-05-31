@@ -74,7 +74,7 @@ class Internet {
   /// ```dart
   ///   faker.internet.domainName();
   /// ```
-  domainName() => '${domainWord()}.${randomElement(_domainSuffixes)}';
+  String domainName() => '${domainWord()}.${randomElement(_domainSuffixes)}';
 
   /// Generates a domain word.
   ///
@@ -82,7 +82,7 @@ class Internet {
   /// ```dart
   ///   faker.internet.domainWord();
   /// ```
-  domainWord() => randomElement(lastnames).toLowerCase();
+  String domainWord() => randomElement(lastnames).toLowerCase();
 
   /// Generates a URI with the given [protocol].
   ///
