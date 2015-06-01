@@ -10,7 +10,7 @@ dart --checked test/runner.dart
 # Install dart_coveralls
 # Rerun tests with coverage and send to coveralls
 if [ "$COVERALLS_TOKEN" ]; then
-  pub global activate dart_coveralls
+  pub global activate dart_coveralls 0.1.11
   pub global run dart_coveralls report \
     --token $COVERALLS_TOKEN \
     --retry 2 \
