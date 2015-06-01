@@ -14,7 +14,6 @@ if [ "$COVERALLS_TOKEN" ]; then
   pub global run dart_coveralls report \
     --token $COVERALLS_TOKEN \
     --retry 2 \
-    --exclude-test-files \
     --throw-on-error \
     --debug \
     test/runner.dart
