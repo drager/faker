@@ -1,6 +1,7 @@
 library faker.test.person;
 
 import 'package:guinness/guinness.dart';
+import 'package:matcher/matcher.dart' hide expect;
 import 'package:faker/faker.dart';
 
 main() {
@@ -8,7 +9,11 @@ main() {
 
   describe('person', () {
     it('should be able to generate name', () {
-      expect(new RegExp(r'(\w)[? ]').hasMatch(faker.person.name())).toBeTrue();
+      expect(faker.person.name()).to(anyOf([
+        matches(new RegExp(r'^[^ ]+ [^ ]+$')),
+        matches(new RegExp(r'^[^ ]+ [^ ]+ [^ ]+$')),
+        matches(new RegExp(r'^[^ ]+ [^ ]+ [^ ]+ [^ ]+$')),
+      ]));
     });
 
     it('should be able to generate first name', () {
