@@ -6,3 +6,4 @@ author: Jesper Håkansson <jesper@jesperh.se>
 dev_dependencies:
   guinness: '>=0.1.17 <0.2.0'
   unittest: '>=0.11.0 <0.12.0'
+  matcher: any
