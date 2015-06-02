@@ -9,11 +9,11 @@ main() {
 
   describe('person', () {
     it('should be able to generate name', () {
-      expect(faker.person.name()).to(anyOf(
-        matches(r'^[^ ]+ [^ ]+$'),
-        matches(r'^[^ ]+ [^ ]+ [^ ]+$'),
-        matches(r'^[^ ]+ [^ ]+ [^ ]+ [^ ]+$')
-      ));
+      for (var i = 0; i < 10; i++) {
+        expect(faker.person.name()).to(anyOf(matches(r'^[^ ]+ [^ ]+$'),
+            matches(r'^[^ ]+ [^ ]+ [^ ]+$'),
+            matches(r'^[^ ]+ [^ ]+ [^ ]+ [^ ]+$')));
+      }
     });
 
     it('should be able to generate first name', () {
