@@ -1,9 +1,11 @@
 /// A library for Dart that generates fake data.
 library faker;
 
-import 'package:faker/src/random.dart';
+import 'dart:math';
 
 part 'src/faker.dart';
+
+part 'src/random_generator.dart';
 
 part 'src/currency.dart';
 part 'src/internet.dart';
@@ -17,3 +19,4 @@ part 'src/data/person/lastnames.dart';
 part 'src/data/job/job_adj.dart';
 part 'src/data/job/job_noun.dart';
 part 'src/data/job/job_prefix.dart';
+

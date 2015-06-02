@@ -17,6 +17,8 @@ class Person {
     'DVM'
   ];
 
+  const Person();
+
   /// Generates a name.
   ///
   /// Example:
@@ -24,18 +26,18 @@ class Person {
   ///   faker.person.name(); // Mrs. Fiona Ward MD
   /// ```
   String name() {
-    switch (randomNumber(10, 1).first) {
+    switch (random.integer(10)) {
       case 0:
-        return '${randomElement(_prefixes)} ${randomElement(firstnames)} '
-            '${randomElement(lastnames)}';
+        return '${random.element(_prefixes)} ${random.element(firstnames)} '
+            '${random.element(lastnames)}';
       case 1:
-        return '${randomElement(firstnames)} ${randomElement(lastnames)} '
-            '${randomElement(_suffixes)}';
+        return '${random.element(firstnames)} ${random.element(lastnames)} '
+            '${random.element(_suffixes)}';
       case 2:
-        return '${randomElement(_prefixes)} ${randomElement(firstnames)} '
-            '${randomElement(lastnames)} ${randomElement(_suffixes)}';
+        return '${random.element(_prefixes)} ${random.element(firstnames)} '
+            '${random.element(lastnames)} ${random.element(_suffixes)}';
       default:
-        return '${randomElement(firstnames)} ${randomElement(lastnames)}';
+        return '${random.element(firstnames)} ${random.element(lastnames)}';
     }
   }
 
@@ -45,7 +47,7 @@ class Person {
   /// ```dart
   ///   faker.person.firstName(); // Fiona
   /// ```
-  String firstName() => randomElement(firstnames);
+  String firstName() => random.element(firstnames);
 
   /// Generates a last name.
   ///
@@ -53,7 +55,7 @@ class Person {
   /// ```dart
   ///   faker.person.lastName(); // Ward
   /// ```
-  String lastName() => randomElement(lastnames);
+  String lastName() => random.element(lastnames);
 
   /// Generates a prefix.
   ///
@@ -61,7 +63,7 @@ class Person {
   /// ```dart
   ///   faker.person.prefix(); // Mr.
   /// ```
-  String prefix() => randomElement(_prefixes);
+  String prefix() => random.element(_prefixes);
 
   /// Generates a suffix.
   ///
@@ -69,5 +71,5 @@ class Person {
   /// ```dart
   ///   faker.person.suffix(); // Jr.
   /// ```
-  String suffix() => randomElement(_suffixes);
+  String suffix() => random.element(_suffixes);
 }

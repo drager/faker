@@ -1,14 +1,18 @@
 part of faker;
 
+const faker = const Faker();
+
 class Faker {
   final Currency currency;
   final Internet internet;
   final Job job;
   final Person person;
+  final RandomGenerator randomGenerator;
 
-  Faker()
-      : currency = new Currency(),
-        internet = new Internet(),
-        job = new Job(),
-        person = new Person();
+  const Faker()
+      : currency = const Currency(),
+        internet = const Internet(),
+        job = const Job(),
+        person = const Person(),
+        randomGenerator = const RandomGenerator();
 }
