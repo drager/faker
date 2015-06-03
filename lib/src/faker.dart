@@ -3,6 +3,7 @@ part of faker;
 const faker = const Faker();
 
 class Faker {
+  final Address address;
   final Currency currency;
   final Internet internet;
   final Job job;
@@ -10,7 +11,8 @@ class Faker {
   final RandomGenerator randomGenerator;
 
   const Faker()
-      : currency = const Currency(),
+      : address = const Address(),
+        currency = const Currency(),
         internet = const Internet(),
         job = const Job(),
         person = const Person(),
