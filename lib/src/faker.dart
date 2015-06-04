@@ -8,6 +8,7 @@ class Faker {
   final Internet internet;
   final Job job;
   final Person person;
+  final Sport sport;
   final RandomGenerator randomGenerator;
 
   const Faker()
@@ -16,5 +17,6 @@ class Faker {
         internet = const Internet(),
         job = const Job(),
         person = const Person(),
+        sport = const Sport(),
         randomGenerator = const RandomGenerator();
 }

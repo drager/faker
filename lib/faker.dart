@@ -12,6 +12,7 @@ part 'src/currency.dart';
 part 'src/internet.dart';
 part 'src/job.dart';
 part 'src/person.dart';
+part 'src/sport.dart';
 
 part 'src/data/address/city_suffixes.dart';
 part 'src/data/address/countries.dart';
@@ -25,4 +26,4 @@ part 'src/data/person/lastnames.dart';
 part 'src/data/job/job_adj.dart';
 part 'src/data/job/job_noun.dart';
 part 'src/data/job/job_prefix.dart';
-
+part 'src/data/sport/sport_names.dart';
