@@ -8,7 +8,7 @@ class RandomGenerator {
   const RandomGenerator();
 
   /// Plucks a random element from the given [list].
-  String element(List list) {
+  element(List list) {
     return list[_rng.nextInt(list.length)];
   }
 
@@ -53,7 +53,7 @@ class RandomGenerator {
   ///
   ///   random.string(10, min: 5);
   ///   ```
-  String string(int max, {int min}) => new String.fromCharCodes(
+  String string(int max, {int min: 1}) => new String.fromCharCodes(
       numbers(92, integer(max, min: min)).map((value) => value + 33));
 
   /// Generates a list of random length filled by return value of [fn].
@@ -64,7 +64,7 @@ class RandomGenerator {
   ///
   ///     random.amount((_) => random.string(15), 10, min: 5);
   ///   ```
-  List amount(fn(int i), int max, {int min}) {
+  List amount(fn(int i), int max, {int min: 1}) {
     var length = integer(max, min: min);
     return new List.generate(length, fn);
   }
