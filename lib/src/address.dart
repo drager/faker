@@ -23,15 +23,15 @@ class Address {
   String city() {
     switch (random.integer(4)) {
       case 0:
-        return '${cityPrefix()} ${new Faker().person.firstName()}${citySuffix()}';
+        return '${cityPrefix()} ${faker.person.firstName()}${citySuffix()}';
       case 1:
-        return '${cityPrefix()} ${new Faker().person.firstName()}';
+        return '${cityPrefix()} ${faker.person.firstName()}';
       case 2:
-        return '${new Faker().person.firstName()}${citySuffix()}';
+        return '${faker.person.firstName()}${citySuffix()}';
       case 3:
-        return '${new Faker().person.lastName()}${citySuffix()}';
+        return '${faker.person.lastName()}${citySuffix()}';
       default:
-        return '${new Faker().person.lastName()}${citySuffix()}';
+        return '${faker.person.lastName()}${citySuffix()}';
     }
   }
 
