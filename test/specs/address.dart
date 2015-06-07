@@ -18,7 +18,7 @@ main() {
     it('should be able to generate city', () {
       for (var i = 0; i < 20; i++) {
         expect(faker.address.city()).to(anyOf(matches(r'^[^ ]+ [^ ]+[^]+$'),
-            matches(r'^[^ ]+ [^ ]+$'), matches(r'^[\w]+[\w]+$')));
+            matches(r'^[^ ]+ [^ ]+$'), matches(r"^[\w']+[\w]+$")));
       }
     });
 
@@ -58,8 +58,8 @@ main() {
     });
 
     it('should be able to generate country', () {
-      expect(new RegExp(r"^[\w,'^ ]+$").hasMatch(faker.address.country()))
-          .toBeTrue();
+      expect(new RegExp(r"^[\w,éÅô\.Ç\-()'^ ]+$")
+          .hasMatch(faker.address.country())).toBeTrue();
     });
 
     it('should be able to generate country code', () {
