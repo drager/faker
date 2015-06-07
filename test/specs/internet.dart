@@ -38,7 +38,7 @@ main() {
     });
 
     it('should be able to generate domain word', () {
-      expect(new RegExp(r'^(\w+)$').hasMatch(faker.internet.domainWord()))
+      expect(new RegExp(r"^[\w']+$").hasMatch(faker.internet.domainWord()))
           .toBeTrue();
     });
 

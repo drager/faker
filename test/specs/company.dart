@@ -9,7 +9,7 @@ main() {
     it('should be able to generate name', () {
       for (var i = 0; i < 10; i++) {
         expect(faker.company.name()).to(anyOf(matches(r'^[^ ]+ [^ ]$'),
-            matches(r"^[\w-']+$"), matches(r'^[\w, ]+[\w ]$')));
+            matches(r"^[\w-']+$"), matches(r"^[\w,' ]+[\w ]$")));
       }
     });
 
