@@ -9,15 +9,17 @@ main() {
 
   describe('address', () {
     it('should be able to zip code', () {
-      for (var i = 0; i < 20; i++) {
+      for (var i = 0; i < 10; i++) {
         expect(faker.address.zipCode()).to(
             anyOf(matches(r'^[0-9]{5}$'), matches(r'^[0-9]{5}([-][0-9]{4})$')));
       }
     });
 
     it('should be able to generate city', () {
-      expect(faker.address.city()).to(anyOf(matches(r'^[^ ]+ [^ ]+[^]+$'),
-          matches(r'^[^ ]+ [^ ]+$'), matches(r'^[\w]+[\w]+$')));
+      for (var i = 0; i < 20; i++) {
+        expect(faker.address.city()).to(anyOf(matches(r'^[^ ]+ [^ ]+[^]+$'),
+            matches(r'^[^ ]+ [^ ]+$'), matches(r'^[\w]+[\w]+$')));
+      }
     });
 
     it('should be able to generate city prefix', () {
