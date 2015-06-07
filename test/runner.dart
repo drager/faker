@@ -1,4 +1,5 @@
 import 'specs/address.dart' as address;
+import 'specs/conference.dart' as conference;
 import 'specs/company.dart' as company;
 import 'specs/currency.dart' as currency;
 import 'specs/internet.dart' as internet;
@@ -9,6 +10,7 @@ import 'specs/random_generator.dart' as random;
 
 main() {
   address.main();
+  conference.main();
   company.main();
   currency.main();
   internet.main();

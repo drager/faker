@@ -4,6 +4,7 @@ const faker = const Faker();
 
 class Faker {
   final Address address;
+  final Conference conference;
   final Company company;
   final Currency currency;
   final Internet internet;
@@ -14,6 +15,7 @@ class Faker {
 
   const Faker()
       : address = const Address(),
+        conference = const Conference(),
         company = const Company(),
         currency = const Currency(),
         internet = const Internet(),
