@@ -8,6 +8,7 @@ part 'src/faker.dart';
 part 'src/random_generator.dart';
 
 part 'src/address.dart';
+part 'src/company.dart';
 part 'src/currency.dart';
 part 'src/internet.dart';
 part 'src/job.dart';

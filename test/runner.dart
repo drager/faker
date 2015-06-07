@@ -1,4 +1,5 @@
 import 'specs/address.dart' as address;
+import 'specs/company.dart' as company;
 import 'specs/currency.dart' as currency;
 import 'specs/internet.dart' as internet;
 import 'specs/job.dart' as job;
@@ -8,6 +9,7 @@ import 'specs/random_generator.dart' as random;
 
 main() {
   address.main();
+  company.main();
   currency.main();
   internet.main();
   job.main();
