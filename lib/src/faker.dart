@@ -7,6 +7,7 @@ class Faker {
   final Conference conference;
   final Company company;
   final Currency currency;
+  final Guid guid;
   final Internet internet;
   final Job job;
   final Person person;
@@ -18,6 +19,7 @@ class Faker {
         conference = const Conference(),
         company = const Company(),
         currency = const Currency(),
+        guid = const Guid(),
         internet = const Internet(),
         job = const Job(),
         person = const Person(),

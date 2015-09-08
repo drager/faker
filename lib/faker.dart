@@ -11,6 +11,7 @@ part 'src/address.dart';
 part 'src/conference.dart';
 part 'src/company.dart';
 part 'src/currency.dart';
+part 'src/guid.dart';
 part 'src/internet.dart';
 part 'src/job.dart';
 part 'src/person.dart';

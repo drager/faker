@@ -78,4 +78,17 @@ class RandomGenerator {
   /// ```
   String fromPattern(List pattern) =>
       element(pattern).splitMapJoin('#', onMatch: (_) => numbers(9, 1).join());
+
+  /// Generates a random set of numbers from the given [pattern].
+  /// Returns this [pattern] as hex.
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  ///   fromPatternToHex(['#####', '#####-####']);
+  /// ```
+  String fromPatternToHex(List pattern) =>
+    element(pattern).splitMapJoin('#', onMatch: (_) => numbers(16, 1)
+      .map((number) => number.toRadixString(16))
+      .join());
 }
