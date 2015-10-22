@@ -8,3 +8,6 @@
 - Added support for guids
 - Added fromPatternToHex method that generates a random set of numbers
   from a given pattern and return it as hex
+
+## 0.0.3
+- fix: Type faker constant to Faker
