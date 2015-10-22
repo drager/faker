@@ -1,6 +1,6 @@
 part of faker;
 
-const faker = const Faker();
+const Faker faker = const Faker();
 
 class Faker {
   final Address address;
