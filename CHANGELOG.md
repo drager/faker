@@ -11,3 +11,6 @@
 
 ## 0.0.3
 - fix: Type faker constant to Faker
+
+## 0.0.4
+- Added food generator, includes restaurants, dishes and cuisines
