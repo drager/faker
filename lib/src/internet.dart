@@ -84,7 +84,10 @@ class Internet {
   /// ```dart
   ///   faker.internet.domainWord();
   /// ```
-  String domainWord() => random.element(lastnames).toLowerCase();
+  String domainWord() => random
+    .element(lastnames)
+    .toLowerCase()
+    .replaceAll(new RegExp(r'[^a-z0-9\-]'), ''); // -- remove illegal domain characters
 
   /// Generates a URI with the given [protocol].
   ///
