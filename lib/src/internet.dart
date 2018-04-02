@@ -21,6 +21,14 @@ class Internet {
 
   const Internet();
 
+  /// Generates an avatar uri.
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.internet.avatarURI();
+  /// ```
+  String avatarURI() => random.element(avatar_uris);
+
   /// Generates an email from the [userName] and [domainName] methods.
   ///
   /// Example:

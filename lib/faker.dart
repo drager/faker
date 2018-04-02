@@ -29,6 +29,7 @@ part 'src/data/currency/currency_codes.dart';
 part 'src/data/food/cuisines.dart';
 part 'src/data/food/dishes.dart';
 part 'src/data/food/restaurants.dart';
+part 'src/data/internet/avatar_uri.dart';
 part 'src/data/person/firstnames.dart';
 part 'src/data/person/lastnames.dart';
 part 'src/data/job/job_adj.dart';
