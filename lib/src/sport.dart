@@ -1,4 +1,5 @@
-part of faker;
+import 'data/sport/sport_names.dart';
+import 'random_generator.dart';
 
 class Sport {
   const Sport();

@@ -1,5 +1,3 @@
-part of faker;
-
 const conferenceNames = const [
   'Social Mobile Payments Americas',
   'LatAm HSE in Oil, Gas and Petrochemicals',

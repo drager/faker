@@ -1,4 +1,4 @@
-part of faker;
+import 'dart:math';
 
 var _rng = new Random();
 
@@ -17,7 +17,7 @@ class RandomGenerator {
   ///
   /// Returns a list of numbers.
   List<int> numbers(num max, num times) {
-    var number = [];
+    var number = <int>[];
 
     for (var i = 0; i < times; i++) {
       number.add(_rng.nextInt(max));

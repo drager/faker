@@ -1,4 +1,15 @@
-part of faker;
+
+import 'address.dart';
+import 'company.dart';
+import 'conference.dart';
+import 'currency.dart';
+import 'food.dart';
+import 'guid.dart';
+import 'internet.dart';
+import 'job.dart';
+import 'person.dart';
+import 'random_generator.dart';
+import 'sport.dart';
 
 const Faker faker = const Faker();
 

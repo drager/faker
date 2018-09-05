@@ -1,5 +1,3 @@
-part of faker;
-
 const lastnames = const [
   "Abbott",
   "Abernathy",

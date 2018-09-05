@@ -1,5 +1,3 @@
-part of faker;
-
 const sportNames = const [
   'Surfing',
   'Bodyboarding',

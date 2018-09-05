@@ -1,4 +1,5 @@
-part of faker;
+
+import 'random_generator.dart';
 
 class Guid {
 

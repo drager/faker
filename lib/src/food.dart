@@ -1,4 +1,8 @@
-part of faker;
+
+import 'data/food/cuisines.dart';
+import 'data/food/dishes.dart';
+import 'data/food/restaurants.dart';
+import 'random_generator.dart';
 
 class Food {
   const Food();

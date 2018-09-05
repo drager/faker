@@ -1,15 +1,12 @@
-library faker.test.job;
-
-import 'package:guinness/guinness.dart';
+import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
 main() {
   var faker = new Faker();
 
-  describe('job', () {
-    it('should be able to generate job title', () {
-      expect(new RegExp(r'^[^ ]+ [^ ]+ [^ ]+$').hasMatch(faker.job.title()))
-          .toBeTrue();
+  group('job', () {
+    test('should be able to generate job title', () {
+      expect(faker.job.title(), matches(new RegExp(r'^[^ ]+ [^ ]+ [^ ]+$')));
     });
   });
 }

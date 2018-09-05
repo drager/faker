@@ -1,5 +1,3 @@
-part of faker;
-
 const firstnames = const [
   "Aaliyah",
   "Aaron",

@@ -1,4 +1,10 @@
-part of faker;
+import 'random_generator.dart';
+import 'faker.dart';
+import 'data/address/street_suffixes.dart';
+import 'data/address/city_suffixes.dart';
+import 'data/address/neighborhoods.dart';
+import 'data/address/countries.dart';
+import 'data/address/country_codes.dart';
 
 class Address {
   static const compassDirections = const ['North', 'East', 'West', 'South'];

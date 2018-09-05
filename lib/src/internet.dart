@@ -1,4 +1,7 @@
-part of faker;
+
+import 'data/person/firstnames.dart';
+import 'data/person/lastnames.dart';
+import 'random_generator.dart';
 
 class Internet {
   static const _hosts = const ['gmail.com', 'yahoo.com', 'hotmail.com'];
