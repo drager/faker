@@ -1,4 +1,6 @@
-part of faker;
+import 'faker.dart';
+import 'random_generator.dart';
+
 
 class Company {
   static const _companySuffixes = const ['Inc', 'and Sons', 'LLC', 'Group'];

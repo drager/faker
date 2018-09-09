@@ -1,5 +1,3 @@
-part of faker;
-
 const neighborhoods = const [
   'East of Telegraph Road',
   'North Norridge',

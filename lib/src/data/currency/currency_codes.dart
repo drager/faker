@@ -1,5 +1,3 @@
-part of faker;
-
 const currencyCodes = const [
   'AED',
   'AFN',

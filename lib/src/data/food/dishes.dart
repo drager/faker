@@ -1,5 +1,3 @@
-part of faker;
-
 const dishes = const [
   "Minestrone",
   "Baked Alaska",

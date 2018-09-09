@@ -1,5 +1,3 @@
-part of faker;
-
 const cuisines = const [
   'American Chinese',
   'Argentinian food',

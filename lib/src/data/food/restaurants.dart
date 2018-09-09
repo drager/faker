@@ -1,5 +1,3 @@
-part of faker;
-
 const restaurants = const [
   "21 Club",
   "241 Pizza",

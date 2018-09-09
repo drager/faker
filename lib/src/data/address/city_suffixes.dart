@@ -1,5 +1,3 @@
-part of faker;
-
 const citySuffixes = const [
   'town',
   'ton',

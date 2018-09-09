@@ -1,5 +1,3 @@
-part of faker;
-
 const jobAdj = const [
   'Solutions',
   'Program',

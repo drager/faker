@@ -1,26 +1,20 @@
-library faker.test.food;
-
-import 'package:guinness/guinness.dart';
-import 'package:unittest/unittest.dart' hide expect;
+import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
 main() {
   var faker = new Faker();
 
-  describe('food', () {
-    it('should be able to generate restaurant', () {
-      expect(new RegExp(r"^([\w\s\'-])+$").hasMatch(faker.food.restaurant()))
-          .toBeTrue();
+  group('food', () {
+    test('should be able to generate restaurant', () {
+      expect(faker.food.restaurant(), matches(new RegExp(r"^([\w\s\'-])+$")));
     });
 
-    it('should be able to generate dish', () {
-      expect(new RegExp(r"^([\w\s\'-])+$").hasMatch(faker.food.dish()))
-          .toBeTrue();
+    test('should be able to generate dish', () {
+      expect(faker.food.dish(), matches(new RegExp(r"^([\w\s\'-])+$")));
     });
 
-    it('should be able to generate cuisine', () {
-      expect(new RegExp(r"^([\w\s\-])+$").hasMatch(faker.food.cuisine()))
-          .toBeTrue();
+    test('should be able to generate cuisine', () {
+      expect(faker.food.cuisine(), matches(new RegExp(r"^([\w\s\-])+$")));
     });
   });
 }

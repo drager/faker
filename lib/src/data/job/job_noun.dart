@@ -1,5 +1,3 @@
-part of faker;
-
 const jobNoun = const [
   'Supervisor',
   'Associate',
