@@ -48,9 +48,9 @@ class Address {
   ///   faker.address.cityPrefix();
   /// ```
   String cityPrefix() => [
-    random.element(compassDirections),
-    random.element(cityPrefixes)
-  ].join(' ');
+        random.element(compassDirections),
+        random.element(cityPrefixes)
+      ].join(' ');
 
   /// Generates a city suffix.
   ///

@@ -1,4 +1,3 @@
-
 import 'data/person/firstnames.dart';
 import 'data/person/lastnames.dart';
 import 'random_generator.dart';
@@ -68,10 +67,10 @@ class Internet {
   /// ```dart
   ///   faker.internet.userName();
   /// ```
-  String userName() => ([
-    random.element(firstnames),
-    random.element(lastnames)
-  ]..shuffle()).join(random.element(['_', '.', '-'])).toLowerCase();
+  String userName() =>
+      ([random.element(firstnames), random.element(lastnames)]..shuffle())
+          .join(random.element(['_', '.', '-']))
+          .toLowerCase();
 
   /// Generates a domain name from the [domainWord] method and [_domainSuffixes].
   ///
@@ -87,10 +86,8 @@ class Internet {
   /// ```dart
   ///   faker.internet.domainWord();
   /// ```
-  String domainWord() => random
-    .element(lastnames)
-    .toLowerCase()
-    .replaceAll(new RegExp(r'[^a-z0-9\-]'), ''); // -- remove illegal domain characters
+  String domainWord() => random.element(lastnames).toLowerCase().replaceAll(
+      new RegExp(r'[^a-z0-9\-]'), ''); // -- remove illegal domain characters
 
   /// Generates a URI with the given [protocol].
   ///

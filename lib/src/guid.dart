@@ -1,11 +1,8 @@
-
 import 'random_generator.dart';
 
 class Guid {
-
   const Guid();
 
-  String guid() => random.fromPatternToHex(
-      ['########-####-####-####-############']
-  );
+  String guid() =>
+      random.fromPatternToHex(['########-####-####-####-############']);
 }

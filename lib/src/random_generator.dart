@@ -87,8 +87,7 @@ class RandomGenerator {
   /// ```dart
   ///   fromPatternToHex(['#####', '#####-####']);
   /// ```
-  String fromPatternToHex(List pattern) =>
-    element(pattern).splitMapJoin('#', onMatch: (_) => numbers(16, 1)
-      .map((number) => number.toRadixString(16))
-      .join());
+  String fromPatternToHex(List pattern) => element(pattern).splitMapJoin('#',
+      onMatch: (_) =>
+          numbers(16, 1).map((number) => number.toRadixString(16)).join());
 }

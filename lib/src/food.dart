@@ -1,4 +1,3 @@
-
 import 'data/food/cuisines.dart';
 import 'data/food/dishes.dart';
 import 'data/food/restaurants.dart';
