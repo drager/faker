@@ -148,5 +148,5 @@ class Internet {
   /// ```dart
   ///   faker.internet.password();
   /// ```
-  String password({int length: 10}) => random.string(length, min: length);
+  String password({int length = 10}) => random.string(length, min: length);
 }
