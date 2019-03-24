@@ -42,7 +42,8 @@ class RandomGenerator {
 
   /// Generates a random decimal.
   /// Accepts a [scale] and a [min] value.
-  double decimal({num scale = 1, num min = 0}) => _rng.nextDouble() * scale + min;
+  double decimal({num scale = 1, num min = 0}) =>
+      _rng.nextDouble() * scale + min;
 
   /// Generates a random string with the given [max] value
   /// and to the lowest [min] value if provided.
