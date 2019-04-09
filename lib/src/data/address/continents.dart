@@ -8,5 +8,5 @@ const continents = const [
   // Some people use austrailia, whilst others use oceania.
   'Oceania',
 
-  'South Ameria',
+  'South America',
 ];

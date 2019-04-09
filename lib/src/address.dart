@@ -119,11 +119,11 @@ class Address {
   /// ```
   String countryCode() => random.element(countryCodes);
 
-  /// Generates a country code.
+  /// Generates a continent.
   ///
   /// Example:
   /// ```dart
-  ///   faker.address.countryCode();
+  ///   faker.address.continent();
   /// ```
   String continent() => random.element(continents);
 }

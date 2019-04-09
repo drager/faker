@@ -56,7 +56,7 @@ main() {
     });
 
     test('should be able to generate continent', () {
-      expect(faker.address.neighborhood(), matches(new RegExp(r'^[\w\s]*$')));
+      expect(faker.address.continent(), matches(new RegExp(r'^[\w\s]*$')));
     });
   });
 }
