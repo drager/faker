@@ -54,5 +54,9 @@ main() {
     test('should be able to generate country code', () {
       expect(faker.address.countryCode(), matches(new RegExp(r'^[A-Z]{2}$')));
     });
+
+    test('should be able to generate continent', () {
+      expect(faker.address.neighborhood(), matches(new RegExp(r'^[\w\s]*$')));
+    });
   });
 }
