@@ -15,7 +15,7 @@ main() {
 
     group('senetences', () {
       test('should be able to generate sentence', () {
-        expect(faker.lorem.sentence(), matches(new RegExp(r'^[\w^ ]+$')));
+        expect(faker.lorem.sentence(), matches(new RegExp(r'^[\w^ ]+\.$')));
       });
 
       test('should be able to generate sentence list', () {
