@@ -1,6 +1,7 @@
 # faker
 [![Build Status](https://travis-ci.org/drager/faker.svg?branch=master)](https://travis-ci.org/drager/faker)
 [![Coverage Status](https://coveralls.io/repos/drager/faker/badge.svg)](https://coveralls.io/r/drager/faker)
+[![Faker on pub](https://img.shields.io/pub/v/faker.svg)](https://pub.dartlang.org/packages/faker)
 
 A library for Dart that generates fake data.
 
