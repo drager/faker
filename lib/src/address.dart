@@ -5,6 +5,7 @@ import 'data/address/city_suffixes.dart';
 import 'data/address/neighborhoods.dart';
 import 'data/address/countries.dart';
 import 'data/address/country_codes.dart';
+import 'data/address/continents.dart';
 
 class Address {
   static const compassDirections = const ['North', 'East', 'West', 'South'];
@@ -117,4 +118,12 @@ class Address {
   ///   faker.address.countryCode();
   /// ```
   String countryCode() => random.element(countryCodes);
+
+  /// Generates a continent.
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.address.continent();
+  /// ```
+  String continent() => random.element(continents);
 }
