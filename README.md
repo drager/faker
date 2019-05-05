@@ -34,6 +34,9 @@ main() {
 
   faker.person.suffix();
   // Sr.
+  
+  faker.lorem.sentence();
+  // Nec nam aliquam sem et
 }
 ```
 
