@@ -8,7 +8,7 @@ class RandomGenerator {
   const RandomGenerator();
 
   /// Plucks a random element from the given [list].
-  element(List list) {
+  T element<T>(List<T> list) {
     return list[_rng.nextInt(list.length)];
   }
 
