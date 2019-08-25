@@ -40,6 +40,6 @@ class Lorem {
   ///   faker.lorem.sentences(5);
   /// ```
   List<String> sentences(numberOfSentences) {
-    return Iterable<int>.generate(numberOfSentences).map((_) => word()).toList();
+    return Iterable<int>.generate(numberOfSentences).map((_) => sentence()).toList();
   }
 }
