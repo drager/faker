@@ -4,7 +4,7 @@
 set -e
 
 # Run the tests.
-dart --checked test/runner.dart
+dart test/runner.dart
 
 # If the COVERALLS_TOKEN token is set on travis
 # Install dart_coveralls
