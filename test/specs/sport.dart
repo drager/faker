@@ -1,12 +1,10 @@
-library faker.test.sport;
-
-import 'package:guinness/guinness.dart';
+import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
 main() {
-  describe('sport', () {
-    it('should be able to generate name', () {
-      expect(new RegExp(r'^[\w-^ ]+$').hasMatch(faker.sport.name())).toBeTrue();
+  group('sport', () {
+    test('should be able to generate name', () {
+      expect(faker.sport.name(), matches(new RegExp(r'^[\w-^ ]+$')));
     });
   });
 }

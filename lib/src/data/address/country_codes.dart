@@ -1,5 +1,3 @@
-part of faker;
-
 const countryCodes = const [
   'AF',
   'AX',

@@ -1,4 +1,4 @@
-part of faker;
+import 'dart:math';
 
 var _rng = new Random();
 
@@ -8,7 +8,7 @@ class RandomGenerator {
   const RandomGenerator();
 
   /// Plucks a random element from the given [list].
-  element(List list) {
+  T element<T>(List<T> list) {
     return list[_rng.nextInt(list.length)];
   }
 
@@ -17,7 +17,7 @@ class RandomGenerator {
   ///
   /// Returns a list of numbers.
   List<int> numbers(num max, num times) {
-    var number = [];
+    var number = <int>[];
 
     for (var i = 0; i < times; i++) {
       number.add(_rng.nextInt(max));
@@ -34,7 +34,7 @@ class RandomGenerator {
   ///
   ///   random.integer(10, min: 5);
   ///   ```
-  int integer(int max, {int min: 0}) =>
+  int integer(int max, {int min = 0}) =>
       max == min ? max : _rng.nextInt(max - min) + min;
 
   /// Generates a random boolean.
@@ -42,7 +42,8 @@ class RandomGenerator {
 
   /// Generates a random decimal.
   /// Accepts a [scale] and a [min] value.
-  double decimal({num scale: 1, num min: 0}) => _rng.nextDouble() * scale + min;
+  double decimal({num scale = 1, num min = 0}) =>
+      _rng.nextDouble() * scale + min;
 
   /// Generates a random string with the given [max] value
   /// and to the lowest [min] value if provided.
@@ -53,7 +54,7 @@ class RandomGenerator {
   ///
   ///   random.string(10, min: 5);
   ///   ```
-  String string(int max, {int min: 1}) => new String.fromCharCodes(
+  String string(int max, {int min = 1}) => new String.fromCharCodes(
       numbers(92, integer(max, min: min)).map((value) => value + 33));
 
   /// Generates a list of random length filled by return value of [fn].
@@ -64,7 +65,7 @@ class RandomGenerator {
   ///
   ///     random.amount((_) => random.string(15), 10, min: 5);
   ///   ```
-  List amount(fn(int i), int max, {int min: 1}) {
+  List amount(fn(int i), int max, {int min = 1}) {
     var length = integer(max, min: min);
     return new List.generate(length, fn);
   }
@@ -87,8 +88,7 @@ class RandomGenerator {
   /// ```dart
   ///   fromPatternToHex(['#####', '#####-####']);
   /// ```
-  String fromPatternToHex(List pattern) =>
-    element(pattern).splitMapJoin('#', onMatch: (_) => numbers(16, 1)
-      .map((number) => number.toRadixString(16))
-      .join());
+  String fromPatternToHex(List pattern) => element(pattern).splitMapJoin('#',
+      onMatch: (_) =>
+          numbers(16, 1).map((number) => number.toRadixString(16)).join());
 }

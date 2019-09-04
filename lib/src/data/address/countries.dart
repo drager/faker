@@ -1,5 +1,3 @@
-part of faker;
-
 const countries = const [
   "Afghanistan",
   "Åland Islands",

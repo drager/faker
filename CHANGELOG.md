@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.0
+- Added lorem sentences and words
+- Added continents
+- Added generics to `randomGenerator.element()`
+
+## 1.0.0
+- Make faker compatible with Dart 2.0.
+
 ## 0.0.5
 - fix: Remove illegal chars from generated domain words
 

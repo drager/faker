@@ -1,5 +1,3 @@
-part of faker;
-
 const currencyNames = const [
   "UAE Dirham",
   "Afghani",

@@ -1,7 +1,8 @@
-part of faker;
+import 'random_generator.dart';
+import 'data/currency/currency_codes.dart';
+import 'data/currency/currency_names.dart';
 
 class Currency {
-
   const Currency();
 
   /// Generates a currency code.

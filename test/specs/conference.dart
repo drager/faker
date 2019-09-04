@@ -1,13 +1,10 @@
-library faker.test.conference;
-
-import 'package:guinness/guinness.dart';
+import "package:test/test.dart";
 import 'package:faker/faker.dart';
 
 main() {
-  describe('conference', () {
-    it('should be able to generate name', () {
-      expect(new RegExp(r'^[\w\.,\-() ]*$').hasMatch(faker.conference.name()))
-          .toBeTrue();
+  group('conference', () {
+    test('should be able to generate name', () {
+      expect(faker.conference.name(), matches(new RegExp(r'^[\w\.,\-() ]*$')));
     });
   });
 }

@@ -1,5 +1,3 @@
-part of faker;
-
 const streetSuffixes = const [
   'Alley',
   'Avenue',

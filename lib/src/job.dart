@@ -1,7 +1,9 @@
-part of faker;
+import 'data/job/job_adj.dart';
+import 'data/job/job_noun.dart';
+import 'data/job/job_prefix.dart';
+import 'random_generator.dart';
 
 class Job {
-
   const Job();
 
   /// Generates a job title.

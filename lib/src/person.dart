@@ -1,4 +1,6 @@
-part of faker;
+import 'data/person/firstnames.dart';
+import 'data/person/lastnames.dart';
+import 'random_generator.dart';
 
 class Person {
   static const _prefixes = const ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr'];

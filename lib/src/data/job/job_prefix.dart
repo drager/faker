@@ -1,5 +1,3 @@
-part of faker;
-
 const jobPrefix = const [
   'Lead',
   'Senior',
