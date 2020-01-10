@@ -1,3 +1,4 @@
+import 'package:faker/src/date.dart';
 import 'package:faker/src/lorem.dart';
 
 import 'address.dart';
@@ -26,6 +27,7 @@ class Faker {
   final Lorem lorem;
   final Person person;
   final Sport sport;
+  final Date date;
   final RandomGenerator randomGenerator;
 
   const Faker()
@@ -40,5 +42,6 @@ class Faker {
         lorem = const Lorem(),
         person = const Person(),
         sport = const Sport(),
+        date = const Date(),
         randomGenerator = const RandomGenerator();
 }
