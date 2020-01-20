@@ -9,6 +9,7 @@ import 'specs/job.dart' as job;
 import 'specs/lorem.dart' as lorem;
 import 'specs/person.dart' as person;
 import 'specs/sport.dart' as sport;
+import 'specs/date.dart' as date;
 import 'specs/random_generator.dart' as random;
 
 main() {
@@ -23,5 +24,6 @@ main() {
   lorem.main();
   person.main();
   sport.main();
+  date.main();
   random.main();
 }

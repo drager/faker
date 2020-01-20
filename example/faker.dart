@@ -20,4 +20,7 @@ main() {
 
   // Generate random decimal.
   print(random.decimal());
+
+  // Generate random DateTime, between the years 2000 and 2020
+  print(faker.date.dateTime(minYear: 2000, maxYear: 2020));
 }
