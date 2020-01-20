@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+- Added DateTime generator. [Issue #13](https://github.com/drager/faker/issues/13), [PR #15](https://github.com/drager/faker/pull/15)
+- Fix `lorem.sentences` returned words instead of sentences. [Issue #14](https://github.com/drager/faker/issues/14), [PR #12](https://github.com/drager/faker/pull/12)
+
 ## 1.1.0
 - Added lorem sentences and words
 - Added continents
