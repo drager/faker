@@ -3,8 +3,8 @@ import 'data/person/lastnames.dart';
 import 'random_generator.dart';
 
 class Internet {
-  static const _hosts = const ['gmail.com', 'yahoo.com', 'hotmail.com'];
-  static const _domainSuffixes = const [
+  static const _hosts = ['gmail.com', 'yahoo.com', 'hotmail.com'];
+  static const _domainSuffixes = [
     'co.uk',
     'com',
     'us',
@@ -13,7 +13,7 @@ class Internet {
     'info',
     'name'
   ];
-  static const _disposableHosts = const [
+  static const _disposableHosts = [
     'mailinator.com',
     'suremail.info',
     'spamherelots.com',
@@ -87,7 +87,7 @@ class Internet {
   ///   faker.internet.domainWord();
   /// ```
   String domainWord() => random.element(lastnames).toLowerCase().replaceAll(
-      new RegExp(r'[^a-z0-9\-]'), ''); // -- remove illegal domain characters
+      RegExp(r'[^a-z0-9\-]'), ''); // -- remove illegal domain characters
 
   /// Generates a URI with the given [protocol].
   ///

@@ -1,4 +1,4 @@
-const jobPrefix = const [
+const jobPrefix = [
   'Lead',
   'Senior',
   'Direct',

@@ -1,4 +1,4 @@
-const countryCodes = const [
+const countryCodes = [
   'AF',
   'AX',
   'AL',

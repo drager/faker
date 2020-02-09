@@ -1,7 +1,7 @@
-import "package:test/test.dart";
+import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
-main() {
+void main() {
   group('company', () {
     test('should be able to generate name', () {
       for (var i = 0; i < 10; i++) {
@@ -18,7 +18,7 @@ main() {
     });
 
     test('should be able to generate suffix', () {
-      expect(faker.company.suffix(), matches(new RegExp(r'^[\w^ ]+$')));
+      expect(faker.company.suffix(), matches(RegExp(r'^[\w^ ]+$')));
     });
   });
 }

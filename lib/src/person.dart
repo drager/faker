@@ -3,9 +3,9 @@ import 'data/person/lastnames.dart';
 import 'random_generator.dart';
 
 class Person {
-  static const _prefixes = const ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr'];
+  static const _prefixes = ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr'];
 
-  static const _suffixes = const [
+  static const _suffixes = [
     'Jr.',
     'Sr.',
     'I',

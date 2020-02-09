@@ -1,4 +1,4 @@
-const sportNames = const [
+const sportNames = [
   'Surfing',
   'Bodyboarding',
   'Wakeboarding',

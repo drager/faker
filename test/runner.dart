@@ -12,7 +12,7 @@ import 'specs/sport.dart' as sport;
 import 'specs/date.dart' as date;
 import 'specs/random_generator.dart' as random;
 
-main() {
+void main() {
   address.main();
   conference.main();
   company.main();

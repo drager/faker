@@ -1,4 +1,4 @@
-const neighborhoods = const [
+const neighborhoods = [
   'East of Telegraph Road',
   'North Norridge',
   'Northwest Midlothian/Midlothian Country Club',

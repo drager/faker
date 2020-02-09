@@ -1,10 +1,10 @@
 import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
-main() {
+void main() {
   group('sport', () {
     test('should be able to generate name', () {
-      expect(faker.sport.name(), matches(new RegExp(r'^[\w-^ ]+$')));
+      expect(faker.sport.name(), matches(RegExp(r'^[\w-^ ]+$')));
     });
   });
 }

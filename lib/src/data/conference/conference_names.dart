@@ -1,4 +1,4 @@
-const conferenceNames = const [
+const conferenceNames = [
   'Social Mobile Payments Americas',
   'LatAm HSE in Oil, Gas and Petrochemicals',
   'LatAm Pipeline Integrity Management Summit',

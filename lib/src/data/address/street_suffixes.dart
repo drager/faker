@@ -1,4 +1,4 @@
-const streetSuffixes = const [
+const streetSuffixes = [
   'Alley',
   'Avenue',
   'Branch',

@@ -1,12 +1,12 @@
-import 'package:test/test.dart';
 import 'package:faker/faker.dart';
+import 'package:test/test.dart';
 
-const isInt = const TypeMatcher<int>();
-const isDouble = const TypeMatcher<double>();
-const isString = const TypeMatcher<String>();
-const isListOfInt = const TypeMatcher<List<int>>();
+const isInt = TypeMatcher<int>();
+const isDouble = TypeMatcher<double>();
+const isString = TypeMatcher<String>();
+const isListOfInt = TypeMatcher<List<int>>();
 
-main() {
+void main() {
   group('random generator', () {
     test('should be able to generate element', () {
       expect(faker.randomGenerator.element([1, 2, 5]), anyOf(1, 2, 5));
@@ -32,14 +32,18 @@ main() {
 
     test('should be able to generate string', () {
       expect(faker.randomGenerator.string(5), isString);
-      expect(faker.randomGenerator.string(10, min: 5), hasLength(greaterThan(4)));
+      expect(
+          faker.randomGenerator.string(10, min: 5), hasLength(greaterThan(4)));
     });
 
     test('should be able to generate amount', () {
-      expect(faker.randomGenerator.amount(
-          (_) => faker.internet.ipv4Address(), 20), hasLength(lessThan(21)));
-      expect(faker.randomGenerator.amount(
-              (_) => faker.internet.ipv4Address(), 20, min: 5), hasLength(greaterThan(4)));
+      expect(
+          faker.randomGenerator.amount((_) => faker.internet.ipv4Address(), 20),
+          hasLength(lessThan(21)));
+      expect(
+          faker.randomGenerator
+              .amount((_) => faker.internet.ipv4Address(), 20, min: 5),
+          hasLength(greaterThan(4)));
     });
 
     test('should be able to generate from pattern', () {

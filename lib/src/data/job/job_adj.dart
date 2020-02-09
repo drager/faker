@@ -1,4 +1,4 @@
-const jobAdj = const [
+const jobAdj = [
   'Solutions',
   'Program',
   'Brand',

@@ -1,4 +1,4 @@
-const currencyCodes = const [
+const currencyCodes = [
   'AED',
   'AFN',
   'ALL',

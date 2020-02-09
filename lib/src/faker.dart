@@ -13,7 +13,7 @@ import 'person.dart';
 import 'random_generator.dart';
 import 'sport.dart';
 
-const Faker faker = const Faker();
+const Faker faker = Faker();
 
 class Faker {
   final Address address;

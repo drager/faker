@@ -2,7 +2,7 @@ library faker.example;
 
 import 'package:faker/faker.dart';
 
-main() {
+void main() {
   // Generate some different types of data.
   print(faker.address.country());
   print(faker.company.name());
