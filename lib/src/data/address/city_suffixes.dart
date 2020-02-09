@@ -1,4 +1,4 @@
-const citySuffixes = const [
+const citySuffixes = [
   'town',
   'ton',
   'land',

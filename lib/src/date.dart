@@ -5,34 +5,34 @@ class Date {
   const Date();
 
   static final _yearSuffixes = [
-    "BC",
-    "AD",
+    'BC',
+    'AD',
   ];
 
   static final _timeSuffixes = [
-    "AM",
-    "PM",
+    'AM',
+    'PM',
   ];
 
   static final _months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
   ];
 
   /// Generates a random [DateTime]
   /// By default the range of the years will be between 0 and 10000. But that can
   /// be adjusted with the minYear and maxYear args
-  /// 
+  ///
   /// Example:
   /// ```dart
   ///   faker.date.dateTime();
@@ -70,7 +70,7 @@ class Date {
   ///   faker.date.year();
   /// ```
   String year({int minYear = 0, int maxYear = 10000}) {
-    DateTime date = dateTime(minYear: minYear, maxYear: maxYear);
+    final date = dateTime(minYear: minYear, maxYear: maxYear);
 
     // Just year
     if (random.boolean()) {
@@ -90,14 +90,14 @@ class Date {
   ///   faker.date.time()
   /// ```
   String time() {
-    DateTime date = dateTime();
+    final date = dateTime();
 
-    String timeSuffix = "";
+    var timeSuffix = '';
     if (random.boolean()) {
-      timeSuffix = random.element(_timeSuffixes) + " ";
+      timeSuffix = random.element(_timeSuffixes) + ' ';
     }
 
-    String timeZone = "";
+    var timeZone = '';
     if (random.boolean()) {
       timeZone = random.element(timeZones);
     }
@@ -113,7 +113,7 @@ class Date {
 
     // If the minute is a single digit (i.e. less than 10)
     // We want to prepend a 0 to it.
-    String minute = (date.minute < 10)
+    final minute = (date.minute < 10)
         ? '0' + date.minute.toString()
         : date.minute.toString();
 

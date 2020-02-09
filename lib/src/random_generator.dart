@@ -1,8 +1,8 @@
 import 'dart:math';
 
-var _rng = new Random();
+var _rng = Random();
 
-const random = const RandomGenerator();
+const random = RandomGenerator();
 
 class RandomGenerator {
   const RandomGenerator();
@@ -54,7 +54,7 @@ class RandomGenerator {
   ///
   ///   random.string(10, min: 5);
   ///   ```
-  String string(int max, {int min = 1}) => new String.fromCharCodes(
+  String string(int max, {int min = 1}) => String.fromCharCodes(
       numbers(92, integer(max, min: min)).map((value) => value + 33));
 
   /// Generates a list of random length filled by return value of [fn].
@@ -67,7 +67,7 @@ class RandomGenerator {
   ///   ```
   List amount(fn(int i), int max, {int min = 1}) {
     var length = integer(max, min: min);
-    return new List.generate(length, fn);
+    return List.generate(length, fn);
   }
 
   /// Generates a random set of numbers from the given [pattern].

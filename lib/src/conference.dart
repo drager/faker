@@ -1,5 +1,5 @@
-import 'random_generator.dart';
 import 'data/conference/conference_names.dart';
+import 'random_generator.dart';
 
 class Conference {
   const Conference();

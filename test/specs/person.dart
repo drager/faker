@@ -1,8 +1,8 @@
 import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
-main() {
-  var faker = new Faker();
+void main() {
+  var faker = Faker();
 
   group('person', () {
     test('should be able to generate name', () {
@@ -14,19 +14,19 @@ main() {
     });
 
     test('should be able to generate first name', () {
-      expect(faker.person.firstName(), matches(new RegExp(r'^[^\s]+$')));
+      expect(faker.person.firstName(), matches(RegExp(r'^[^\s]+$')));
     });
 
     test('should be able to generate last name', () {
-      expect(faker.person.lastName(), matches(new RegExp(r'^[^\s]+$')));
+      expect(faker.person.lastName(), matches(RegExp(r'^[^\s]+$')));
     });
 
     test('should be able to generate prefix', () {
-      expect(faker.person.prefix(), matches(new RegExp(r'^[\w.]{2,4}$')));
+      expect(faker.person.prefix(), matches(RegExp(r'^[\w.]{2,4}$')));
     });
 
     test('should be able to generate suffix', () {
-      expect(faker.person.suffix(), matches(new RegExp(r'^[\w.]{1,3}$')));
+      expect(faker.person.suffix(), matches(RegExp(r'^[\w.]{1,3}$')));
     });
   });
 }

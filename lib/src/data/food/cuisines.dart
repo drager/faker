@@ -1,4 +1,4 @@
-const cuisines = const [
+const cuisines = [
   'American Chinese',
   'Argentinian food',
   'Chinese Islamic',

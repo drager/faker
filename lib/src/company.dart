@@ -2,21 +2,21 @@ import 'faker.dart';
 import 'random_generator.dart';
 
 class Company {
-  static const _companySuffixes = const ['Inc', 'and Sons', 'LLC', 'Group'];
-  static const _positionPrefixes = const [
+  static const _companySuffixes = ['Inc', 'and Sons', 'LLC', 'Group'];
+  static const _positionPrefixes = [
     'Executive',
     'Assistant',
     'General',
     'Associate'
   ];
-  static const _positions = const [
+  static const _positions = [
     'President',
     'Manager',
     'Director',
     'Secretary',
     'Consultant'
   ];
-  static const _positionAreas = const [
+  static const _positionAreas = [
     'Finance',
     'IT',
     'Operations',

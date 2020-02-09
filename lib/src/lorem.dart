@@ -1,5 +1,5 @@
-import 'data/lorem/words.dart' as word_list;
 import 'data/lorem/sentences.dart' as sentence_list;
+import 'data/lorem/words.dart' as word_list;
 import 'random_generator.dart';
 
 class Lorem {
@@ -40,6 +40,8 @@ class Lorem {
   ///   faker.lorem.sentences(5);
   /// ```
   List<String> sentences(numberOfSentences) {
-    return Iterable<int>.generate(numberOfSentences).map((_) => sentence()).toList();
+    return Iterable<int>.generate(numberOfSentences)
+        .map((_) => sentence())
+        .toList();
   }
 }

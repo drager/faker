@@ -1,8 +1,8 @@
 import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
-main() {
-  var faker = new Faker();
+void main() {
+  var faker = Faker();
 
   group('currency', () {
     test('should be able to generate currency code', () {
@@ -10,7 +10,7 @@ main() {
     });
 
     test('should be able to generate currency name', () {
-      expect(faker.currency.name(), matches(new RegExp(r'(\w){1}')));
+      expect(faker.currency.name(), matches(RegExp(r'(\w){1}')));
     });
   });
 }

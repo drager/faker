@@ -1,11 +1,11 @@
 import 'package:faker/faker.dart';
 import 'package:test/test.dart';
 
-main() {
+void main() {
   group('Lorem', (){
     group('words', () {
       test('should be able to generate single word', () {
-        expect(faker.lorem.word(), matches(new RegExp(r'^[\w-^]+$')));
+        expect(faker.lorem.word(), matches(RegExp(r'^[\w-^]+$')));
       });
 
       test('should be able to generate word list', () {
@@ -15,7 +15,7 @@ main() {
 
     group('senetences', () {
       test('should be able to generate sentence', () {
-        expect(faker.lorem.sentence(), matches(new RegExp(r'^[\w^ ]+\.$')));
+        expect(faker.lorem.sentence(), matches(RegExp(r'^[\w^ ]+\.$')));
       });
 
       test('should be able to generate sentence list', () {

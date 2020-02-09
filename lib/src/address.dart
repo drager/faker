@@ -1,15 +1,15 @@
-import 'random_generator.dart';
-import 'faker.dart';
-import 'data/address/street_suffixes.dart';
 import 'data/address/city_suffixes.dart';
-import 'data/address/neighborhoods.dart';
+import 'data/address/continents.dart';
 import 'data/address/countries.dart';
 import 'data/address/country_codes.dart';
-import 'data/address/continents.dart';
+import 'data/address/neighborhoods.dart';
+import 'data/address/street_suffixes.dart';
+import 'faker.dart';
+import 'random_generator.dart';
 
 class Address {
-  static const compassDirections = const ['North', 'East', 'West', 'South'];
-  static const cityPrefixes = const ['New', 'Lake', 'Port'];
+  static const compassDirections = ['North', 'East', 'West', 'South'];
+  static const cityPrefixes = ['New', 'Lake', 'Port'];
 
   const Address();
 
@@ -68,8 +68,8 @@ class Address {
   ///   faker.address.streetName();
   /// ```
   String streetName() => random.integer(2) == 0
-      ? '${new Faker().person.lastName()} ${streetSuffix()}'
-      : '${new Faker().person.firstName()} ${streetSuffix()}';
+      ? '${Faker().person.lastName()} ${streetSuffix()}'
+      : '${Faker().person.firstName()} ${streetSuffix()}';
 
   /// Generates a street address.
   ///

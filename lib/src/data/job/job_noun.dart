@@ -1,4 +1,4 @@
-const jobNoun = const [
+const jobNoun = [
   'Supervisor',
   'Associate',
   'Executive',
