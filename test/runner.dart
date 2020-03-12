@@ -4,6 +4,7 @@ import 'specs/company.dart' as company;
 import 'specs/currency.dart' as currency;
 import 'specs/food.dart' as food;
 import 'specs/guid.dart' as guid;
+import 'specs/image.dart' as image;
 import 'specs/internet.dart' as internet;
 import 'specs/job.dart' as job;
 import 'specs/lorem.dart' as lorem;
@@ -19,6 +20,7 @@ void main() {
   currency.main();
   food.main();
   guid.main();
+  image.main();
   internet.main();
   job.main();
   lorem.main();
