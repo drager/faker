@@ -2,7 +2,7 @@ class Image {
   const Image();
 
   /// Generates a url to a image random image. The size of image is determined
-  /// by `width` and `height` paramters. You can choose the image categories related
+  /// by `width` and `height` parameters. You can choose the image categories related
   /// by the `keywords` parameter separeted by comma .
   /// 
   /// Example:
