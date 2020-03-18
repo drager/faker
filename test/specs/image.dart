@@ -14,18 +14,23 @@ void main() {
       });
 
       test('should be able to generate a url image with nature keyword', () {
-        expect(faker.image.image(keywords: "nature"),
+        expect(faker.image.image(keywords: ["nature"]),
             'https://source.unsplash.com/640x480?nature');
       });
 
-      test('should be able to generate a url for image with custom size and technology keyword', () {
+      test(
+          'should be able to generate a url for image with custom size and technology keyword',
+          () {
         expect(
-            faker.image.image(width: 1200, height: 900, keywords: "technology"),
+            faker.image
+                .image(width: 1200, height: 900, keywords: ["technology"]),
             'https://source.unsplash.com/1200x900?technology');
       });
 
-      test('should be able to generate a url image with nature and people keywords', () {
-        expect(faker.image.image(keywords: "nature,people"),
+      test(
+          'should be able to generate a url image with nature and people keywords',
+          () {
+        expect(faker.image.image(keywords: ["nature", "people"]),
             'https://source.unsplash.com/640x480?nature,people');
       });
     });
