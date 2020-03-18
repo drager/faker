@@ -17,7 +17,7 @@ class Image {
   ///
   /// Example:
   /// ```dart
-  ///   this._imageUrl(1600, 1200, 'nature');
+  ///   this._imageUrl(1600, 1200,  ['people']);
   /// ```
   String _imageUrl(int width, int height, List<String> keywords) {
     var url = 'https://source.unsplash.com';
