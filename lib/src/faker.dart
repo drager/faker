@@ -12,6 +12,7 @@ import 'job.dart';
 import 'person.dart';
 import 'random_generator.dart';
 import 'sport.dart';
+import 'vehicle.dart';
 
 const Faker faker = Faker();
 
@@ -27,6 +28,7 @@ class Faker {
   final Lorem lorem;
   final Person person;
   final Sport sport;
+  final Vehicle vehicle;
   final Date date;
   final RandomGenerator randomGenerator;
 
@@ -42,6 +44,7 @@ class Faker {
         lorem = const Lorem(),
         person = const Person(),
         sport = const Sport(),
+        vehicle = const Vehicle(),
         date = const Date(),
         randomGenerator = const RandomGenerator();
 }
