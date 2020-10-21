@@ -12,6 +12,14 @@ void main() {
       expect(faker.randomGenerator.element([1, 2, 5]), anyOf(1, 2, 5));
     });
 
+    test('should be able to generate key from map', () {
+      expect(faker.randomGenerator.mapElementKey({1: 2, 3: 4}), anyOf(1, 3));
+    });
+
+    test('should be able to generate value from map', () {
+      expect(faker.randomGenerator.mapElementValue({1: 2, 3: 4}), anyOf(2, 4));
+    });
+
     test('should be able to generate numbers', () {
       expect(faker.randomGenerator.numbers(5, 2), hasLength(2));
       expect(faker.randomGenerator.numbers(5, 2), isListOfInt);
@@ -20,6 +28,10 @@ void main() {
     test('should be able to generate integer', () {
       expect(faker.randomGenerator.integer(5), isInt);
       expect(faker.randomGenerator.integer(10, min: 5), greaterThan(4));
+    });
+
+    test('should be able to generate integer of given length', () {
+      expect(faker.randomGenerator.numberOfLength(5), hasLength(5));
     });
 
     test('should be able to generate boolean', () {

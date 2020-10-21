@@ -7,6 +7,10 @@ const random = RandomGenerator();
 class RandomGenerator {
   const RandomGenerator();
 
+  void seed(int seed) {
+    _rng = Random(seed);
+  }
+
   /// Plucks a random element from the given [list].
   T element<T>(List<T> list) {
     return list[_rng.nextInt(list.length)];
@@ -46,6 +50,14 @@ class RandomGenerator {
   ///   ```
   int integer(int max, {int min = 0}) =>
       max == min ? max : _rng.nextInt(max - min) + min;
+  
+  /// Generates a random string of numbers with a number of characters equal to [length]
+  /// 
+  /// Example
+  /// ```dart
+  /// random.numberOfLength(10);
+  /// ```
+  String numberOfLength(int length) => numbers(10, length).join();
 
   /// Generates a random boolean.
   bool boolean() => _rng.nextBool();
