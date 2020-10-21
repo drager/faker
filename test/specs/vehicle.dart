@@ -3,7 +3,6 @@ import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
 void main() {
-
   group('vehicle', () {
     test('should be able to generate a vehicle as map', () {
       Map<String, dynamic> vehicle = faker.vehicle.vehicle();
@@ -24,6 +23,11 @@ void main() {
       expect(vehicle.year.toString().isNotEmpty, true);
       expect(vehicle.make.isNotEmpty, true);
       expect(vehicle.model.isNotEmpty, true);
+    });
+
+    test('should be able to generate a vin', () {
+      expect(faker.vehicle.vin().isNotEmpty, true);
+      expect(faker.vehicle.vin().length, 17);
     });
   });
 }

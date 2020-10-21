@@ -12,6 +12,16 @@ class RandomGenerator {
     return list[_rng.nextInt(list.length)];
   }
 
+  /// Plucks a random key from the given [map].
+  T mapElementKey<T>(Map<dynamic, dynamic> map) {
+    return map.keys.elementAt(_rng.nextInt(map.length));
+  }
+
+  /// Plucks a random value from the given [map].
+  T mapElementValue<T>(Map<dynamic, dynamic> map) {
+    return map.values.elementAt(_rng.nextInt(map.length));
+  }
+
   /// Generates a random number from the [max] value
   /// and by the number of [times].
   ///
@@ -25,8 +35,8 @@ class RandomGenerator {
     return number;
   }
 
-  /// Generates a random integer with the given [max] value
-  /// and to the lowest [min] value if provided.
+  /// Generates a random integer with the given [max] (exclusive) value
+  /// and to the lowest [min] (inclusive) value if provided.
   ///
   /// Example:
   ///   ```dart
@@ -91,4 +101,15 @@ class RandomGenerator {
   String fromPatternToHex(List pattern) => element(pattern).splitMapJoin('#',
       onMatch: (_) =>
           numbers(16, 1).map((number) => number.toRadixString(16)).join());
+
+  /// Generated a random string from the given string of chracters.
+  /// 
+  /// Example:
+  /// 
+  /// ``` dart
+  ///   fromCharSet('ABCDEFGHIJKLMONPQESTUVWXYZ!?@#$$%');
+  /// ```
+  String fromCharSet(String charSet, int length) =>
+      String.fromCharCodes(Iterable.generate(
+          length, (_) => charSet.codeUnitAt(_rng.nextInt(charSet.length))));
 }
