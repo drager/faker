@@ -110,7 +110,27 @@ class Address {
   /// ```dart
   ///   faker.address.state();
   /// ```
-  String state() => random.element(states);
+  String state() => random.mapElementValue(states);
+
+  /// Generates a US state abbreviation.
+  /// 
+  /// Example:
+  /// ```dart
+  ///   faker.address.stateAbbreviation();
+  /// ```
+  String stateAbbreviation() => random.mapElementKey(states);
+
+  /// Generates a Map containing a US state and it's abbreviation.
+  /// 
+  /// Example:
+  /// ```dart
+  ///   faker.address.stateAsMap();
+  /// ```
+  Map<String, String> stateAsMap(){
+    var key = random.mapElementKey(states);
+    var value = states[key];
+    return {'state': key, 'abbreviation': value};
+  }
 
   /// Generates a country.
   ///
