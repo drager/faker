@@ -47,6 +47,10 @@ void main() {
       expect(faker.address.neighborhood(), matches(RegExp(r'^[\w-/^ ]*$')));
     });
 
+    test('should be able to generate state', () {
+      expect(faker.address.state(), matches(RegExp(r'^[\w]+$')));
+    });
+
     test('should be able to generate country', () {
       expect(faker.address.country(), matches(RegExp(r"^[\w,éÅô\.Ç\-()'^ ]+$")));
     });

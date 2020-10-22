@@ -3,6 +3,7 @@ import 'data/address/continents.dart';
 import 'data/address/countries.dart';
 import 'data/address/country_codes.dart';
 import 'data/address/neighborhoods.dart';
+import 'data/address/states.dart';
 import 'data/address/street_suffixes.dart';
 import 'faker.dart';
 import 'random_generator.dart';
@@ -102,6 +103,14 @@ class Address {
   ///   faker.address.neighborhood();
   /// ```
   String neighborhood() => random.element(neighborhoods);
+
+  /// Generates a US state.
+  /// 
+  /// Example:
+  /// ```dart
+  ///   faker.address.state();
+  /// ```
+  String state() => random.element(states);
 
   /// Generates a country.
   ///
