@@ -60,5 +60,9 @@ void main() {
     test('should be able to generate password', () {
       expect(faker.internet.password(length: 40), hasLength(40));
     });
+
+    test('should be able to generate user agent', () {
+      expect(faker.internet.userAgent(), matches(RegExp(r'(MSIE|Trident|(?!Gecko.+)Firefox|(?!AppleWebKit.+Chrome.+)Safari(?!.+Edge)|(?!AppleWebKit.+)Chrome(?!.+Edge)|(?!AppleWebKit.+Chrome.+Safari.+)Edge|AppleWebKit(?!.+Chrome|.+Safari)|Gecko(?!.+Firefox))(?: |\/)([\d\.apre]+)')));
+    });
   });
 }
