@@ -153,9 +153,9 @@ class Internet {
   /// ```
   String password({int length = 10}) => random.string(length, min: length);
 
-  /// Generates a User Agent from Predefined Dictionary
+  /// Generates an User Agent from Predefined Dictionary
   /// with the given [osName] if provided.
-  /// if not provided [osName] is an empty String
+  /// if not provided [osName] is an empty String or ['']
   ///
   /// Example:
   /// ```dart
