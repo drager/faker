@@ -23,4 +23,7 @@ void main() {
 
   // Generate random DateTime, between the years 2000 and 2020
   print(faker.date.dateTime(minYear: 2000, maxYear: 2020));
+
+  // Generate random User Agent, with osName iOS
+  print(faker.internet.userAgent(osName: 'iOS'));
 }
