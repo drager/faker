@@ -4,6 +4,7 @@ var _rng = Random();
 
 const random = RandomGenerator();
 
+
 class RandomGenerator {
   const RandomGenerator();
 
@@ -91,4 +92,14 @@ class RandomGenerator {
   String fromPatternToHex(List pattern) => element(pattern).splitMapJoin('#',
       onMatch: (_) =>
           numbers(16, 1).map((number) => number.toRadixString(16)).join());
+
+  /// Sets [ seed ] as the seed of random generator [_rng].
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.RandomGenerator.setSeed(1);
+  /// ```
+  void setSeed(int seed){
+    _rng = Random(seed);
+  }
 }

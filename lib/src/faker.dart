@@ -7,7 +7,6 @@ import 'conference.dart';
 import 'currency.dart';
 import 'food.dart';
 import 'guid.dart';
-import 'image.dart';
 import 'internet.dart';
 import 'job.dart';
 import 'person.dart';
@@ -23,7 +22,6 @@ class Faker {
   final Currency currency;
   final Food food;
   final Guid guid;
-  final Image image;
   final Internet internet;
   final Job job;
   final Lorem lorem;
@@ -39,7 +37,6 @@ class Faker {
         currency = const Currency(),
         food = const Food(),
         guid = const Guid(),
-        image = const Image(),
         internet = const Internet(),
         job = const Job(),
         lorem = const Lorem(),
