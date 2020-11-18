@@ -1,5 +1,19 @@
 # Changelog
 
+
+## 1.3.0
+- Add userAgent method to internet.dart. [Issue #26](https://github.com/drager/faker/issues/26), [PR #28](https://github.com/drager/faker/pull/28)
+
+```dart
+faker.internet.userAgent();
+faker.internet.userAgent(osName:'iOS');
+```
+- Add image to faker. [Issue #19](https://github.com/drager/faker/issues/19), [PR #21](https://github.com/drager/faker/pull/21)
+
+```dart
+faker.image.image(width: 1200, height: 900, keywords: 'nature,people');
+```
+
 ## 1.2.1
 - Apply pub.dev health suggestions to improve score. [Issue #17](https://github.com/drager/faker/issues/17), [PR #18](https://github.com/drager/faker/pull/18)
 
