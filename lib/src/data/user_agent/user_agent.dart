@@ -6,15 +6,15 @@ class UserAgents {
 
   UserAgents.fromJson(Map<String, dynamic> json) {
     if (json['userAgents'] != null) {
-      userAgents = new List<UserAgent>();
+      userAgents = List<UserAgent>();
       json['userAgents'].forEach((v) {
-        userAgents.add(new UserAgent.fromJson(v));
+        userAgents.add(UserAgent.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     if (this.userAgents != null) {
       data['userAgents'] = this.userAgents.map((v) => v.toJson()).toList();
     }
@@ -90,7 +90,7 @@ class UserAgent {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['folder'] = this.folder;
     data['description'] = this.description;
     data['userAgent'] = this.userAgent;
