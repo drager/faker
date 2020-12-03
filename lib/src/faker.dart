@@ -61,3 +61,4 @@ class FakerDataProvider {
 class FakerDataProviderFa extends FakerDataProvider {
   FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa());
 }
+
