@@ -1,6 +1,7 @@
 import 'package:faker/src/date.dart';
 import 'package:faker/src/lorem.dart';
-import 'package:faker/src/providers/default_provider.dart';
+import 'package:faker/src/providers/default_providers.dart';
+import 'package:faker/src/providers/fa_providers.dart';
 
 import 'address.dart';
 import 'company.dart';
@@ -44,7 +45,7 @@ class Faker {
         image = const Image(),
         internet = const Internet(),
         job = const Job(),
-        lorem = Lorem(provider.loremDataProvider ?? DefaultLoremDataProvider()),
+        lorem = Lorem(provider?.loremDataProvider ?? DefaultLoremDataProvider()),
         person = const Person(),
         sport = const Sport(),
         date = const Date(),
@@ -55,4 +56,8 @@ class FakerDataProvider {
   final LoremDataProvider loremDataProvider;
 
   FakerDataProvider({this.loremDataProvider});
+}
+
+class FakerDataProviderFa extends FakerDataProvider {
+  FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa());
 }
