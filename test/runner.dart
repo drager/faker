@@ -12,6 +12,7 @@ import 'specs/person.dart' as person;
 import 'specs/sport.dart' as sport;
 import 'specs/date.dart' as date;
 import 'specs/random_generator.dart' as random;
+import 'specs/seed.dart' as seed;
 
 void main() {
   address.main();
@@ -28,4 +29,5 @@ void main() {
   sport.main();
   date.main();
   random.main();
+  seed.main();
 }
