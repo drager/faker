@@ -14,7 +14,7 @@ import 'person.dart';
 import 'random_generator.dart';
 import 'sport.dart';
 
-const Faker faker = Faker();
+final Faker faker = Faker._(random);
 
 class Faker {
   final Address address;
@@ -32,19 +32,21 @@ class Faker {
   final Date date;
   final RandomGenerator randomGenerator;
 
-  const Faker()
-      : address = const Address(),
-        conference = const Conference(),
-        company = const Company(),
-        currency = const Currency(),
-        food = const Food(),
-        guid = const Guid(),
-        image = const Image(),
-        internet = const Internet(),
-        job = const Job(),
-        lorem = const Lorem(),
-        person = const Person(),
-        sport = const Sport(),
-        date = const Date(),
-        randomGenerator = const RandomGenerator();
+  Faker._(RandomGenerator random)
+      : address = Address(random),
+        conference = Conference(random),
+        company = Company(random),
+        currency = Currency(random),
+        food = Food(random),
+        guid = Guid(random),
+        image = Image(),
+        internet = Internet(random),
+        job = Job(random),
+        lorem = Lorem(random),
+        person = Person(random),
+        sport = Sport(random),
+        date = Date(random),
+        randomGenerator = random;
+
+  factory Faker({int seed}) => Faker._(RandomGenerator(seed: seed));
 }

@@ -24,7 +24,9 @@ class Internet {
     'safetymail.info'
   ];
 
-  const Internet();
+  const Internet(this.random);
+
+  final RandomGenerator random;
 
   /// Generates an email from the [userName] and [domainName] methods.
   ///

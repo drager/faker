@@ -1,3 +1,4 @@
+import '../faker.dart';
 import 'faker.dart';
 import 'random_generator.dart';
 
@@ -30,7 +31,9 @@ class Company {
     'Division'
   ];
 
-  const Company();
+  const Company(this.random);
+
+  final RandomGenerator random;
 
   /// Generates a company name.
   ///

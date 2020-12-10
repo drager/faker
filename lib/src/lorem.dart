@@ -3,7 +3,9 @@ import 'data/lorem/words.dart' as word_list;
 import 'random_generator.dart';
 
 class Lorem {
-  const Lorem();
+  const Lorem(this.random);
+
+  final RandomGenerator random;
 
   /// Generates a word.
   ///

@@ -1,3 +1,4 @@
+import '../faker.dart';
 import 'data/address/city_suffixes.dart';
 import 'data/address/continents.dart';
 import 'data/address/countries.dart';
@@ -11,7 +12,9 @@ class Address {
   static const compassDirections = ['North', 'East', 'West', 'South'];
   static const cityPrefixes = ['New', 'Lake', 'Port'];
 
-  const Address();
+  const Address(this.random);
+
+  final RandomGenerator random;
 
   /// Generates a zip code.
   ///

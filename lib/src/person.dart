@@ -19,7 +19,9 @@ class Person {
     'DVM'
   ];
 
-  const Person();
+  const Person(this.random);
+
+  final RandomGenerator random;
 
   /// Generates a name.
   ///
