@@ -1,5 +1,4 @@
-import '../faker.dart';
-import 'faker.dart';
+import 'person.dart';
 import 'random_generator.dart';
 
 class Company {
@@ -31,9 +30,11 @@ class Company {
     'Division'
   ];
 
-  const Company(this.random);
+  const Company(this.person);
 
-  final RandomGenerator random;
+  final Person person;
+
+  RandomGenerator get random => person.random;
 
   /// Generates a company name.
   ///
@@ -44,14 +45,14 @@ class Company {
   String name() {
     switch (random.integer(3)) {
       case 0:
-        return '${faker.person.lastName()} ${suffix()}';
+        return '${person.lastName()} ${suffix()}';
       case 1:
-        return '${faker.person.lastName()}-${faker.person.lastName()}';
+        return '${person.lastName()}-${person.lastName()}';
       case 2:
-        return '${faker.person.lastName()}, ${faker.person.lastName()} '
-            'and ${faker.person.lastName()}';
+        return '${person.lastName()}, ${person.lastName()} '
+            'and ${person.lastName()}';
       default:
-        return '${faker.person.lastName()} ${suffix()}';
+        return '${person.lastName()} ${suffix()}';
     }
   }
 
