@@ -1,5 +1,7 @@
 import 'package:faker/src/date.dart';
 import 'package:faker/src/lorem.dart';
+import 'package:faker/src/providers/default_providers.dart';
+import 'package:faker/src/providers/fa_providers.dart';
 
 import 'address.dart';
 import 'company.dart';
@@ -11,10 +13,11 @@ import 'image.dart';
 import 'internet.dart';
 import 'job.dart';
 import 'person.dart';
+import 'providers/base_providers.dart';
 import 'random_generator.dart';
 import 'sport.dart';
 
-const Faker faker = Faker();
+final Faker faker = Faker();
 
 class Faker {
   final Address address;
@@ -32,7 +35,7 @@ class Faker {
   final Date date;
   final RandomGenerator randomGenerator;
 
-  const Faker()
+  Faker([FakerDataProvider provider])
       : address = const Address(),
         conference = const Conference(),
         company = const Company(),
@@ -42,9 +45,20 @@ class Faker {
         image = const Image(),
         internet = const Internet(),
         job = const Job(),
-        lorem = const Lorem(),
+        lorem = Lorem(provider?.loremDataProvider ?? DefaultLoremDataProvider()),
         person = const Person(),
         sport = const Sport(),
         date = const Date(),
         randomGenerator = const RandomGenerator();
 }
+
+class FakerDataProvider {
+  final LoremDataProvider loremDataProvider;
+
+  FakerDataProvider({this.loremDataProvider});
+}
+
+class FakerDataProviderFa extends FakerDataProvider {
+  FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa());
+}
+
