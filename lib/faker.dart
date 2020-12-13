@@ -32,3 +32,7 @@ export 'src/data/job/job_adj.dart';
 export 'src/data/job/job_noun.dart';
 export 'src/data/job/job_prefix.dart';
 export 'src/data/sport/sport_names.dart';
+
+export 'src/providers/base_providers.dart';
+export 'src/providers/default_providers.dart';
+export 'src/providers/fa_providers.dart';

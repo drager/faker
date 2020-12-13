@@ -1,5 +1,7 @@
 import 'package:faker/src/date.dart';
 import 'package:faker/src/lorem.dart';
+import 'package:faker/src/providers/default_providers.dart';
+import 'package:faker/src/providers/fa_providers.dart';
 
 import 'address.dart';
 import 'company.dart';
@@ -11,6 +13,7 @@ import 'image.dart';
 import 'internet.dart';
 import 'job.dart';
 import 'person.dart';
+import 'providers/base_providers.dart';
 import 'random_generator.dart';
 import 'sport.dart';
 
@@ -32,7 +35,7 @@ class Faker {
   final Date date;
   final RandomGenerator randomGenerator;
 
-  Faker.withGenerator(RandomGenerator random)
+  Faker.withGenerator(RandomGenerator random, {FakerDataProvider provider})
       : address = Address(Person(random)),
         conference = Conference(random),
         company = Company(Person(random)),
@@ -42,11 +45,22 @@ class Faker {
         image = Image(),
         internet = Internet(random),
         job = Job(random),
-        lorem = Lorem(random),
+        lorem = Lorem(random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
         person = Person(random),
         sport = Sport(random),
         date = Date(random),
         randomGenerator = random;
 
-  factory Faker({int seed}) => Faker.withGenerator(RandomGenerator(seed: seed));
+  factory Faker({int seed, FakerDataProvider provider}) => Faker.withGenerator(RandomGenerator(seed: seed), provider: provider);
 }
+
+class FakerDataProvider {
+  final LoremDataProvider loremDataProvider;
+
+  FakerDataProvider({this.loremDataProvider});
+}
+
+class FakerDataProviderFa extends FakerDataProvider {
+  FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa());
+}
+

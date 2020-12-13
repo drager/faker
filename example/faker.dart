@@ -29,4 +29,12 @@ void main() {
 
   // Generate random User Agent, with osName iOS
   print(faker.internet.userAgent(osName: 'iOS'));
+
+  // Generate localized Farsi lorem text
+  final fakerFa = Faker(provider: FakerDataProviderFa());
+  print(fakerFa.lorem.word());
+  print(fakerFa.lorem.sentence());
+  print(fakerFa.lorem.words(10).join(' '));
+  print(fakerFa.lorem.sentences(3).join(' '));
+
 }
