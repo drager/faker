@@ -46,7 +46,7 @@ class Faker {
         internet = const Internet(),
         job = const Job(),
         lorem = Lorem(provider?.loremDataProvider ?? DefaultLoremDataProvider()),
-        person = const Person(),
+        person = Person(provider?.personDataProvider ?? DefaultPersonDataProvider()),
         sport = const Sport(),
         date = const Date(),
         randomGenerator = const RandomGenerator();
@@ -54,11 +54,12 @@ class Faker {
 
 class FakerDataProvider {
   final LoremDataProvider loremDataProvider;
+  final PersonDataProvider personDataProvider;
 
-  FakerDataProvider({this.loremDataProvider});
+  FakerDataProvider({this.loremDataProvider,this.personDataProvider});
 }
 
 class FakerDataProviderFa extends FakerDataProvider {
-  FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa());
+  FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa(),personDataProvider: PersonDataProviderFa());
 }
 

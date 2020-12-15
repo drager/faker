@@ -26,8 +26,6 @@ export 'src/data/currency/currency_codes.dart';
 export 'src/data/food/cuisines.dart';
 export 'src/data/food/dishes.dart';
 export 'src/data/food/restaurants.dart';
-export 'src/data/person/firstnames.dart';
-export 'src/data/person/lastnames.dart';
 export 'src/data/job/job_adj.dart';
 export 'src/data/job/job_noun.dart';
 export 'src/data/job/job_prefix.dart';

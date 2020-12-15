@@ -1,8 +1,8 @@
 import '../faker.dart';
-import 'data/person/firstnames.dart';
+import 'data/person/defaults/firstnames.dart';
 import 'data/user_agent/user_agent.dart';
 import 'data/user_agent/user_agent_data.dart';
-import 'data/person/lastnames.dart';
+import 'data/person/defaults/lastnames.dart';
 import 'random_generator.dart';
 
 class Internet {

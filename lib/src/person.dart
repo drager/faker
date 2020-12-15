@@ -1,25 +1,11 @@
-import 'data/person/firstnames.dart';
-import 'data/person/lastnames.dart';
+import 'package:faker/faker.dart';
+
 import 'random_generator.dart';
 
 class Person {
-  static const _prefixes = ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr'];
+  final PersonDataProvider provider;
 
-  static const _suffixes = [
-    'Jr.',
-    'Sr.',
-    'I',
-    'II',
-    'III',
-    'IV',
-    'V',
-    'MD',
-    'DDS',
-    'PhD',
-    'DVM'
-  ];
-
-  const Person();
+  const Person(this.provider);
 
   /// Generates a name.
   ///
@@ -30,18 +16,26 @@ class Person {
   String name() {
     switch (random.integer(10)) {
       case 0:
-        return '${random.element(_prefixes)} ${random.element(firstnames)} '
-            '${random.element(lastnames)}';
+        return '${random.element(provider.prefixes())} ${random.element(provider.firstNames())} '
+            '${random.element(provider.lastNames())}';
       case 1:
-        return '${random.element(firstnames)} ${random.element(lastnames)} '
-            '${random.element(_suffixes)}';
+        return '${random.element(provider.firstNames())} ${random.element(provider.lastNames())} '
+            '${random.element(provider.suffixes())}';
       case 2:
-        return '${random.element(_prefixes)} ${random.element(firstnames)} '
-            '${random.element(lastnames)} ${random.element(_suffixes)}';
+        return '${random.element(provider.prefixes())} ${random.element(provider.firstNames())} '
+            '${random.element(provider.lastNames())} ${random.element(provider.suffixes())}';
       default:
-        return '${random.element(firstnames)} ${random.element(lastnames)}';
+        return '${random.element(provider.firstNames())} ${random.element(provider.lastNames())}';
     }
   }
+
+  /// Generates a name containing only first name and last name. without any prefixes or suffixes
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.person.name(); // Fiona Ward
+  /// ``
+  String fullName() => '${random.element(provider.firstNames())} ${random.element(provider.lastNames())}';
 
   /// Generates a first name.
   ///
@@ -49,7 +43,7 @@ class Person {
   /// ```dart
   ///   faker.person.firstName(); // Fiona
   /// ```
-  String firstName() => random.element(firstnames);
+  String firstName() => random.element(provider.firstNames());
 
   /// Generates a last name.
   ///
@@ -57,7 +51,7 @@ class Person {
   /// ```dart
   ///   faker.person.lastName(); // Ward
   /// ```
-  String lastName() => random.element(lastnames);
+  String lastName() => random.element(provider.lastNames());
 
   /// Generates a prefix.
   ///
@@ -65,7 +59,7 @@ class Person {
   /// ```dart
   ///   faker.person.prefix(); // Mr.
   /// ```
-  String prefix() => random.element(_prefixes);
+  String prefix() => random.element(provider.prefixes());
 
   /// Generates a suffix.
   ///
@@ -73,5 +67,5 @@ class Person {
   /// ```dart
   ///   faker.person.suffix(); // Jr.
   /// ```
-  String suffix() => random.element(_suffixes);
+  String suffix() => random.element(provider.suffixes());
 }
