@@ -39,5 +39,5 @@ class PhoneNumber {
 
   const PhoneNumber();
 
-  String phoneNumber() => random.fromPattern(usPhoneNumberPatterns);
+  String us() => random.fromPattern(usPhoneNumberPatterns);
 }

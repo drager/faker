@@ -8,42 +8,38 @@ void main() {
     test('should be able to generate phone number', () {
       for (var i = 0; i < 20; i++) {
         expect(
-          faker.person.name(),
+          faker.phoneNumber.us(),
           anyOf(
             [
               // Standard 10-digit phone number formats
-              matches('##########'),
-              matches('##########'),
-              matches('###-###-####'),
-              matches('###-###-####'),
+              matches(r'\d{10}'),
+              matches(r'\d{3}-\d{3}-\d{3}'),
               // Optional 10-digit local phone number format
-              matches('(###)###-####'),
-              matches('(###)###-####'),
+              matches(r'\(\d{3}\)\d{3}-\d{3}'),
               // Non-standard 10-digit phone number format
-              matches('###.###.####'),
-              matches('###.###.####'),
+              matches(r'\d{3}.\d{3}.\d{4}'),
               // Standard 10-digit phone number format with extensions
-              matches('###-###-####x###'),
-              matches('###-###-####x####'),
-              matches('###-###-####x#####'),
+              matches(r'\d{3}-\d{3}-\d{4}x\d{3}'),
+              matches(r'\d{3}-\d{3}-\d{4}x\d{4}'),
+              matches(r'\d{3}-\d{3}-\d{4}x\d{5}'),
               // Optional 10-digit local phone number format with extensions
-              matches('(###)###-####x###'),
-              matches('(###)###-####x####'),
-              matches('(###)###-####x#####'),
+              matches(r'\(\d{3}\)\d{3}-\d{4}x\d{3}'),
+              matches(r'\(\d{3}\)\d{3}-\d{4}x\d{4}'),
+              matches(r'\(\d{3}\)\d{3}-\d{4}x\d{5}'),
               // Non-standard 10-digit phone number format with extensions
-              matches('###.###.####x###'),
-              matches('###.###.####x####'),
-              matches('###.###.####x#####'),
+              matches(r'\d{3}.\d{3}.\d{4}x\d{3}'),
+              matches(r'\d{3}.\d{3}.\d{4}x\d{4}'),
+              matches(r'\d{3}.\d{3}.\d{4}x\d{5}'),
               // Standard 11-digit phone number format
-              matches('+1-###-###-####'),
-              matches('001-###-###-####'),
+              matches(r'\+1-\d{3}-\d{3}-\d{4}'),
+              matches(r'001-\d{3}-\d{3}-\d{4}'),
               // Standard 11-digit phone number format with extensions
-              matches('+1-###-###-####x###'),
-              matches('+1-###-###-####x####'),
-              matches('+1-###-###-####x#####'),
-              matches('001-###-###-####x###'),
-              matches('001-###-###-####x####'),
-              matches('001-###-###-####x#####'),
+              matches(r'\+1-\d{3}-\d{3}-\d{4}x\d{3}'),
+              matches(r'\+1-\d{3}-\d{3}-\d{4}x\d{4}'),
+              matches(r'\+1-\d{3}-\d{3}-\d{4}x\d{5}'),
+              matches(r'001-\d{3}-\d{3}-\d{4}x\d{3}'),
+              matches(r'001-\d{3}-\d{3}-\d{4}x\d{4}'),
+              matches(r'001-\d{3}-\d{3}-\d{4}x\d{5}'),
             ],
           ),
         );
