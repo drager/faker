@@ -4,8 +4,8 @@ import 'package:test/test.dart';
 void main() {
   var faker = Faker();
 
-  group('person', () {
-    test('should be able to generate phone number', () {
+  group('us', () {
+    test('should be able to generate us phone number', () {
       for (var i = 0; i < 20; i++) {
         expect(
           faker.phoneNumber.us(),
