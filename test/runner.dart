@@ -12,6 +12,7 @@ import 'specs/lorem.dart' as lorem;
 import 'specs/person.dart' as person;
 import 'specs/phone_number.dart' as phoneNumber;
 import 'specs/random_generator.dart' as random;
+import 'specs/seed.dart' as seed;
 import 'specs/sport.dart' as sport;
 
 void main() {
@@ -30,4 +31,5 @@ void main() {
   sport.main();
   date.main();
   random.main();
+  seed.main();
 }

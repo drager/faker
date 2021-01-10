@@ -1,4 +1,4 @@
-import 'package:faker/faker.dart';
+import 'random_generator.dart';
 
 class PhoneNumber {
   static const usPhoneNumberPatterns = [
@@ -37,7 +37,9 @@ class PhoneNumber {
     '001-###-###-####x#####',
   ];
 
-  const PhoneNumber();
+  const PhoneNumber(this.random);
+
+  final RandomGenerator random;
 
   String us() => random.fromPattern(usPhoneNumberPatterns);
 }

@@ -1,4 +1,3 @@
-import '../faker.dart';
 import 'data/person/firstnames.dart';
 import 'data/user_agent/user_agent.dart';
 import 'data/user_agent/user_agent_data.dart';
@@ -24,7 +23,9 @@ class Internet {
     'safetymail.info'
   ];
 
-  const Internet();
+  const Internet(this.random);
+
+  final RandomGenerator random;
 
   /// Generates an email from the [userName] and [domainName] methods.
   ///

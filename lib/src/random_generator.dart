@@ -1,15 +1,16 @@
 import 'dart:math';
 
-var _rng = Random();
-
-const random = RandomGenerator();
+final random = RandomGenerator();
 
 class RandomGenerator {
-  const RandomGenerator();
+  RandomGenerator({int seed}):
+    _random = Random(seed);
+
+  final Random _random;
 
   /// Plucks a random element from the given [list].
   T element<T>(List<T> list) {
-    return list[_rng.nextInt(list.length)];
+    return list[_random.nextInt(list.length)];
   }
 
   /// Generates a random number from the [max] value
@@ -20,7 +21,7 @@ class RandomGenerator {
     var number = <int>[];
 
     for (var i = 0; i < times; i++) {
-      number.add(_rng.nextInt(max));
+      number.add(_random.nextInt(max));
     }
     return number;
   }
@@ -35,15 +36,15 @@ class RandomGenerator {
   ///   random.integer(10, min: 5);
   ///   ```
   int integer(int max, {int min = 0}) =>
-      max == min ? max : _rng.nextInt(max - min) + min;
+      max == min ? max : _random.nextInt(max - min) + min;
 
   /// Generates a random boolean.
-  bool boolean() => _rng.nextBool();
+  bool boolean() => _random.nextBool();
 
   /// Generates a random decimal.
   /// Accepts a [scale] and a [min] value.
   double decimal({num scale = 1, num min = 0}) =>
-      _rng.nextDouble() * scale + min;
+      _random.nextDouble() * scale + min;
 
   /// Generates a random string with the given [max] value
   /// and to the lowest [min] value if provided.

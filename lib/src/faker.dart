@@ -18,7 +18,7 @@ import 'providers/base_providers.dart';
 import 'random_generator.dart';
 import 'sport.dart';
 
-final Faker faker = Faker();
+final Faker faker = Faker.withGenerator(random);
 
 class Faker {
   final Address address;
@@ -37,23 +37,24 @@ class Faker {
   final Date date;
   final RandomGenerator randomGenerator;
 
-  Faker([FakerDataProvider provider])
-      : address = const Address(),
-        conference = const Conference(),
-        company = const Company(),
-        currency = const Currency(),
-        food = const Food(),
-        guid = const Guid(),
-        image = const Image(),
-        internet = const Internet(),
-        job = const Job(),
-        lorem =
-            Lorem(provider?.loremDataProvider ?? DefaultLoremDataProvider()),
-        person = const Person(),
-        phoneNumber = const PhoneNumber(),
-        sport = const Sport(),
-        date = const Date(),
-        randomGenerator = const RandomGenerator();
+  Faker.withGenerator(RandomGenerator random, {FakerDataProvider provider})
+      : address = Address(Person(random)),
+        conference = Conference(random),
+        company = Company(Person(random)),
+        currency = Currency(random),
+        food = Food(random),
+        guid = Guid(random),
+        image = Image(),
+        internet = Internet(random),
+        job = Job(random),
+        lorem = Lorem(random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
+        person = Person(random),
+        sport = Sport(random),
+        date = Date(random),
+        phoneNumber = PhoneNumber(random),
+        randomGenerator = random;
+
+  factory Faker({int seed, FakerDataProvider provider}) => Faker.withGenerator(RandomGenerator(seed: seed), provider: provider);
 }
 
 class FakerDataProvider {

@@ -2,9 +2,10 @@ import 'package:faker/src/providers/base_providers.dart';
 import 'random_generator.dart';
 
 class Lorem {
-  final LoremDataProvider _provider;
+  const Lorem(this.random, this._provider);
 
-  const Lorem(this._provider);
+  final RandomGenerator random;
+  final LoremDataProvider _provider;
 
   /// Generates a word.
   ///

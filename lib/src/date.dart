@@ -2,7 +2,9 @@ import 'data/date_time/time_zones.dart';
 import 'random_generator.dart';
 
 class Date {
-  const Date();
+  const Date(this.random);
+
+  final RandomGenerator random;
 
   static final _yearSuffixes = [
     'BC',
