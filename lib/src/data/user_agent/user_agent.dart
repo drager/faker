@@ -2,11 +2,10 @@
 class UserAgents {
   List<UserAgent> userAgents = [];
 
-  UserAgents({this.userAgents = const []});
+  UserAgents({List<UserAgent>? userAgents}) : this.userAgents = userAgents ?? [];
 
   UserAgents.fromJson(Map<String, dynamic> json) {
     if (json['userAgents'] != null) {
-      userAgents = [];
       json['userAgents'].forEach((v) {
         userAgents.add(UserAgent.fromJson(v));
       });
