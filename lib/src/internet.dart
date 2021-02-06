@@ -166,11 +166,8 @@ class Internet {
   String userAgent({String osName = ''}) => random
       .element(UserAgents.fromJson(userAgentDatas)
           .userAgents
-          .map((e) => e)
           .where(
-            (element) =>
-                element.osName.toLowerCase().contains(osName.toLowerCase()),
-          )
+            (element) => element.osName?.toLowerCase().contains(osName.toLowerCase()) == true)
           .toList())
       .userAgent
       .toString();

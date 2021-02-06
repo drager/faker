@@ -1,12 +1,12 @@
 /// data based on: https://github.com/skratchdot/random-useragent
 class UserAgents {
-  List<UserAgent> userAgents;
+  List<UserAgent> userAgents = [];
 
-  UserAgents({this.userAgents});
+  UserAgents({this.userAgents = const []});
 
   UserAgents.fromJson(Map<String, dynamic> json) {
     if (json['userAgents'] != null) {
-      userAgents = List<UserAgent>();
+      userAgents = [];
       json['userAgents'].forEach((v) {
         userAgents.add(UserAgent.fromJson(v));
       });
@@ -15,34 +15,32 @@ class UserAgents {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
-    if (this.userAgents != null) {
-      data['userAgents'] = this.userAgents.map((v) => v.toJson()).toList();
-    }
+    data['userAgents'] = userAgents.map((v) => v.toJson()).toList();
     return data;
   }
 }
 
 class UserAgent {
-  String folder;
-  String description;
-  String userAgent;
-  String appCodename;
-  String appName;
-  String appVersion;
-  String platform;
-  String vendor;
-  String vendorSub;
-  String browserName;
-  String browserMajor;
-  String browserVersion;
-  String deviceModel;
-  String deviceType;
-  String deviceVendor;
-  String engineName;
-  String engineVersion;
-  String osName;
-  String osVersion;
-  String cpuArchitecture;
+  String? folder;
+  String? description;
+  String? userAgent;
+  String? appCodename;
+  String? appName;
+  String? appVersion;
+  String? platform;
+  String? vendor;
+  String? vendorSub;
+  String? browserName;
+  String? browserMajor;
+  String? browserVersion;
+  String? deviceModel;
+  String? deviceType;
+  String? deviceVendor;
+  String? engineName;
+  String? engineVersion;
+  String? osName;
+  String? osVersion;
+  String? cpuArchitecture;
 
   UserAgent(
       {this.folder,

@@ -1,8 +1,6 @@
 import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
-import 'package:faker/src/data/food/restaurants.dart';
-
 void main() {
   var faker = Faker();
 
