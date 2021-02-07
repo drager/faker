@@ -41,5 +41,5 @@ class PhoneNumber {
 
   final RandomGenerator random;
 
-  String us() => random.fromPattern(usPhoneNumberPatterns);
+  String? us() => random.fromPattern(usPhoneNumberPatterns);
 }

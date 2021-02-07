@@ -37,7 +37,7 @@ class Faker {
   final Date date;
   final RandomGenerator randomGenerator;
 
-  Faker.withGenerator(RandomGenerator random, {FakerDataProvider provider})
+  Faker.withGenerator(RandomGenerator random, {FakerDataProvider? provider})
       : address = Address(Person(random)),
         conference = Conference(random),
         company = Company(Person(random)),
@@ -54,11 +54,11 @@ class Faker {
         phoneNumber = PhoneNumber(random),
         randomGenerator = random;
 
-  factory Faker({int seed, FakerDataProvider provider}) => Faker.withGenerator(RandomGenerator(seed: seed), provider: provider);
+  factory Faker({int? seed, FakerDataProvider? provider}) => Faker.withGenerator(RandomGenerator(seed: seed), provider: provider);
 }
 
 class FakerDataProvider {
-  final LoremDataProvider loremDataProvider;
+  final LoremDataProvider? loremDataProvider;
 
   FakerDataProvider({this.loremDataProvider});
 }

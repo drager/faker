@@ -3,7 +3,7 @@ import 'dart:math';
 final random = RandomGenerator();
 
 class RandomGenerator {
-  RandomGenerator({int seed}):
+  RandomGenerator({int? seed}):
     _random = Random(seed);
 
   final Random _random;
@@ -21,7 +21,7 @@ class RandomGenerator {
     var number = <int>[];
 
     for (var i = 0; i < times; i++) {
-      number.add(_random.nextInt(max));
+      number.add(_random.nextInt(max as int));
     }
     return number;
   }
