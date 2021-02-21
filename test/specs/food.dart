@@ -1,14 +1,13 @@
 import 'package:test/test.dart';
 import 'package:faker/faker.dart';
 
-import 'package:faker/src/data/food/restaurants.dart';
-
 void main() {
   var faker = Faker();
 
-  group('food', () {    
+  group('food', () {
     test('should be able to generate restaurant', () {
-      expect(faker.food.restaurant(), matches(RegExp(r"^([\w\s\&\/\,\.\ö\’\'-])+$")));
+      expect(faker.food.restaurant(),
+          matches(RegExp(r"^([\w\s\&\/\,\.\ö\’\'-])+$")));
     });
 
     test('should be able to generate dish', () {

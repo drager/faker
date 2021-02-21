@@ -47,14 +47,16 @@ class Faker {
         image = Image(),
         internet = Internet(random),
         job = Job(random),
-        lorem = Lorem(random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
+        lorem = Lorem(
+            random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
         person = Person(random),
         sport = Sport(random),
         date = Date(random),
         phoneNumber = PhoneNumber(random),
         randomGenerator = random;
 
-  factory Faker({int? seed, FakerDataProvider? provider}) => Faker.withGenerator(RandomGenerator(seed: seed), provider: provider);
+  factory Faker({int? seed, FakerDataProvider? provider}) =>
+      Faker.withGenerator(RandomGenerator(seed: seed), provider: provider);
 }
 
 class FakerDataProvider {

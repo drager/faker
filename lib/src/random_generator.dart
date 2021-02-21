@@ -3,8 +3,7 @@ import 'dart:math';
 final random = RandomGenerator();
 
 class RandomGenerator {
-  RandomGenerator({int? seed}):
-    _random = Random(seed);
+  RandomGenerator({int? seed}) : _random = Random(seed);
 
   final Random _random;
 

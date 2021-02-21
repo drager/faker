@@ -47,5 +47,3 @@ class Lorem {
         .toList();
   }
 }
-
-
