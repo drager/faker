@@ -5,6 +5,6 @@ class Guid {
 
   final RandomGenerator random;
 
-  String? guid() =>
+  String guid() =>
       random.fromPatternToHex(['########-####-####-####-############']);
 }
