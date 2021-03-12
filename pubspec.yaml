@@ -7,4 +7,3 @@ environment:
 dev_dependencies:
   test: ^1.16.0-nullsafety.17
   crypto: ^3.0.0
-  jwt_decoder: ^2.0.0
