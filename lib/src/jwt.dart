@@ -76,7 +76,10 @@ class Jwt {
         : dateToSeconds(new DateTime.now()) - 3600;
 
     final _header = _generate_header();
-    final _payload = _generate_payload({'exp': expiration});
+    final _payload = _generate_payload({
+      'iat': dateToSeconds(new DateTime.now()),
+      'exp': expiration,
+    });
     final _signature = _generate_signature(_header, _payload);
 
     return '$_header.$_payload.$_signature';
@@ -85,7 +88,11 @@ class Jwt {
   String custom({required DateTime expiresIn, required Map payload}) {
     final _header = _generate_header();
     final _payload = _generate_payload(
-      payload..addAll({'exp': dateToSeconds(expiresIn)}),
+      payload
+        ..addAll({
+          'iat': payload['iat'] ?? dateToSeconds(new DateTime.now()),
+          'exp': dateToSeconds(expiresIn),
+        }),
     );
     final _signature = _generate_signature(_header, _payload);
 

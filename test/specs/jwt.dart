@@ -136,5 +136,22 @@ void main() {
       expect(payload['exp'], expiresIn.millisecondsSinceEpoch ~/ 1000);
       expect(payload['any_key'], 'any_value');
     });
+
+    test('should preserve the iat param of payload', () {
+      final expiresIn = new DateTime.now().add(new Duration(hours: 1));
+      final iat = new DateTime.now()
+          .subtract(new Duration(hours: 1))
+          .millisecondsSinceEpoch;
+
+      final token = fakerJwt.custom(
+        expiresIn: expiresIn,
+        payload: {'exp': expiresIn, 'iat': iat},
+      );
+      final payload = decode(token);
+
+      expect(isExpired(token), false);
+      expect(payload['exp'], expiresIn.millisecondsSinceEpoch ~/ 1000);
+      expect(payload['iat'], iat);
+    });
   });
 }
