@@ -13,6 +13,7 @@ import 'guid.dart';
 import 'image.dart';
 import 'internet.dart';
 import 'job.dart';
+import 'jwt.dart';
 import 'person.dart';
 import 'providers/base_providers.dart';
 import 'random_generator.dart';
@@ -30,6 +31,7 @@ class Faker {
   final Image image;
   final Internet internet;
   final Job job;
+  final Jwt jwt;
   final Lorem lorem;
   final Person person;
   final PhoneNumber phoneNumber;
@@ -47,6 +49,7 @@ class Faker {
         image = Image(),
         internet = Internet(random),
         job = Job(random),
+        jwt = Jwt(),
         lorem = Lorem(
             random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
         person = Person(random),
