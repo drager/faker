@@ -7,9 +7,10 @@ void main() {
   group('person', () {
     test('should be able to generate name', () {
       for (var i = 0; i < 20; i++) {
-        expect(faker.person.name(), anyOf(matches(r'^[^ ]+ [^ ]+$'),
-            matches(r'^[^ ]+ [^ ]+ [^ ]+$'),
-            matches(r'^[^ ]+ [^ ]+ [^ ]+ [^ ]+$')));
+        expect(
+            faker.person.name(),
+            anyOf(matches(r'^[^ ]+ [^ ]+$'), matches(r'^[^ ]+ [^ ]+ [^ ]+$'),
+                matches(r'^[^ ]+ [^ ]+ [^ ]+ [^ ]+$')));
       }
     });
 

@@ -14,8 +14,7 @@ void main() {
     });
 
     test('should be able to generate a year', () {
-      expect(
-          faker.date.year(), matches(RegExp(r'^([0-9]){1,5}( (BC|AD))?$')));
+      expect(faker.date.year(), matches(RegExp(r'^([0-9]){1,5}( (BC|AD))?$')));
     });
 
     test('should be able to generate a time', () {
