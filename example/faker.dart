@@ -37,4 +37,9 @@ void main() {
   print(fakerFa.lorem.words(10).join(' '));
   print(fakerFa.lorem.sentences(3).join(' '));
 
+  // Generate JWT(json web token)
+  print(faker.jwt.valid());
+  print(faker.jwt.valid(expiresIn: DateTime.now().add(Duration(hours: 2))));
+  print(faker.jwt.expired());
+  print(faker.jwt.custom(expiresIn: DateTime.now(), payload: {'key': 'value'}));
 }

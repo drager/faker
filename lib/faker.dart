@@ -12,6 +12,7 @@ export 'src/food.dart';
 export 'src/guid.dart';
 export 'src/internet.dart';
 export 'src/job.dart';
+export 'src/jwt.dart';
 export 'src/person.dart';
 export 'src/sport.dart';
 
