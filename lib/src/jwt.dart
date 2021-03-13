@@ -29,7 +29,7 @@ class Jwt {
 
   String _generate_signature(String header, String payload) {
     final data = '$header.$payload';
-    final hmac = new Hmac(sha256, base64.decode(secret));
+    final hmac = Hmac(sha256, base64.decode(secret));
     final digest = hmac.convert(utf8.encode(data));
     final signature = base64
         .encode(digest.bytes)
@@ -53,11 +53,11 @@ class Jwt {
     // default expiration with 1 hour
     final expiration = expiresIn != null
         ? dateToSeconds(expiresIn)
-        : dateToSeconds(new DateTime.now()) + 3600;
+        : dateToSeconds(DateTime.now()) + 3600;
 
     final _header = _generate_header();
     final _payload = _generate_payload({
-      'iat': dateToSeconds(new DateTime.now()),
+      'iat': dateToSeconds(DateTime.now()),
       'exp': expiration,
     });
     final _signature = _generate_signature(_header, _payload);
@@ -73,11 +73,11 @@ class Jwt {
     // expired at one hour
     final expiration = expiresIn != null
         ? dateToSeconds(expiresIn)
-        : dateToSeconds(new DateTime.now()) - 3600;
+        : dateToSeconds(DateTime.now()) - 3600;
 
     final _header = _generate_header();
     final _payload = _generate_payload({
-      'iat': dateToSeconds(new DateTime.now()),
+      'iat': dateToSeconds(DateTime.now()),
       'exp': expiration,
     });
     final _signature = _generate_signature(_header, _payload);
@@ -90,7 +90,7 @@ class Jwt {
     final _payload = _generate_payload(
       payload
         ..addAll({
-          'iat': payload['iat'] ?? dateToSeconds(new DateTime.now()),
+          'iat': payload['iat'] ?? dateToSeconds(DateTime.now()),
           'exp': dateToSeconds(expiresIn),
         }),
     );

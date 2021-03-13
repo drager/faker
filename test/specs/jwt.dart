@@ -45,7 +45,7 @@ void main() {
     });
 
     test('should return a correct payload', () {
-      final exp = new DateTime.now().add(new Duration(hours: 1));
+      final exp = DateTime.now().add(Duration(hours: 1));
       final token = fakerJwt.valid(expiresIn: exp);
       final payload = decode(token);
 
@@ -54,7 +54,7 @@ void main() {
     });
 
     test('should throws if expiresIn is not future date', () {
-      final exp = new DateTime.now().subtract(new Duration(hours: 1));
+      final exp = DateTime.now().subtract(Duration(hours: 1));
 
       expect(
         () => fakerJwt.valid(expiresIn: exp),
@@ -71,7 +71,7 @@ void main() {
     });
 
     test('should return a correct payload', () {
-      final exp = new DateTime.now().subtract(new Duration(hours: 1));
+      final exp = DateTime.now().subtract(Duration(hours: 1));
       final token = fakerJwt.expired(expiresIn: exp);
       final payload = decode(token);
 
@@ -80,7 +80,7 @@ void main() {
     });
 
     test('should throws if expiresIn is not past date', () {
-      final exp = new DateTime.now().add(new Duration(hours: 1));
+      final exp = DateTime.now().add(Duration(hours: 1));
 
       expect(
         () => fakerJwt.expired(expiresIn: exp),
@@ -91,7 +91,7 @@ void main() {
 
   group('custom', () {
     test('should return a expired jwt if expiresIn is a past date', () {
-      final exp = new DateTime.now().subtract(new Duration(hours: 1));
+      final exp = DateTime.now().subtract(Duration(hours: 1));
       final token = fakerJwt.custom(
         expiresIn: exp,
         payload: {'any_key': 'any_value'},
@@ -101,7 +101,7 @@ void main() {
     });
 
     test('should return a valid jwt if expiresIn is a future date', () {
-      final exp = new DateTime.now().add(new Duration(hours: 1));
+      final exp = DateTime.now().add(Duration(hours: 1));
       final token = fakerJwt.custom(
         expiresIn: exp,
         payload: {'any_key': 'any_value'},
@@ -111,7 +111,7 @@ void main() {
     });
 
     test('should return a correct payload', () {
-      final exp = new DateTime.now().add(new Duration(hours: 1));
+      final exp = DateTime.now().add(Duration(hours: 1));
       final token = fakerJwt.custom(
         expiresIn: exp,
         payload: {'any_key': 'any_value'},
@@ -124,8 +124,8 @@ void main() {
     });
 
     test('should override the exp param of payload', () {
-      final expiresIn = new DateTime.now().add(new Duration(hours: 1));
-      final payLoadExp = (new DateTime.now()).millisecondsSinceEpoch / 1000;
+      final expiresIn = DateTime.now().add(Duration(hours: 1));
+      final payLoadExp = (DateTime.now()).millisecondsSinceEpoch / 1000;
       final token = fakerJwt.custom(
         expiresIn: expiresIn,
         payload: {'exp': payLoadExp, 'any_key': 'any_value'},
@@ -138,10 +138,9 @@ void main() {
     });
 
     test('should preserve the iat param of payload', () {
-      final expiresIn = new DateTime.now().add(new Duration(hours: 1));
-      final iat = new DateTime.now()
-          .subtract(new Duration(hours: 1))
-          .millisecondsSinceEpoch;
+      final expiresIn = DateTime.now().add(Duration(hours: 1));
+      final iat =
+          DateTime.now().subtract(Duration(hours: 1)).millisecondsSinceEpoch;
 
       final token = fakerJwt.custom(
         expiresIn: expiresIn,
