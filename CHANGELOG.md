@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0-rc.2
+- Add JWT support. [Issue #42](https://github.com/drager/faker/issues/42), [PR #43](https://github.com/drager/faker/pull/43)
+- Remove unnecessary nullables. [Issue #40](https://github.com/drager/faker/issues/40), [PR #41](https://github.com/drager/faker/pull/41)
+
 ## 2.0.0-rc.1
 
 - Add null safety. [Issue #37](https://github.com/drager/faker/issues/37), [PR #38](https://github.com/drager/faker/pull/38)
