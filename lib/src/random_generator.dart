@@ -7,10 +7,6 @@ class RandomGenerator {
 
   final Random _random;
 
-  void seed(int seed) {
-    _rng = Random(seed);
-  }
-
   /// Plucks a random element from the given [list].
   T element<T>(List<T> list) {
     return list[_random.nextInt(list.length)];
@@ -18,12 +14,12 @@ class RandomGenerator {
 
   /// Plucks a random key from the given [map].
   T mapElementKey<T>(Map<dynamic, dynamic> map) {
-    return map.keys.elementAt(_rng.nextInt(map.length));
+    return map.keys.elementAt(_random.nextInt(map.length));
   }
 
   /// Plucks a random value from the given [map].
   T mapElementValue<T>(Map<dynamic, dynamic> map) {
-    return map.values.elementAt(_rng.nextInt(map.length));
+    return map.values.elementAt(_random.nextInt(map.length));
   }
 
   /// Generates a random number from the [max] value
@@ -50,6 +46,14 @@ class RandomGenerator {
   ///   ```
   int integer(int max, {int min = 0}) =>
       max == min ? max : _random.nextInt(max - min) + min;
+
+  /// Generates a random string of numbers with a number of characters equal to [length]
+  /// 
+  /// Example
+  /// ```dart
+  /// random.numberOfLength(10);
+  /// ```
+  String numberOfLength(int length) => numbers(10, length).join();
 
   /// Generates a random boolean.
   bool boolean() => _random.nextBool();
@@ -115,5 +119,5 @@ class RandomGenerator {
   /// ```
   String fromCharSet(String charSet, int length) =>
       String.fromCharCodes(Iterable.generate(
-          length, (_) => charSet.codeUnitAt(_rng.nextInt(charSet.length))));
+          length, (_) => charSet.codeUnitAt(_random.nextInt(charSet.length))));
 }

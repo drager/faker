@@ -59,8 +59,8 @@ void main() {
     });
 
     test('should be able to generate state as map', () {
-      expect(faker.address.stateAsMap()['state'].isNotEmpty, true);
-      expect(faker.address.stateAsMap()['abbreviation'].isNotEmpty, true);
+      expect(faker.address.stateAsMap()['state']!.isNotEmpty, true);
+      expect(faker.address.stateAsMap()['abbreviation']!.isNotEmpty, true);
     });
 
     test('should be able to generate country', () {

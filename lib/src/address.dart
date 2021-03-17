@@ -131,8 +131,8 @@ class Address {
   ///   faker.address.stateAsMap();
   /// ```
   Map<String, String> stateAsMap(){
-    var key = random.mapElementKey(states);
-    var value = states[key];
+    String key = random.mapElementKey(states);
+    String value = states[key]!;
     return {'state': key, 'abbreviation': value};
   }
 
