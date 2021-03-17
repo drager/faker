@@ -2,7 +2,7 @@ import 'package:faker/faker.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Lorem', (){
+  group('Lorem', () {
     group('words', () {
       test('should be able to generate single word', () {
         expect(faker.lorem.word(), matches(RegExp(r'^[\w-^]+$')));

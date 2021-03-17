@@ -5,14 +5,18 @@ import 'data/address/country_codes.dart';
 import 'data/address/neighborhoods.dart';
 import 'data/address/states.dart';
 import 'data/address/street_suffixes.dart';
-import 'faker.dart';
+import 'person.dart';
 import 'random_generator.dart';
 
 class Address {
   static const compassDirections = ['North', 'East', 'West', 'South'];
   static const cityPrefixes = ['New', 'Lake', 'Port'];
 
-  const Address();
+  const Address(this.person);
+
+  final Person person;
+
+  RandomGenerator get random => person.random;
 
   /// Generates a zip code.
   ///
@@ -31,15 +35,15 @@ class Address {
   String city() {
     switch (random.integer(4)) {
       case 0:
-        return '${cityPrefix()} ${faker.person.firstName()}${citySuffix()}';
+        return '${cityPrefix()} ${person.firstName()}${citySuffix()}';
       case 1:
-        return '${cityPrefix()} ${faker.person.firstName()}';
+        return '${cityPrefix()} ${person.firstName()}';
       case 2:
-        return '${faker.person.firstName()}${citySuffix()}';
+        return '${person.firstName()}${citySuffix()}';
       case 3:
-        return '${faker.person.lastName()}${citySuffix()}';
+        return '${person.lastName()}${citySuffix()}';
       default:
-        return '${faker.person.lastName()}${citySuffix()}';
+        return '${person.lastName()}${citySuffix()}';
     }
   }
 
@@ -69,8 +73,8 @@ class Address {
   ///   faker.address.streetName();
   /// ```
   String streetName() => random.integer(2) == 0
-      ? '${Faker().person.lastName()} ${streetSuffix()}'
-      : '${Faker().person.firstName()} ${streetSuffix()}';
+      ? '${person.lastName()} ${streetSuffix()}'
+      : '${person.firstName()} ${streetSuffix()}';
 
   /// Generates a street address.
   ///

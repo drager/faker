@@ -1,4 +1,6 @@
 import 'data/person/firstnames.dart';
+import 'data/user_agent/user_agent.dart';
+import 'data/user_agent/user_agent_data.dart';
 import 'data/person/lastnames.dart';
 import 'random_generator.dart';
 
@@ -21,7 +23,9 @@ class Internet {
     'safetymail.info'
   ];
 
-  const Internet();
+  const Internet(this.random);
+
+  final RandomGenerator random;
 
   /// Generates an email from the [userName] and [domainName] methods.
   ///
@@ -149,4 +153,25 @@ class Internet {
   ///   faker.internet.password();
   /// ```
   String password({int length = 10}) => random.string(length, min: length);
+
+  /// Generates an User Agent from Predefined Dictionary
+  /// with the given [osName] if provided.
+  /// if not provided [osName] is an empty String or ['']
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.internet.userAgent();
+  ///   faker.internet.userAgent(osName:'ios');
+  /// ```
+  String userAgent({String osName = ''}) => random
+      .element(UserAgents.fromJson(userAgentDatas)
+          .userAgents!
+          .map((e) => e)
+          .where(
+            (element) =>
+                element.osName!.toLowerCase().contains(osName.toLowerCase()),
+          )
+          .toList())
+      .userAgent
+      .toString();
 }

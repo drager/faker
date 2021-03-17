@@ -6,7 +6,8 @@ void main() {
 
   group('food', () {
     test('should be able to generate restaurant', () {
-      expect(faker.food.restaurant(), matches(RegExp(r"^([\w\s\'-])+$")));
+      expect(faker.food.restaurant(),
+          matches(RegExp(r"^([\w\s\&\/\,\.\ö\’\'-])+$")));
     });
 
     test('should be able to generate dish', () {

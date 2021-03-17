@@ -1,11 +1,11 @@
 import 'dart:math';
 
-var _rng = Random();
-
-const random = RandomGenerator();
+final random = RandomGenerator();
 
 class RandomGenerator {
-  const RandomGenerator();
+  RandomGenerator({int? seed}) : _random = Random(seed);
+
+  final Random _random;
 
   void seed(int seed) {
     _rng = Random(seed);
@@ -13,7 +13,7 @@ class RandomGenerator {
 
   /// Plucks a random element from the given [list].
   T element<T>(List<T> list) {
-    return list[_rng.nextInt(list.length)];
+    return list[_random.nextInt(list.length)];
   }
 
   /// Plucks a random key from the given [map].
@@ -34,7 +34,7 @@ class RandomGenerator {
     var number = <int>[];
 
     for (var i = 0; i < times; i++) {
-      number.add(_rng.nextInt(max));
+      number.add(_random.nextInt(max as int));
     }
     return number;
   }
@@ -49,23 +49,15 @@ class RandomGenerator {
   ///   random.integer(10, min: 5);
   ///   ```
   int integer(int max, {int min = 0}) =>
-      max == min ? max : _rng.nextInt(max - min) + min;
-  
-  /// Generates a random string of numbers with a number of characters equal to [length]
-  /// 
-  /// Example
-  /// ```dart
-  /// random.numberOfLength(10);
-  /// ```
-  String numberOfLength(int length) => numbers(10, length).join();
+      max == min ? max : _random.nextInt(max - min) + min;
 
   /// Generates a random boolean.
-  bool boolean() => _rng.nextBool();
+  bool boolean() => _random.nextBool();
 
   /// Generates a random decimal.
   /// Accepts a [scale] and a [min] value.
   double decimal({num scale = 1, num min = 0}) =>
-      _rng.nextDouble() * scale + min;
+      _random.nextDouble() * scale + min;
 
   /// Generates a random string with the given [max] value
   /// and to the lowest [min] value if provided.

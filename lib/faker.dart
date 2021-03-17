@@ -12,6 +12,7 @@ export 'src/food.dart';
 export 'src/guid.dart';
 export 'src/internet.dart';
 export 'src/job.dart';
+export 'src/jwt.dart';
 export 'src/person.dart';
 export 'src/sport.dart';
 export 'src/vehicle.dart';
@@ -33,3 +34,7 @@ export 'src/data/job/job_adj.dart';
 export 'src/data/job/job_noun.dart';
 export 'src/data/job/job_prefix.dart';
 export 'src/data/sport/sport_names.dart';
+
+export 'src/providers/base_providers.dart';
+export 'src/providers/default_providers.dart';
+export 'src/providers/fa_providers.dart';
