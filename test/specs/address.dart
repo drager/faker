@@ -51,7 +51,7 @@ void main() {
     });
 
     test('should be able to generate state', () {
-      expect(faker.address.state(), matches(RegExp(r'^[\w]+$')));
+      expect(faker.address.state(), matches(RegExp(r'^[\w]+(\s\w+)*$')));
     });
 
     test('should be able to generate state abbreviation', () {
