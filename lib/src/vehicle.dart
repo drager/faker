@@ -32,7 +32,7 @@ class Vehicle {
   /// ```
   String model() => random.element(vehicles).model;
 
-  /// Generates a random vehicle year between 1940 and 2020.
+  /// Generates a random vehicle year between 1940 and DateTime.now().year + 1.
   ///
   /// Example:
   /// ```dart
