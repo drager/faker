@@ -89,6 +89,8 @@ class Vehicle {
   }
 
   String _generateVis() {
-    return random.mapElementKey(yearMap) + 'A' + random.fromCharSet(_vinChars, 6);
+    return random.mapElementKey(yearMap) +
+        'A' +
+        random.fromCharSet(_vinChars, 6);
   }
 }

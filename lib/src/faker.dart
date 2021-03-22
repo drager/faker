@@ -40,7 +40,7 @@ class Faker {
   final Vehicle vehicle;
   final Date date;
   final RandomGenerator randomGenerator;
-  
+
   Faker.withGenerator(RandomGenerator random, {FakerDataProvider? provider})
       : address = Address(Person(random)),
         conference = Conference(random),

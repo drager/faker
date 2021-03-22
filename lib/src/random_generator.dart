@@ -48,7 +48,7 @@ class RandomGenerator {
       max == min ? max : _random.nextInt(max - min) + min;
 
   /// Generates a random string of numbers with a number of characters equal to [length]
-  /// 
+  ///
   /// Example
   /// ```dart
   /// random.numberOfLength(10);
@@ -111,9 +111,9 @@ class RandomGenerator {
           numbers(16, 1).map((number) => number.toRadixString(16)).join());
 
   /// Generated a random string from the given string of chracters.
-  /// 
+  ///
   /// Example:
-  /// 
+  ///
   /// ``` dart
   ///   fromCharSet('ABCDEFGHIJKLMONPQESTUVWXYZ!?@#$$%');
   /// ```

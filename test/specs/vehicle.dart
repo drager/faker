@@ -11,7 +11,9 @@ void main() {
       expect(vehicle['Model'].isNotEmpty, true);
     });
 
-    test('should be able to generete year, make, model independently and as one', () {
+    test(
+        'should be able to generete year, make, model independently and as one',
+        () {
       expect(faker.vehicle.year().isNotEmpty, true);
       expect(faker.vehicle.make().isNotEmpty, true);
       expect(faker.vehicle.model().isNotEmpty, true);
