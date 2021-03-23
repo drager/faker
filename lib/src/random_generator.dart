@@ -65,9 +65,9 @@ class RandomGenerator {
   ///
   ///     random.amount((_) => random.string(15), 10, min: 5);
   ///   ```
-  List amount(fn(int i), int max, {int min = 1}) {
+  List<T> amount<T>(T Function(int i) generator, int max, {int min = 1}) {
     var length = integer(max, min: min);
-    return List.generate(length, fn);
+    return List.generate(length, generator);
   }
 
   /// Generates a random set of numbers from the given [pattern].
