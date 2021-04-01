@@ -3,6 +3,7 @@ import 'data/address/continents.dart';
 import 'data/address/countries.dart';
 import 'data/address/country_codes.dart';
 import 'data/address/neighborhoods.dart';
+import 'data/address/states.dart';
 import 'data/address/street_suffixes.dart';
 import 'person.dart';
 import 'random_generator.dart';
@@ -106,6 +107,34 @@ class Address {
   ///   faker.address.neighborhood();
   /// ```
   String neighborhood() => random.element(neighborhoods);
+
+  /// Generates a US state.
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.address.state();
+  /// ```
+  String state() => random.mapElementValue(states);
+
+  /// Generates a US state abbreviation.
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.address.stateAbbreviation();
+  /// ```
+  String stateAbbreviation() => random.mapElementKey(states);
+
+  /// Generates a Map containing a US state and it's abbreviation.
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.address.stateAsMap();
+  /// ```
+  Map<String, String> stateAsMap() {
+    String key = random.mapElementKey(states);
+    String value = states[key]!;
+    return {'state': key, 'abbreviation': value};
+  }
 
   /// Generates a country.
   ///

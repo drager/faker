@@ -11,10 +11,11 @@ import 'specs/job.dart' as job;
 import 'specs/jwt.dart' as jwt;
 import 'specs/lorem.dart' as lorem;
 import 'specs/person.dart' as person;
+import 'specs/sport.dart' as sport;
+import 'specs/vehicle.dart' as vehicle;
 import 'specs/phone_number.dart' as phoneNumber;
 import 'specs/random_generator.dart' as random;
 import 'specs/seed.dart' as seed;
-import 'specs/sport.dart' as sport;
 
 void main() {
   address.main();
@@ -31,6 +32,7 @@ void main() {
   person.main();
   phoneNumber.main();
   sport.main();
+  vehicle.main();
   date.main();
   random.main();
   seed.main();
