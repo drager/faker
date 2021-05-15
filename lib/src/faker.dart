@@ -18,6 +18,7 @@ import 'person.dart';
 import 'providers/base_providers.dart';
 import 'random_generator.dart';
 import 'sport.dart';
+import 'vehicle.dart';
 
 final Faker faker = Faker.withGenerator(random);
 
@@ -36,6 +37,7 @@ class Faker {
   final Person person;
   final PhoneNumber phoneNumber;
   final Sport sport;
+  final Vehicle vehicle;
   final Date date;
   final RandomGenerator randomGenerator;
 
@@ -56,6 +58,7 @@ class Faker {
         sport = Sport(random),
         date = Date(random),
         phoneNumber = PhoneNumber(random),
+        vehicle = Vehicle(),
         randomGenerator = random;
 
   factory Faker({int? seed, FakerDataProvider? provider}) =>

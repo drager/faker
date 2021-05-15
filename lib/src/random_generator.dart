@@ -12,6 +12,16 @@ class RandomGenerator {
     return list[_random.nextInt(list.length)];
   }
 
+  /// Plucks a random key from the given [map].
+  T mapElementKey<T>(Map<dynamic, dynamic> map) {
+    return map.keys.elementAt(_random.nextInt(map.length));
+  }
+
+  /// Plucks a random value from the given [map].
+  T mapElementValue<T>(Map<dynamic, dynamic> map) {
+    return map.values.elementAt(_random.nextInt(map.length));
+  }
+
   /// Generates a random number from the [max] value
   /// and by the number of [times].
   ///
@@ -25,8 +35,8 @@ class RandomGenerator {
     return number;
   }
 
-  /// Generates a random integer with the given [max] value
-  /// and to the lowest [min] value if provided.
+  /// Generates a random integer with the given [max] (exclusive) value
+  /// and to the lowest [min] (inclusive) value if provided.
   ///
   /// Example:
   ///   ```dart
@@ -36,6 +46,14 @@ class RandomGenerator {
   ///   ```
   int integer(int max, {int min = 0}) =>
       max == min ? max : _random.nextInt(max - min) + min;
+
+  /// Generates a random string of numbers with a number of characters equal to [length]
+  ///
+  /// Example
+  /// ```dart
+  /// random.numberOfLength(10);
+  /// ```
+  String numberOfLength(int length) => numbers(10, length).join();
 
   /// Generates a random boolean.
   bool boolean() => _random.nextBool();
@@ -65,9 +83,9 @@ class RandomGenerator {
   ///
   ///     random.amount((_) => random.string(15), 10, min: 5);
   ///   ```
-  List amount(fn(int i), int max, {int min = 1}) {
+  List<T> amount<T>(T Function(int i) generator, int max, {int min = 1}) {
     var length = integer(max, min: min);
-    return List.generate(length, fn);
+    return List.generate(length, generator);
   }
 
   /// Generates a random set of numbers from the given [pattern].
@@ -91,4 +109,15 @@ class RandomGenerator {
   String fromPatternToHex(List pattern) => element(pattern).splitMapJoin('#',
       onMatch: (_) =>
           numbers(16, 1).map((number) => number.toRadixString(16)).join());
+
+  /// Generated a random string from the given string of chracters.
+  ///
+  /// Example:
+  ///
+  /// ``` dart
+  ///   fromCharSet('ABCDEFGHIJKLMONPQESTUVWXYZ!?@#$$%');
+  /// ```
+  String fromCharSet(String charSet, int length) =>
+      String.fromCharCodes(Iterable.generate(
+          length, (_) => charSet.codeUnitAt(_random.nextInt(charSet.length))));
 }
