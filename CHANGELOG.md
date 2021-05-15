@@ -2,6 +2,8 @@
 
 ## 2.0.0
 - RC to stable
+- Add vehicles. [PR #44](https://github.com/drager/faker/pull/44)
+- fix: Added a generic type parameter to faker.randomGenerator.amount(). [Issue #45](https://github.com/drager/faker/issues/45), [PR #46](https://github.com/drager/faker/pull/46)
 
 ## 2.0.0-rc.2
 - Add JWT support. [Issue #42](https://github.com/drager/faker/issues/42), [PR #43](https://github.com/drager/faker/pull/43)
