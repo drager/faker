@@ -3,7 +3,9 @@ import 'data/currency/currency_names.dart';
 import 'random_generator.dart';
 
 class Currency {
-  const Currency();
+  const Currency(this.random);
+
+  final RandomGenerator random;
 
   /// Generates a currency code.
   ///

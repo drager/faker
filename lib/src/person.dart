@@ -4,8 +4,9 @@ import 'random_generator.dart';
 
 class Person {
   final PersonDataProvider provider;
+  final RandomGenerator random;
 
-  const Person(this.provider);
+  Person(this.random, this.provider);
 
   /// Generates a name.
   ///
@@ -35,7 +36,8 @@ class Person {
   /// ```dart
   ///   faker.person.name(); // Fiona Ward
   /// ``
-  String fullName() => '${random.element(provider.firstNames())} ${random.element(provider.lastNames())}';
+  String fullName() =>
+      '${random.element(provider.firstNames())} ${random.element(provider.lastNames())}';
 
   /// Generates a first name.
   ///

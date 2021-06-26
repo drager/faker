@@ -20,7 +20,8 @@ class PersonDataProviderFa extends PersonDataProvider {
   List<String> lastNames() => last_names_list.lastnames;
 
   @override
-  List<String> prefixes() => ['آقای', 'خانم', 'سرکار', 'دکتر', 'مهندس', 'خلبان', 'جناب'];
+  List<String> prefixes() =>
+      ['آقای', 'خانم', 'سرکار', 'دکتر', 'مهندس', 'خلبان', 'جناب'];
 
   @override
   List<String> suffixes() => ['']; //no suffixes in farsi

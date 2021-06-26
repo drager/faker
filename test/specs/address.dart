@@ -14,8 +14,10 @@ void main() {
 
     test('should be able to generate city', () {
       for (var i = 0; i < 20; i++) {
-        expect(faker.address.city(), anyOf(matches(r'^[^ ]+ [^ ]+[^]+$'),
-            matches(r'^[^ ]+ [^ ]+$'), matches(r"^[\w']+[\w]+$")));
+        expect(
+            faker.address.city(),
+            anyOf(matches(r'^[^ ]+ [^ ]+[^]+$'), matches(r'^[^ ]+ [^ ]+$'),
+                matches(r"^[\w']+[\w]+$")));
       }
     });
 
@@ -32,7 +34,8 @@ void main() {
     });
 
     test('should be able to generate street address', () {
-      expect(faker.address.streetAddress(), matches(RegExp(r'^[^ ]+ [^ ]+ [^ ]+$')));
+      expect(faker.address.streetAddress(),
+          matches(RegExp(r'^[^ ]+ [^ ]+ [^ ]+$')));
     });
 
     test('should be able to generate street suffix', () {
@@ -47,8 +50,22 @@ void main() {
       expect(faker.address.neighborhood(), matches(RegExp(r'^[\w-/^ ]*$')));
     });
 
+    test('should be able to generate state', () {
+      expect(faker.address.state(), matches(RegExp(r'^[\w]+(\s\w+)*$')));
+    });
+
+    test('should be able to generate state abbreviation', () {
+      expect(faker.address.stateAbbreviation(), matches(RegExp(r'^[A-Z]{2}$')));
+    });
+
+    test('should be able to generate state as map', () {
+      expect(faker.address.stateAsMap()['state']!.isNotEmpty, true);
+      expect(faker.address.stateAsMap()['abbreviation']!.isNotEmpty, true);
+    });
+
     test('should be able to generate country', () {
-      expect(faker.address.country(), matches(RegExp(r"^[\w,éÅô\.Ç\-()'^ ]+$")));
+      expect(
+          faker.address.country(), matches(RegExp(r"^[\w,éÅô\.Ç\-()'^ ]+$")));
     });
 
     test('should be able to generate country code', () {

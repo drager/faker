@@ -4,7 +4,9 @@ import 'data/food/restaurants.dart';
 import 'random_generator.dart';
 
 class Food {
-  const Food();
+  const Food(this.random);
+
+  final RandomGenerator random;
 
   /// Generates a restaurant.
   ///

@@ -1,5 +1,6 @@
 import 'package:faker/src/date.dart';
 import 'package:faker/src/lorem.dart';
+import 'package:faker/src/phone_number.dart';
 import 'package:faker/src/providers/default_providers.dart';
 import 'package:faker/src/providers/fa_providers.dart';
 
@@ -12,12 +13,14 @@ import 'guid.dart';
 import 'image.dart';
 import 'internet.dart';
 import 'job.dart';
+import 'jwt.dart';
 import 'person.dart';
 import 'providers/base_providers.dart';
 import 'random_generator.dart';
 import 'sport.dart';
+import 'vehicle.dart';
 
-final Faker faker = Faker();
+final Faker faker = Faker.withGenerator(random);
 
 class Faker {
   final Address address;
@@ -29,37 +32,52 @@ class Faker {
   final Image image;
   final Internet internet;
   final Job job;
+  final Jwt jwt;
   final Lorem lorem;
   final Person person;
+  final PhoneNumber phoneNumber;
   final Sport sport;
+  final Vehicle vehicle;
   final Date date;
   final RandomGenerator randomGenerator;
 
-  Faker([FakerDataProvider provider])
-      : address = const Address(),
-        conference = const Conference(),
-        company = const Company(),
-        currency = const Currency(),
-        food = const Food(),
-        guid = const Guid(),
-        image = const Image(),
-        internet = const Internet(),
-        job = const Job(),
-        lorem = Lorem(provider?.loremDataProvider ?? DefaultLoremDataProvider()),
-        person = Person(provider?.personDataProvider ?? DefaultPersonDataProvider()),
-        sport = const Sport(),
-        date = const Date(),
-        randomGenerator = const RandomGenerator();
+  Faker.withGenerator(RandomGenerator random, {FakerDataProvider? provider})
+      : address = Address(Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider())),
+        conference = Conference(random),
+        company = Company(Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider())),
+        currency = Currency(random),
+        food = Food(random),
+        guid = Guid(random),
+        image = Image(),
+        internet = Internet(random),
+        job = Job(random),
+        jwt = Jwt(),
+        lorem = Lorem(
+            random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
+        person = Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider()),
+        sport = Sport(random),
+        date = Date(random),
+        phoneNumber = PhoneNumber(random),
+        vehicle = Vehicle(),
+        randomGenerator = random;
+
+  factory Faker({int? seed, FakerDataProvider? provider}) =>
+      Faker.withGenerator(RandomGenerator(seed: seed), provider: provider);
 }
 
 class FakerDataProvider {
-  final LoremDataProvider loremDataProvider;
-  final PersonDataProvider personDataProvider;
+  final LoremDataProvider? loremDataProvider;
+  final PersonDataProvider? personDataProvider;
 
-  FakerDataProvider({this.loremDataProvider,this.personDataProvider});
+  FakerDataProvider({this.loremDataProvider, this.personDataProvider});
 }
 
 class FakerDataProviderFa extends FakerDataProvider {
-  FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa(),personDataProvider: PersonDataProviderFa());
+  FakerDataProviderFa()
+      : super(
+            loremDataProvider: LoremDataProviderFa(),
+            personDataProvider: PersonDataProviderFa());
 }
-
