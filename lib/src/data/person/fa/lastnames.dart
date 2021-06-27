@@ -1,4 +1,4 @@
-const lastnames = [
+const lastnamesFa = [
   'آریان‌پور',
   'آژند',
   'آشتیانی',

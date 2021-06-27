@@ -15,3 +15,7 @@ abstract class PersonDataProvider {
 
   List<String> suffixes();
 }
+
+abstract class ConferenceDataProvider {
+  List<String> conferences();
+}

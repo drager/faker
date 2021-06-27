@@ -44,7 +44,10 @@ class Faker {
   Faker.withGenerator(RandomGenerator random, {FakerDataProvider? provider})
       : address = Address(Person(random,
             provider?.personDataProvider ?? DefaultPersonDataProvider())),
-        conference = Conference(random),
+        conference = Conference(
+            random,
+            provider?.conferenceDataProvider ??
+                DefaultConferenceDataProvider()),
         company = Company(Person(random,
             provider?.personDataProvider ?? DefaultPersonDataProvider())),
         currency = Currency(random),
@@ -71,13 +74,20 @@ class Faker {
 class FakerDataProvider {
   final LoremDataProvider? loremDataProvider;
   final PersonDataProvider? personDataProvider;
+  final ConferenceDataProvider? conferenceDataProvider;
 
-  FakerDataProvider({this.loremDataProvider, this.personDataProvider});
+  FakerDataProvider({
+    this.loremDataProvider,
+    this.personDataProvider,
+    this.conferenceDataProvider,
+  });
 }
 
 class FakerDataProviderFa extends FakerDataProvider {
   FakerDataProviderFa()
       : super(
-            loremDataProvider: LoremDataProviderFa(),
-            personDataProvider: PersonDataProviderFa());
+          loremDataProvider: LoremDataProviderFa(),
+          personDataProvider: PersonDataProviderFa(),
+          conferenceDataProvider: ConferenceDataProviderFa(),
+        );
 }

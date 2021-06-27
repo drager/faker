@@ -1,3 +1,5 @@
+import 'package:faker/src/data/conference/default/conference_names.dart';
+
 import 'base_providers.dart';
 import '../data/lorem/defaults/sentences.dart' as sentence_list;
 import '../data/lorem/defaults/words.dart' as word_list;
@@ -26,4 +28,9 @@ class DefaultPersonDataProvider extends PersonDataProvider {
   @override
   List<String> suffixes() =>
       ['Jr.', 'Sr.', 'I', 'II', 'III', 'IV', 'V', 'MD', 'DDS', 'PhD', 'DVM'];
+}
+
+class DefaultConferenceDataProvider extends ConferenceDataProvider {
+  @override
+  List<String> conferences() => conferenceNames;
 }

@@ -1,4 +1,4 @@
-const firstnames = [
+const firstnamesFa = [
   'محمد',
   'علی',
   'فاطمه',
