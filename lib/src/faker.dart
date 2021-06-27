@@ -51,7 +51,8 @@ class Faker {
         company = Company(Person(random,
             provider?.personDataProvider ?? DefaultPersonDataProvider())),
         currency = Currency(random),
-        food = Food(random),
+        food = Food(
+            random, provider?.foodDataProvider ?? DefaultFoodDataProvider()),
         guid = Guid(random),
         image = Image(),
         internet = Internet(random),
@@ -75,11 +76,13 @@ class FakerDataProvider {
   final LoremDataProvider? loremDataProvider;
   final PersonDataProvider? personDataProvider;
   final ConferenceDataProvider? conferenceDataProvider;
+  final FoodDataProvider? foodDataProvider;
 
   FakerDataProvider({
     this.loremDataProvider,
     this.personDataProvider,
     this.conferenceDataProvider,
+    this.foodDataProvider,
   });
 }
 
@@ -89,5 +92,6 @@ class FakerDataProviderFa extends FakerDataProvider {
           loremDataProvider: LoremDataProviderFa(),
           personDataProvider: PersonDataProviderFa(),
           conferenceDataProvider: ConferenceDataProviderFa(),
+          foodDataProvider: FoodDataProviderFa(),
         );
 }

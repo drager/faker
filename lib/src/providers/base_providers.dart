@@ -19,3 +19,9 @@ abstract class PersonDataProvider {
 abstract class ConferenceDataProvider {
   List<String> conferences();
 }
+
+abstract class FoodDataProvider {
+  List<String> restaurants();
+  List<String> dishes();
+  List<String> cuisines();
+}

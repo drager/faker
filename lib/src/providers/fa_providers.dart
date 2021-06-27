@@ -1,4 +1,7 @@
 import 'package:faker/src/data/conference/fa/conference_names_fa.dart';
+import 'package:faker/src/data/food/fa/cuisines_fa.dart';
+import 'package:faker/src/data/food/fa/dishes_fa.dart';
+import 'package:faker/src/data/food/fa/restaurants_fa.dart';
 
 import '../data/lorem/fa/sentences_fa.dart' as sentence_list;
 import '../data/lorem/fa/words_fa.dart' as word_list;
@@ -32,4 +35,15 @@ class PersonDataProviderFa extends PersonDataProvider {
 class ConferenceDataProviderFa extends ConferenceDataProvider {
   @override
   List<String> conferences() => conferenceNamesFa;
+}
+
+class FoodDataProviderFa extends FoodDataProvider {
+  @override
+  List<String> cuisines() => cuisinesFa;
+
+  @override
+  List<String> dishes() => dishesFa;
+
+  @override
+  List<String> restaurants() => restaurantsFa;
 }
