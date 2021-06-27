@@ -23,7 +23,7 @@ export 'src/data/address/country_codes.dart';
 export 'src/data/address/neighborhoods.dart';
 export 'src/data/address/street_suffixes.dart';
 export 'src/data/conference/default/conference_names.dart';
-export 'src/data/currency/currency_names.dart';
+export 'src/data/currency/default/currency_names.dart';
 export 'src/data/currency/currency_codes.dart';
 export 'src/data/food/default/cuisines.dart';
 export 'src/data/food/default/dishes.dart';

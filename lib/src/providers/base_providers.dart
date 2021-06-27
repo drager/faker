@@ -25,3 +25,8 @@ abstract class FoodDataProvider {
   List<String> dishes();
   List<String> cuisines();
 }
+
+abstract class CurrencyDataProvider {
+  List<String> currencyCodes();
+  List<String> currencyNames();
+}

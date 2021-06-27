@@ -1,4 +1,6 @@
+import 'package:faker/faker.dart';
 import 'package:faker/src/data/conference/fa/conference_names_fa.dart';
+import 'package:faker/src/data/currency/fa/currency_names_fa.dart';
 import 'package:faker/src/data/food/fa/cuisines_fa.dart';
 import 'package:faker/src/data/food/fa/dishes_fa.dart';
 import 'package:faker/src/data/food/fa/restaurants_fa.dart';
@@ -7,6 +9,8 @@ import '../data/lorem/fa/sentences_fa.dart' as sentence_list;
 import '../data/lorem/fa/words_fa.dart' as word_list;
 import '../data/person/fa/firstnames.dart' as first_names_list;
 import '../data/person/fa/lastnames.dart' as last_names_list;
+import 'package:faker/src/data/currency/currency_codes.dart'
+    as currencyCodesList;
 import 'base_providers.dart';
 
 class LoremDataProviderFa extends LoremDataProvider {
@@ -46,4 +50,12 @@ class FoodDataProviderFa extends FoodDataProvider {
 
   @override
   List<String> restaurants() => restaurantsFa;
+}
+
+class CurrencyProviderFa extends CurrencyDataProvider {
+  @override
+  List<String> currencyCodes() => currencyCodesList.currencyCodes;
+
+  @override
+  List<String> currencyNames() => currencyNamesFa;
 }

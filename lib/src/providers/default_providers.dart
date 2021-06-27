@@ -13,6 +13,11 @@ import 'package:faker/src/data/food/default/dishes.dart' as dishesList;
 import 'package:faker/src/data/food/default/restaurants.dart'
     as restaurantsList;
 
+import 'package:faker/src/data/currency/default/currency_names.dart'
+    as currencyNamesList;
+import 'package:faker/src/data/currency/currency_codes.dart'
+    as currencyCodesList;
+
 class DefaultLoremDataProvider extends LoremDataProvider {
   @override
   List<String> sentencesList() => sentence_list.sentences;
@@ -50,4 +55,12 @@ class DefaultFoodDataProvider extends FoodDataProvider {
 
   @override
   List<String> restaurants() => restaurantsList.restaurants;
+}
+
+class DefaultCurrencyProvider extends CurrencyDataProvider {
+  @override
+  List<String> currencyCodes() => currencyCodesList.currencyCodes;
+
+  @override
+  List<String> currencyNames() => currencyNamesList.currencyNames;
 }
