@@ -62,13 +62,14 @@ class Faker {
             random, provider?.sportDataProvider ?? DefaultSportDataProvider()),
         job =
             Job(random, provider?.jobDataProvider ?? DefaultJobDataProvider()),
+        vehicle = Vehicle(random,
+            provider?.vehicleDataProvider ?? DefaultVehicleDataProvider()),
         guid = Guid(random),
         image = Image(),
         internet = Internet(random),
         jwt = Jwt(),
         date = Date(random),
         phoneNumber = PhoneNumber(random),
-        vehicle = Vehicle(),
         randomGenerator = random;
 
   factory Faker({int? seed, FakerDataProvider? provider}) =>
@@ -83,6 +84,7 @@ class FakerDataProvider {
   final CurrencyDataProvider? currencyDataProvider;
   final SportNamesProvider? sportDataProvider;
   final JobDataProvider? jobDataProvider;
+  final VehicleDataProvider? vehicleDataProvider;
 
   FakerDataProvider({
     this.loremDataProvider,
@@ -92,6 +94,7 @@ class FakerDataProvider {
     this.currencyDataProvider,
     this.sportDataProvider,
     this.jobDataProvider,
+    this.vehicleDataProvider,
   });
 }
 
@@ -108,5 +111,6 @@ class FakerDataProviderFa extends FakerDataProvider {
           currencyDataProvider: CurrencyProviderFa(),
           sportDataProvider: SportNamesProviderFa(),
           jobDataProvider: JobDataProviderFa(),
+          vehicleDataProvider: VehicleDataProviderFa(),
         );
 }

@@ -3,6 +3,7 @@ import 'package:faker/src/data/conference/default/conference_names.dart';
 import 'package:faker/src/data/job/default/job_adj.dart';
 import 'package:faker/src/data/job/default/job_noun.dart';
 import 'package:faker/src/data/job/default/job_prefix.dart';
+import 'package:faker/src/data/vehicles/default/vehicles.dart';
 
 import 'base_providers.dart';
 import '../data/lorem/defaults/sentences.dart' as sentence_list;
@@ -85,4 +86,11 @@ class DefaultJobDataProvider extends JobDataProvider {
 
   @override
   List<String> jobTitles() => _jobTitles;
+}
+
+class DefaultVehicleDataProvider extends VehicleDataProvider {
+  final _vehicles = vehicles.map((e) => e.model).toList();
+
+  @override
+  List<String> names() => _vehicles;
 }

@@ -6,6 +6,7 @@ import 'package:faker/src/data/food/fa/dishes_fa.dart';
 import 'package:faker/src/data/food/fa/restaurants_fa.dart';
 import 'package:faker/src/data/job/fa/job_titles_fa.dart';
 import 'package:faker/src/data/sport/fa/sport_names_fa.dart';
+import 'package:faker/src/data/vehicles/fa/vehicle_names_fa.dart';
 
 import '../data/lorem/fa/sentences_fa.dart' as sentence_list;
 import '../data/lorem/fa/words_fa.dart' as word_list;
@@ -70,4 +71,9 @@ class SportNamesProviderFa extends SportNamesProvider {
 class JobDataProviderFa extends JobDataProvider {
   @override
   List<String> jobTitles() => jobTitlesFaList;
+}
+
+class VehicleDataProviderFa extends VehicleDataProvider {
+  @override
+  List<String> names() => vehiclesNamesListFa;
 }
