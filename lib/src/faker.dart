@@ -42,23 +42,34 @@ class Faker {
   final RandomGenerator randomGenerator;
 
   Faker.withGenerator(RandomGenerator random, {FakerDataProvider? provider})
-      : address = Address(Person(random)),
-        conference = Conference(random),
-        company = Company(Person(random)),
-        currency = Currency(random),
-        food = Food(random),
+      : address = Address(Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider())),
+        conference = Conference(
+            random,
+            provider?.conferenceDataProvider ??
+                DefaultConferenceDataProvider()),
+        company = Company(Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider())),
+        currency = Currency(random,
+            provider?.currencyDataProvider ?? DefaultCurrencyDataProvider()),
+        food = Food(
+            random, provider?.foodDataProvider ?? DefaultFoodDataProvider()),
+        lorem = Lorem(
+            random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
+        person = Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider()),
+        sport = Sport(
+            random, provider?.sportDataProvider ?? DefaultSportDataProvider()),
+        job =
+            Job(random, provider?.jobDataProvider ?? DefaultJobDataProvider()),
+        vehicle = Vehicle(random,
+            provider?.vehicleDataProvider ?? DefaultVehicleDataProvider()),
         guid = Guid(random),
         image = Image(),
         internet = Internet(random),
-        job = Job(random),
         jwt = Jwt(),
-        lorem = Lorem(
-            random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
-        person = Person(random),
-        sport = Sport(random),
         date = Date(random),
         phoneNumber = PhoneNumber(random),
-        vehicle = Vehicle(),
         randomGenerator = random;
 
   factory Faker({int? seed, FakerDataProvider? provider}) =>
@@ -67,10 +78,39 @@ class Faker {
 
 class FakerDataProvider {
   final LoremDataProvider? loremDataProvider;
+  final PersonDataProvider? personDataProvider;
+  final ConferenceDataProvider? conferenceDataProvider;
+  final FoodDataProvider? foodDataProvider;
+  final CurrencyDataProvider? currencyDataProvider;
+  final SportNamesProvider? sportDataProvider;
+  final JobDataProvider? jobDataProvider;
+  final VehicleDataProvider? vehicleDataProvider;
 
-  FakerDataProvider({this.loremDataProvider});
+  FakerDataProvider({
+    this.loremDataProvider,
+    this.personDataProvider,
+    this.conferenceDataProvider,
+    this.foodDataProvider,
+    this.currencyDataProvider,
+    this.sportDataProvider,
+    this.jobDataProvider,
+    this.vehicleDataProvider,
+  });
 }
 
+//######################################### all localized providers ################################################
+//######################################### all localized providers ################################################
+//######################################### all localized providers ################################################
 class FakerDataProviderFa extends FakerDataProvider {
-  FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa());
+  FakerDataProviderFa()
+      : super(
+          loremDataProvider: LoremDataProviderFa(),
+          personDataProvider: PersonDataProviderFa(),
+          conferenceDataProvider: ConferenceDataProviderFa(),
+          foodDataProvider: FoodDataProviderFa(),
+          currencyDataProvider: CurrencyProviderFa(),
+          sportDataProvider: SportNamesProviderFa(),
+          jobDataProvider: JobDataProviderFa(),
+          vehicleDataProvider: VehicleDataProviderFa(),
+        );
 }

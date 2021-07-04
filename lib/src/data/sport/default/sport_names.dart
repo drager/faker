@@ -1,4 +1,4 @@
-const sportNames = [
+const sportNamesList = [
   'Surfing',
   'Bodyboarding',
   'Wakeboarding',

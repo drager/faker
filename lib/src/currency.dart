@@ -1,10 +1,10 @@
-import 'data/currency/currency_codes.dart';
-import 'data/currency/currency_names.dart';
+import 'package:faker/faker.dart';
+
 import 'random_generator.dart';
 
 class Currency {
-  const Currency(this.random);
-
+  const Currency(this.random, this.dataProvider);
+  final CurrencyDataProvider dataProvider;
   final RandomGenerator random;
 
   /// Generates a currency code.
@@ -13,7 +13,7 @@ class Currency {
   /// ```dart
   ///   faker.currency.code();
   /// ```
-  String code() => random.element(currencyCodes);
+  String code() => random.element(dataProvider.currencyCodes());
 
   /// Generates a currency name.
   ///
@@ -21,5 +21,5 @@ class Currency {
   /// ```dart
   ///   faker.currency.name();
   /// ```
-  String name() => random.element(currencyNames);
+  String name() => random.element(dataProvider.currencyNames());
 }

@@ -37,6 +37,12 @@ void main() {
   print(fakerFa.lorem.words(10).join(' '));
   print(fakerFa.lorem.sentences(3).join(' '));
 
+  // Generate localized Farsi person names
+  print(fakerFa.person.firstName());
+  print(fakerFa.person.lastName());
+  print(fakerFa.person.name());
+  print(fakerFa.person.fullName());
+
   // Generate JWT(json web token)
   print(faker.jwt.valid());
   print(faker.jwt.valid(expiresIn: DateTime.now().add(Duration(hours: 2))));

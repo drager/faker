@@ -1,4 +1,4 @@
-const words = [
+const wordsFa = [
   'معایبی',
   'دارد',
   'روغن',

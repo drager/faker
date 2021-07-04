@@ -1,9 +1,11 @@
-import 'data/sport/sport_names.dart';
+import 'package:faker/src/providers/base_providers.dart';
+
 import 'random_generator.dart';
 
 class Sport {
-  const Sport(this.random);
+  const Sport(this.random, this.provider);
 
+  final SportNamesProvider provider;
   final RandomGenerator random;
 
   /// Generates a sport name.
@@ -12,5 +14,5 @@ class Sport {
   /// ```dart
   ///   faker.sport.name();
   /// ```
-  String name() => random.element(sportNames);
+  String name() => random.element(provider.sportNames());
 }

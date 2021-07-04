@@ -1,4 +1,4 @@
-import 'package:faker/src/data/vehicles/vehicles.dart';
+import 'package:faker/src/data/vehicles/default/vehicles.dart';
 
 class VehicleYMM {
   final String make;

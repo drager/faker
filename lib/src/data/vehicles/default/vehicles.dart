@@ -1,4 +1,5 @@
-import '../../../faker.dart';
+import 'package:faker/src/random_generator.dart';
+
 import 'models/vehicle.dart';
 
 var randomGenerator = RandomGenerator();

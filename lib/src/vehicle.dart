@@ -1,12 +1,25 @@
-import 'data/vehicles/vin_manufacturers.dart';
-import 'data/vehicles/models/vehicle.dart';
-import 'data/vehicles/vehicles.dart';
-import 'data/vehicles/vin_years.dart';
+import 'package:faker/src/providers/base_providers.dart';
+
+import 'data/vehicles/default/vin_manufacturers.dart';
+import 'data/vehicles/default/models/vehicle.dart';
+import 'data/vehicles/default/vehicles.dart';
+import 'data/vehicles/default/vin_years.dart';
 import 'random_generator.dart';
 
 class Vehicle {
-  const Vehicle();
+  const Vehicle(this.random, this.provider);
+  final RandomGenerator random;
+  final VehicleDataProvider provider;
+
   final _vinChars = "ABCDEFGHJKLMNPRSTUVWXYZ0123456789";
+
+  /// Generates a random vehicle name
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.vehicle.name;
+  /// ```
+  String get name => random.element(provider.names());
 
   /// Generates a random vehicle as a VehicleYMM object.
   ///
