@@ -31,9 +31,10 @@ export 'src/data/food/default/restaurants.dart';
 export 'src/data/food/fa/cuisines_fa.dart';
 export 'src/data/food/fa/dishes_fa.dart';
 export 'src/data/food/fa/restaurants_fa.dart';
-export 'src/data/job/job_adj.dart';
-export 'src/data/job/job_noun.dart';
-export 'src/data/job/job_prefix.dart';
+export 'src/data/job/default/job_adj.dart';
+export 'src/data/job/default/job_noun.dart';
+export 'src/data/job/default/job_prefix.dart';
+export 'src/data/job/fa/job_titles_fa.dart';
 export 'src/data/sport/default/sport_names.dart';
 
 export 'src/providers/base_providers.dart';

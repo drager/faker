@@ -1,5 +1,8 @@
 import 'package:faker/faker.dart';
 import 'package:faker/src/data/conference/default/conference_names.dart';
+import 'package:faker/src/data/job/default/job_adj.dart';
+import 'package:faker/src/data/job/default/job_noun.dart';
+import 'package:faker/src/data/job/default/job_prefix.dart';
 
 import 'base_providers.dart';
 import '../data/lorem/defaults/sentences.dart' as sentence_list;
@@ -57,7 +60,7 @@ class DefaultFoodDataProvider extends FoodDataProvider {
   List<String> restaurants() => restaurantsList.restaurants;
 }
 
-class DefaultCurrencyProvider extends CurrencyDataProvider {
+class DefaultCurrencyDataProvider extends CurrencyDataProvider {
   @override
   List<String> currencyCodes() => currencyCodesList.currencyCodes;
 
@@ -65,7 +68,21 @@ class DefaultCurrencyProvider extends CurrencyDataProvider {
   List<String> currencyNames() => currencyNamesList.currencyNames;
 }
 
-class DefaultSportNamesProvider extends SportNamesProvider {
+class DefaultSportDataProvider extends SportNamesProvider {
   @override
   List<String> sportNames() => sportNamesList;
+}
+
+class DefaultJobDataProvider extends JobDataProvider {
+  late List<String> _jobTitles;
+  DefaultJobDataProvider() {
+    _jobTitles = List.generate(
+      200,
+      (index) =>
+          '${random.element(jobPrefix)} ${random.element(jobAdj)} ${random.element(jobNoun)}',
+    );
+  }
+
+  @override
+  List<String> jobTitles() => _jobTitles;
 }

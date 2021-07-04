@@ -34,3 +34,7 @@ abstract class CurrencyDataProvider {
 abstract class SportNamesProvider {
   List<String> sportNames();
 }
+
+abstract class JobDataProvider {
+  List<String> jobTitles();
+}

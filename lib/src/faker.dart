@@ -51,19 +51,20 @@ class Faker {
         company = Company(Person(random,
             provider?.personDataProvider ?? DefaultPersonDataProvider())),
         currency = Currency(random,
-            provider?.currencyDataProvider ?? DefaultCurrencyProvider()),
+            provider?.currencyDataProvider ?? DefaultCurrencyDataProvider()),
         food = Food(
             random, provider?.foodDataProvider ?? DefaultFoodDataProvider()),
         lorem = Lorem(
             random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
         person = Person(random,
             provider?.personDataProvider ?? DefaultPersonDataProvider()),
-        sport = Sport(random,
-            provider?.sportNamesProvider ?? DefaultSportNamesProvider()),
+        sport = Sport(
+            random, provider?.sportDataProvider ?? DefaultSportDataProvider()),
+        job =
+            Job(random, provider?.jobDataProvider ?? DefaultJobDataProvider()),
         guid = Guid(random),
         image = Image(),
         internet = Internet(random),
-        job = Job(random),
         jwt = Jwt(),
         date = Date(random),
         phoneNumber = PhoneNumber(random),
@@ -80,7 +81,8 @@ class FakerDataProvider {
   final ConferenceDataProvider? conferenceDataProvider;
   final FoodDataProvider? foodDataProvider;
   final CurrencyDataProvider? currencyDataProvider;
-  final SportNamesProvider? sportNamesProvider;
+  final SportNamesProvider? sportDataProvider;
+  final JobDataProvider? jobDataProvider;
 
   FakerDataProvider({
     this.loremDataProvider,
@@ -88,7 +90,8 @@ class FakerDataProvider {
     this.conferenceDataProvider,
     this.foodDataProvider,
     this.currencyDataProvider,
-    this.sportNamesProvider,
+    this.sportDataProvider,
+    this.jobDataProvider,
   });
 }
 
@@ -103,6 +106,7 @@ class FakerDataProviderFa extends FakerDataProvider {
           conferenceDataProvider: ConferenceDataProviderFa(),
           foodDataProvider: FoodDataProviderFa(),
           currencyDataProvider: CurrencyProviderFa(),
-          sportNamesProvider: SportNamesProviderFa(),
+          sportDataProvider: SportNamesProviderFa(),
+          jobDataProvider: JobDataProviderFa(),
         );
 }
