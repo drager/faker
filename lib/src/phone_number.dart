@@ -1,45 +1,39 @@
+import 'package:faker/src/data/phone_number/phone_number_patterns.dart';
+
 import 'random_generator.dart';
 
 class PhoneNumber {
-  static const usPhoneNumberPatterns = [
-    // Standard 10-digit phone number formats
-    '##########',
-    '##########',
-    '###-###-####',
-    '###-###-####',
-    // Optional 10-digit local phone number format
-    '(###)###-####',
-    '(###)###-####',
-    // Non-standard 10-digit phone number format
-    '###.###.####',
-    '###.###.####',
-    // Standard 10-digit phone number format with extensions
-    '###-###-####x###',
-    '###-###-####x####',
-    '###-###-####x#####',
-    // Optional 10-digit local phone number format with extensions
-    '(###)###-####x###',
-    '(###)###-####x####',
-    '(###)###-####x#####',
-    // Non-standard 10-digit phone number format with extensions
-    '###.###.####x###',
-    '###.###.####x####',
-    '###.###.####x#####',
-    // Standard 11-digit phone number format
-    '+1-###-###-####',
-    '001-###-###-####',
-    // Standard 11-digit phone number format with extensions
-    '+1-###-###-####x###',
-    '+1-###-###-####x####',
-    '+1-###-###-####x#####',
-    '001-###-###-####x###',
-    '001-###-###-####x####',
-    '001-###-###-####x#####',
-  ];
-
   const PhoneNumber(this.random);
 
   final RandomGenerator random;
 
-  String us() => random.fromPattern(usPhoneNumberPatterns);
+  /// creates a random phonenumber by replacing the '#' character in the given [patterns]
+  /// [pattern] is optional if null default phone-number pattern will be used
+  ///
+  /// example:
+  ///   ```dart
+  ///       var phoneNumberPatterns = [
+  ///           '+1-###-###-####',
+  ///           '001-###-###-####',
+  ///       ];
+  ///
+  ///       var randomPhoneNumber = faker.phoneNumber.us(phoneNumberPatterns);
+  ///   ```
+  String us([List<String>? patterns]) =>
+      random.fromPattern(patterns ?? usPhoneNumberPatterns);
+
+  /// creates a random phonenumber by replacing the '#' character in the given [patterns]
+  /// [pattern] is optional if null default phone-number pattern will be used
+  ///
+  /// example:
+  ///   ```dart
+  ///       var phoneNumberPatterns = [
+  ///           '+1-###-###-####',
+  ///           '001-###-###-####',
+  ///       ];
+  ///
+  ///       var randomPhoneNumber = faker.phoneNumber.iran(phoneNumberPatterns);
+  ///   ```
+  String iran([List<String>? patterns]) =>
+      random.fromPattern(patterns ?? iranPhoneNumberPatterns);
 }

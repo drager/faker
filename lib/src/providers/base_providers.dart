@@ -30,3 +30,7 @@ abstract class CurrencyDataProvider {
   List<String> currencyCodes();
   List<String> currencyNames();
 }
+
+abstract class SportNamesProvider {
+  List<String> sportNames();
+}

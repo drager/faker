@@ -54,16 +54,17 @@ class Faker {
             provider?.currencyDataProvider ?? DefaultCurrencyProvider()),
         food = Food(
             random, provider?.foodDataProvider ?? DefaultFoodDataProvider()),
+        lorem = Lorem(
+            random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
+        person = Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider()),
+        sport = Sport(random,
+            provider?.sportNamesProvider ?? DefaultSportNamesProvider()),
         guid = Guid(random),
         image = Image(),
         internet = Internet(random),
         job = Job(random),
         jwt = Jwt(),
-        lorem = Lorem(
-            random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
-        person = Person(random,
-            provider?.personDataProvider ?? DefaultPersonDataProvider()),
-        sport = Sport(random),
         date = Date(random),
         phoneNumber = PhoneNumber(random),
         vehicle = Vehicle(),
@@ -79,6 +80,7 @@ class FakerDataProvider {
   final ConferenceDataProvider? conferenceDataProvider;
   final FoodDataProvider? foodDataProvider;
   final CurrencyDataProvider? currencyDataProvider;
+  final SportNamesProvider? sportNamesProvider;
 
   FakerDataProvider({
     this.loremDataProvider,
@@ -86,9 +88,13 @@ class FakerDataProvider {
     this.conferenceDataProvider,
     this.foodDataProvider,
     this.currencyDataProvider,
+    this.sportNamesProvider,
   });
 }
 
+//######################################### all localized providers ################################################
+//######################################### all localized providers ################################################
+//######################################### all localized providers ################################################
 class FakerDataProviderFa extends FakerDataProvider {
   FakerDataProviderFa()
       : super(
@@ -97,5 +103,6 @@ class FakerDataProviderFa extends FakerDataProvider {
           conferenceDataProvider: ConferenceDataProviderFa(),
           foodDataProvider: FoodDataProviderFa(),
           currencyDataProvider: CurrencyProviderFa(),
+          sportNamesProvider: SportNamesProviderFa(),
         );
 }

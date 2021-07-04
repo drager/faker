@@ -64,3 +64,8 @@ class DefaultCurrencyProvider extends CurrencyDataProvider {
   @override
   List<String> currencyNames() => currencyNamesList.currencyNames;
 }
+
+class DefaultSportNamesProvider extends SportNamesProvider {
+  @override
+  List<String> sportNames() => sportNamesList;
+}
