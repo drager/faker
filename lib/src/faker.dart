@@ -6,6 +6,7 @@ import 'package:faker/src/providers/fa_providers.dart';
 
 import 'address.dart';
 import 'company.dart';
+import 'colors.dart';
 import 'conference.dart';
 import 'currency.dart';
 import 'food.dart';
@@ -25,6 +26,7 @@ final Faker faker = Faker.withGenerator(random);
 class Faker {
   final Address address;
   final Conference conference;
+  final Color color;
   final Company company;
   final Currency currency;
   final Food food;
@@ -44,6 +46,7 @@ class Faker {
   Faker.withGenerator(RandomGenerator random, {FakerDataProvider? provider})
       : address = Address(Person(random)),
         conference = Conference(random),
+        color = Color(random),
         company = Company(Person(random)),
         currency = Currency(random),
         food = Food(random),
