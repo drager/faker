@@ -18,6 +18,7 @@ void main() {
       expect(faker.vehicle.make().isNotEmpty, true);
       expect(faker.vehicle.model().isNotEmpty, true);
       expect(faker.vehicle.yearMakeModel().isNotEmpty, true);
+      expect(faker.vehicle.colorYearMakeModel().isNotEmpty, true);
     });
 
     test('should be able to generate a vehicle as a VehicleYMM object', () {
@@ -25,6 +26,7 @@ void main() {
       expect(vehicle.year.toString().isNotEmpty, true);
       expect(vehicle.make.isNotEmpty, true);
       expect(vehicle.model.isNotEmpty, true);
+      expect(vehicle.color.isNotEmpty, true);
     });
 
     test('should be able to generate a vin', () {

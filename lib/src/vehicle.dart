@@ -1,3 +1,5 @@
+import 'data/colors/colors.dart';
+
 import 'data/vehicles/vin_manufacturers.dart';
 import 'data/vehicles/models/vehicle.dart';
 import 'data/vehicles/vehicles.dart';
@@ -49,6 +51,18 @@ class Vehicle {
   String yearMakeModel() {
     VehicleYMM vehicle = random.element(vehicles);
     return '${vehicle.year.toString()} ${vehicle.make} ${vehicle.model}';
+  }
+
+  /// Generates a random vehicle's year, make, and model with a prefixed color.
+  ///
+  /// Example:
+  /// ```dart
+  ///   faker.vehicle.colorYearMakeModel();
+  /// ```
+  String colorYearMakeModel() {
+    VehicleYMM vehicle = random.element(vehicles);
+    String color = random.element(commonColors);
+    return '$color ${vehicle.year.toString()} ${vehicle.make} ${vehicle.model}';
   }
 
   /// Generates a random vehicle's year, make and model as a map with keys and values.
