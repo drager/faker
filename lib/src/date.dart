@@ -53,6 +53,26 @@ class Date {
     );
   }
 
+  /// Generates a random [DateTime] in between 2 given dates.
+  /// This is accurate to the nearest hour.
+  /// Example:
+  /// ```dart
+  ///   faker.date.dateTimeBetween(DateTime(2017, 9, 7), DateTime(2020, 9, 7));
+  /// ```
+  DateTime dateTimeBetween(DateTime startDate, DateTime endDate) {
+    final hoursInBetween = endDate.difference(startDate).inHours;
+    return DateTime(
+      startDate.year, // year
+      startDate.month, // month
+      startDate.day, // day
+      startDate.hour + random.integer(hoursInBetween), // hour
+      random.integer(60), // minute
+      random.integer(60), // second
+      random.integer(1000), // millisecond
+      random.integer(1000), // microsecond
+    );
+  }
+
   /// Generates a random month
   ///
   /// Example:

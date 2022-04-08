@@ -9,6 +9,14 @@ void main() {
       expect(true, faker.date.dateTime() is DateTime);
     });
 
+    test('should be able to generate a DateTime between 2 DateTimes', () {
+      final fromDate = DateTime(1920);
+      final toDate = DateTime.now();
+      final fakeDateTime = faker.date.dateTimeBetween(fromDate, toDate);
+      expect(true,
+          fakeDateTime.isAfter(fromDate) && fakeDateTime.isBefore(toDate));
+    });
+
     test('should be able to generate a month', () {
       expect(faker.date.month(), matches(RegExp(r'^([\w\s\-])+$')));
     });
