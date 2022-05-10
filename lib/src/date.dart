@@ -141,4 +141,19 @@ class Date {
 
     return '${hour}:${minute} ${timeSuffix}${timeZone}';
   }
+
+  /// Generates a random time (only digits)
+  /// Such as 23:52, 06:45, 03:14
+  String justTime() {
+    final date = dateTime();
+    String hour = (date.hour < 10) ? '0' + date.hour.toString() : date.hour.toString();
+
+    // If the minute is a single digit (i.e. less than 10)
+    // We want to prepend a 0 to it.
+    final minute = (date.minute < 10)
+        ? '0' + date.minute.toString()
+        : date.minute.toString();
+
+    return '${hour}:${minute}';
+  }
 }
