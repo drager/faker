@@ -5,6 +5,7 @@ import 'package:faker/src/providers/default_providers.dart';
 import 'package:faker/src/providers/fa_providers.dart';
 
 import 'address.dart';
+import 'animals.dart';
 import 'company.dart';
 import 'colors.dart';
 import 'conference.dart';
@@ -20,6 +21,7 @@ import 'providers/base_providers.dart';
 import 'random_generator.dart';
 import 'sport.dart';
 import 'vehicle.dart';
+import 'animals.dart';
 
 final Faker faker = Faker.withGenerator(random);
 
@@ -42,6 +44,7 @@ class Faker {
   final Vehicle vehicle;
   final Date date;
   final RandomGenerator randomGenerator;
+  final Animal animal;
 
   Faker.withGenerator(RandomGenerator random, {FakerDataProvider? provider})
       : address = Address(Person(random)),
@@ -62,7 +65,8 @@ class Faker {
         date = Date(random),
         phoneNumber = PhoneNumber(random),
         vehicle = Vehicle(),
-        randomGenerator = random;
+        randomGenerator = random,
+        animal = Animal(random);
 
   factory Faker({int? seed, FakerDataProvider? provider}) =>
       Faker.withGenerator(RandomGenerator(seed: seed), provider: provider);
