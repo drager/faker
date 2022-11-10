@@ -8,7 +8,7 @@ class Jwt {
     return base64.encode(utf8.encode(data)).replaceAll('=', '');
   }
 
-  String _generate_header() {
+  String _generateHeader() {
     final data = jsonEncode({
       'alg': 'HS256',
       'typ': 'JWT',
@@ -17,7 +17,7 @@ class Jwt {
     return _base64Encode(data);
   }
 
-  String _generate_payload(Map payload) {
+  String _generatePayload(Map payload) {
     if (payload['exp'] == null) {
       throw Exception('payload without exp param');
     }
@@ -27,7 +27,7 @@ class Jwt {
     return _base64Encode(data);
   }
 
-  String _generate_signature(String header, String payload) {
+  String _generateSignature(String header, String payload) {
     final data = '$header.$payload';
     final hmac = Hmac(sha256, base64.decode(secret));
     final digest = hmac.convert(utf8.encode(data));
@@ -55,14 +55,14 @@ class Jwt {
         ? dateToSeconds(expiresIn)
         : dateToSeconds(DateTime.now()) + 3600;
 
-    final _header = _generate_header();
-    final _payload = _generate_payload({
+    final header = _generateHeader();
+    final payload = _generatePayload({
       'iat': dateToSeconds(DateTime.now()),
       'exp': expiration,
     });
-    final _signature = _generate_signature(_header, _payload);
+    final signature = _generateSignature(header, payload);
 
-    return '$_header.$_payload.$_signature';
+    return '$header.$payload.$signature';
   }
 
   String expired({DateTime? expiresIn}) {
@@ -75,27 +75,27 @@ class Jwt {
         ? dateToSeconds(expiresIn)
         : dateToSeconds(DateTime.now()) - 3600;
 
-    final _header = _generate_header();
-    final _payload = _generate_payload({
+    final header = _generateHeader();
+    final payload = _generatePayload({
       'iat': dateToSeconds(DateTime.now()),
       'exp': expiration,
     });
-    final _signature = _generate_signature(_header, _payload);
+    final signature = _generateSignature(header, payload);
 
-    return '$_header.$_payload.$_signature';
+    return '$header.$payload.$signature';
   }
 
   String custom({required DateTime expiresIn, required Map payload}) {
-    final _header = _generate_header();
-    final _payload = _generate_payload(
+    final header = _generateHeader();
+    final aPayload = _generatePayload(
       payload
         ..addAll({
           'iat': payload['iat'] ?? dateToSeconds(DateTime.now()),
           'exp': dateToSeconds(expiresIn),
         }),
     );
-    final _signature = _generate_signature(_header, _payload);
+    final signature = _generateSignature(header, aPayload);
 
-    return '$_header.$_payload.$_signature';
+    return '$header.$aPayload.$signature';
   }
 }

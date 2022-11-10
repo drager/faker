@@ -80,7 +80,7 @@ class Date {
   ///   faker.date.month()
   /// ```
   String month() {
-    return '${random.element(_months)}';
+    return random.element(_months);
   }
 
   /// Generates a random year.
@@ -116,7 +116,7 @@ class Date {
 
     var timeSuffix = '';
     if (random.boolean()) {
-      timeSuffix = random.element(_timeSuffixes) + ' ';
+      timeSuffix = '${random.element(_timeSuffixes)} ';
     }
 
     var timeZone = '';
@@ -129,16 +129,14 @@ class Date {
     if (timeSuffix.isNotEmpty) {
       hour = (date.hour % 13).toString();
     } else {
-      hour =
-          (date.hour < 10) ? '0' + date.hour.toString() : date.hour.toString();
+      hour = (date.hour < 10) ? '0${date.hour}' : date.hour.toString();
     }
 
     // If the minute is a single digit (i.e. less than 10)
     // We want to prepend a 0 to it.
-    final minute = (date.minute < 10)
-        ? '0' + date.minute.toString()
-        : date.minute.toString();
+    final minute =
+        (date.minute < 10) ? '0${date.minute}' : date.minute.toString();
 
-    return '${hour}:${minute} ${timeSuffix}${timeZone}';
+    return '$hour:$minute $timeSuffix$timeZone';
   }
 }

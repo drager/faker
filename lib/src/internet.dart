@@ -142,7 +142,7 @@ class Internet {
   /// ```
   String macAddress() => random
       .numbers(0xff, 6)
-      .map((number) => '${number.toRadixString(16).padLeft(2, '0')}')
+      .map((number) => number.toRadixString(16).padLeft(2, '0'))
       .join(':');
 
   /// Generates a password with the given [length] if provided.

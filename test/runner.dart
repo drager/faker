@@ -14,7 +14,7 @@ import 'specs/lorem.dart' as lorem;
 import 'specs/person.dart' as person;
 import 'specs/sport.dart' as sport;
 import 'specs/vehicle.dart' as vehicle;
-import 'specs/phone_number.dart' as phoneNumber;
+import 'specs/phone_number.dart' as phone_number;
 import 'specs/random_generator.dart' as random;
 import 'specs/seed.dart' as seed;
 
@@ -32,7 +32,7 @@ void main() {
   jwt.main();
   lorem.main();
   person.main();
-  phoneNumber.main();
+  phone_number.main();
   sport.main();
   vehicle.main();
   date.main();
