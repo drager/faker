@@ -7,7 +7,9 @@ import 'data/vehicles/vin_years.dart';
 import 'random_generator.dart';
 
 class Vehicle {
-  const Vehicle();
+  const Vehicle(this.random);
+
+  final RandomGenerator random;
   final _vinChars = "ABCDEFGHJKLMNPRSTUVWXYZ0123456789";
 
   /// Generates a random vehicle as a VehicleYMM object.

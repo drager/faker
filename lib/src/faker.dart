@@ -66,7 +66,7 @@ class Faker {
         sport = Sport(random),
         date = Date(random),
         phoneNumber = PhoneNumber(random),
-        vehicle = Vehicle(),
+        vehicle = Vehicle(random),
         randomGenerator = random,
         animal = Animal(random);
 
