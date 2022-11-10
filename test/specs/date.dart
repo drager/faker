@@ -6,7 +6,7 @@ void main() {
 
   group('date', () {
     test('should be able to generate a DateTime', () {
-      expect(true, faker.date.dateTime() is DateTime);
+      expect(faker.date.dateTime(), isA<DateTime>());
     });
 
     test('should be able to generate a DateTime between 2 DateTimes', () {

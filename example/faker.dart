@@ -15,6 +15,10 @@ void main() {
   print(faker.person.firstName());
   print(faker.sport.name());
 
+  // Generate a random geo.
+  print(faker.geo.longitude());
+  print(faker.geo.latitude());
+
   // Generate a random amount of IP v4 addresses (max 10).
   print(random.amount((_) => faker.internet.ipv4Address(), 10));
 

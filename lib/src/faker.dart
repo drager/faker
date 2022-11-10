@@ -1,4 +1,5 @@
 import 'package:faker/src/date.dart';
+import 'package:faker/src/geo.dart';
 import 'package:faker/src/lorem.dart';
 import 'package:faker/src/phone_number.dart';
 import 'package:faker/src/providers/default_providers.dart';
@@ -21,7 +22,6 @@ import 'providers/base_providers.dart';
 import 'random_generator.dart';
 import 'sport.dart';
 import 'vehicle.dart';
-import 'animals.dart';
 
 final Faker faker = Faker.withGenerator(random);
 
@@ -32,6 +32,7 @@ class Faker {
   final Company company;
   final Currency currency;
   final Food food;
+  final Geo geo;
   final Guid guid;
   final Image image;
   final Internet internet;
@@ -53,6 +54,7 @@ class Faker {
         company = Company(Person(random)),
         currency = Currency(random),
         food = Food(random),
+        geo = Geo(random),
         guid = Guid(random),
         image = Image(),
         internet = Internet(random),
