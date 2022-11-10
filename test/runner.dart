@@ -4,6 +4,7 @@ import 'specs/conference.dart' as conference;
 import 'specs/currency.dart' as currency;
 import 'specs/date.dart' as date;
 import 'specs/food.dart' as food;
+import 'specs/geo.dart' as geo;
 import 'specs/guid.dart' as guid;
 import 'specs/image.dart' as image;
 import 'specs/internet.dart' as internet;
@@ -23,6 +24,7 @@ void main() {
   company.main();
   currency.main();
   food.main();
+  geo.main();
   guid.main();
   image.main();
   internet.main();
