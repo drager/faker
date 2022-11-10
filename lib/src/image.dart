@@ -30,13 +30,13 @@ class Image {
       [bool random = false]) {
     var url = 'https://source.unsplash.com';
 
-    url += '/${width}x${height}';
+    url += '/${width}x$height';
 
     if (keywords.isNotEmpty) {
       var keywordFormat =
           RegExp(r'^([A-Za-z0-9].+,[A-Za-z0-9]+)$|^([A-Za-z0-9]+)$');
       if (keywords.any(keywordFormat.hasMatch)) {
-        url += '?' + keywords.join(',');
+        url += '?${keywords.join(',')}';
         if (random) {
           url = url += '&random=${Random().nextInt(100) + 1}';
         }

@@ -14,9 +14,9 @@ class UserAgents {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    if (this.userAgents != null) {
-      data['userAgents'] = this.userAgents!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (userAgents != null) {
+      data['userAgents'] = userAgents!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -90,27 +90,27 @@ class UserAgent {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['folder'] = this.folder;
-    data['description'] = this.description;
-    data['userAgent'] = this.userAgent;
-    data['appCodename'] = this.appCodename;
-    data['appName'] = this.appName;
-    data['appVersion'] = this.appVersion;
-    data['platform'] = this.platform;
-    data['vendor'] = this.vendor;
-    data['vendorSub'] = this.vendorSub;
-    data['browserName'] = this.browserName;
-    data['browserMajor'] = this.browserMajor;
-    data['browserVersion'] = this.browserVersion;
-    data['deviceModel'] = this.deviceModel;
-    data['deviceType'] = this.deviceType;
-    data['deviceVendor'] = this.deviceVendor;
-    data['engineName'] = this.engineName;
-    data['engineVersion'] = this.engineVersion;
-    data['osName'] = this.osName;
-    data['osVersion'] = this.osVersion;
-    data['cpuArchitecture'] = this.cpuArchitecture;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['folder'] = folder;
+    data['description'] = description;
+    data['userAgent'] = userAgent;
+    data['appCodename'] = appCodename;
+    data['appName'] = appName;
+    data['appVersion'] = appVersion;
+    data['platform'] = platform;
+    data['vendor'] = vendor;
+    data['vendorSub'] = vendorSub;
+    data['browserName'] = browserName;
+    data['browserMajor'] = browserMajor;
+    data['browserVersion'] = browserVersion;
+    data['deviceModel'] = deviceModel;
+    data['deviceType'] = deviceType;
+    data['deviceVendor'] = deviceVendor;
+    data['engineName'] = engineName;
+    data['engineVersion'] = engineVersion;
+    data['osName'] = osName;
+    data['osVersion'] = osVersion;
+    data['cpuArchitecture'] = cpuArchitecture;
     return data;
   }
 }
