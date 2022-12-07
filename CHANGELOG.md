@@ -1,5 +1,47 @@
 # Changelog
 
+## 2.1.0
+
+### Features
+- Add `justTime` method. [Issue #58](https://github.com/drager/faker/issues/58), [PR #59](https://github.com/drager/faker/pull/59)
+```dart
+faker.date.justTime();
+```
+- Add `geo.latitude` and `geo.longitude`. [Issue #53](https://github.com/drager/faker/issues/53), [PR #63](https://github.com/drager/faker/pull/63)
+```dart
+faker.geo.latitude();
+faker.geo.longitude();
+```
+- Add animals faker. [PR #62](https://github.com/drager/faker/pull/62)
+```dart
+faker.animal.name();
+```
+- Add german phone numbers. [PR #60](https://github.com/drager/faker/pull/60)
+```dart
+faker.phoneNumber.de();
+```
+- Add dateTimeBetween. [Issue #54](https://github.com/drager/faker/issues/54), [PR #55](https://github.com/drager/faker/pull/55)
+```dart
+faker.date.dateTimeBetween(DateTime(2017, 9, 7), DateTime(2020, 9, 7));
+```
+- Add colors faker. As well as `vehicle.colorYearMakeModel`. [PR #50](https://github.com/drager/faker/pull/50)
+```dart
+// Generates a color name.
+faker.colors.color();
+
+// Generates a color name from a smaller list of colors.
+faker.colors.commonColor();
+
+/// Generates a random vehicle's year, make, and model with a prefixed color.
+faker.vehicle.colorYearMakeModel();
+```
+
+### Fixes
+- Vehicule doesn't use same random instance. [Issue #56](https://github.com/drager/faker/issues/56), [PR #65](https://github.com/drager/faker/pull/65)
+
+### Maintenance
+- Add lints & Upgrade min dart sdk and dependencies. [PR #64](https://github.com/drager/faker/pull/64)
+
 ## 2.0.0
 - RC to stable
 - Add vehicles. [PR #44](https://github.com/drager/faker/pull/44)
