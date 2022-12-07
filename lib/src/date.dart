@@ -144,14 +144,13 @@ class Date {
   /// Such as 23:52, 06:45, 03:14
   String justTime() {
     final date = dateTime();
-    String hour = (date.hour < 10) ? '0' + date.hour.toString() : date.hour.toString();
+    String hour = (date.hour < 10) ? '0${date.hour}' : date.hour.toString();
 
     // If the minute is a single digit (i.e. less than 10)
     // We want to prepend a 0 to it.
-    final minute = (date.minute < 10)
-        ? '0' + date.minute.toString()
-        : date.minute.toString();
+    final minute =
+        (date.minute < 10) ? '0${date.minute}' : date.minute.toString();
 
-    return '${hour}:${minute}';
+    return '$hour:$minute';
   }
 }
