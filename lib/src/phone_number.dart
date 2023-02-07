@@ -80,11 +80,11 @@ class PhoneNumber {
     '0049 (0)### ######/##',
   ];
 
-  const PhoneNumber(this.random);
+  const PhoneNumber(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
 
-  String us() => random.fromPattern(usPhoneNumberPatterns);
+  String us() => _random.fromPattern(usPhoneNumberPatterns);
 
-  String de() => random.fromPattern(dePhoneNumberPatterns);
+  String de() => _random.fromPattern(dePhoneNumberPatterns);
 }

@@ -2,9 +2,9 @@ import 'package:faker/src/providers/base_providers.dart';
 import 'random_generator.dart';
 
 class Lorem {
-  const Lorem(this.random, this._provider);
+  const Lorem(this._random, this._provider);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
   final LoremDataProvider _provider;
 
   /// Generates a word.
@@ -13,7 +13,7 @@ class Lorem {
   /// ```dart
   ///   faker.lorem.word();
   /// ```
-  String word() => random.element(_provider.wordsList());
+  String word() => _random.element(_provider.wordsList());
 
   /// Generates a list of random words. The number of words is determined
   /// by the `numberOfWords` parameter.
@@ -32,7 +32,7 @@ class Lorem {
   /// ```dart
   ///   faker.lorem.sentence();
   /// ```
-  String sentence() => random.element(_provider.sentencesList());
+  String sentence() => _random.element(_provider.sentencesList());
 
   /// Generates a list of random sentences. The size of the list of determined
   /// by the `numberOfSentences` parameter.

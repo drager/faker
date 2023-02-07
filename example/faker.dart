@@ -3,8 +3,7 @@ library faker.example;
 import 'package:faker/faker.dart';
 
 void main() {
-  // final random = RandomGenerator(seed: 63833423);
-  // final faker = Faker.withGenerator(random);
+  final random = RandomGenerator();
 
   // Generate some different types of data.
   print(faker.address.country());

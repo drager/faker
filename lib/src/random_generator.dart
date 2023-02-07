@@ -1,7 +1,5 @@
 import 'dart:math';
 
-final random = RandomGenerator();
-
 class RandomGenerator {
   RandomGenerator({int? seed}) : _random = Random(seed);
 

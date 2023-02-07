@@ -4,9 +4,9 @@ import 'data/job/job_prefix.dart';
 import 'random_generator.dart';
 
 class Job {
-  const Job(this.random);
+  const Job(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
 
   /// Generates a job title.
   ///
@@ -14,6 +14,6 @@ class Job {
   /// ```dart
   ///   faker.job.title();
   /// ```
-  String title() => '${random.element(jobPrefix)} ${random.element(jobAdj)} '
-      '${random.element(jobNoun)}';
+  String title() => '${_random.element(jobPrefix)} ${_random.element(jobAdj)} '
+      '${_random.element(jobNoun)}';
 }

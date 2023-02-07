@@ -23,9 +23,9 @@ class Internet {
     'safetymail.info'
   ];
 
-  const Internet(this.random);
+  const Internet(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
 
   /// Generates an email from the [userName] and [domainName] methods.
   ///
@@ -43,7 +43,7 @@ class Internet {
   ///   faker.internet.disposableEmail();
   /// ```
   String disposableEmail() =>
-      [userName(), random.element(_disposableHosts)].join('@');
+      [userName(), _random.element(_disposableHosts)].join('@');
 
   /// Generates a free email from the [userName] method and [_hosts].
   ///
@@ -51,7 +51,7 @@ class Internet {
   /// ```dart
   ///   faker.internet.freeEmail();
   /// ```
-  String freeEmail() => '${userName()}@${random.element(_hosts)}';
+  String freeEmail() => '${userName()}@${_random.element(_hosts)}';
 
   /// Generates a safe email from [userName] method and [_domainSuffixes].
   ///
@@ -60,7 +60,7 @@ class Internet {
   ///   faker.internet.safeEmail();
   /// ```
   String safeEmail() =>
-      [userName(), 'example.${random.element(_domainSuffixes)}'].join('@');
+      [userName(), 'example.${_random.element(_domainSuffixes)}'].join('@');
 
   /// Generates a user name.
   ///
@@ -72,8 +72,8 @@ class Internet {
   ///   faker.internet.userName();
   /// ```
   String userName() =>
-      ([random.element(firstnames), random.element(lastnames)]..shuffle())
-          .join(random.element(['_', '.', '-']))
+      ([_random.element(firstnames), _random.element(lastnames)]..shuffle())
+          .join(_random.element(['_', '.', '-']))
           .toLowerCase();
 
   /// Generates a domain name from the [domainWord] method and [_domainSuffixes].
@@ -82,7 +82,7 @@ class Internet {
   /// ```dart
   ///   faker.internet.domainName();
   /// ```
-  String domainName() => '${domainWord()}.${random.element(_domainSuffixes)}';
+  String domainName() => '${domainWord()}.${_random.element(_domainSuffixes)}';
 
   /// Generates a domain word.
   ///
@@ -90,7 +90,7 @@ class Internet {
   /// ```dart
   ///   faker.internet.domainWord();
   /// ```
-  String domainWord() => random.element(lastnames).toLowerCase().replaceAll(
+  String domainWord() => _random.element(lastnames).toLowerCase().replaceAll(
       RegExp(r'[^a-z0-9\-]'), ''); // -- remove illegal domain characters
 
   /// Generates a URI with the given [protocol].
@@ -123,7 +123,7 @@ class Internet {
   /// ```dart
   ///   faker.internet.ipv4Address();
   /// ```
-  String ipv4Address() => random.numbers(255, 4).join('.');
+  String ipv4Address() => _random.numbers(255, 4).join('.');
 
   /// Generates a IP version 6 address.
   ///
@@ -132,7 +132,7 @@ class Internet {
   ///   faker.internet.ipv6Address();
   /// ```
   String ipv6Address() =>
-      random.numbers(65535, 8).map((x) => x.toRadixString(16)).join(':');
+      _random.numbers(65535, 8).map((x) => x.toRadixString(16)).join(':');
 
   /// Generates a MAC address.
   ///
@@ -140,7 +140,7 @@ class Internet {
   /// ```dart
   ///   faker.internet.macAddress();
   /// ```
-  String macAddress() => random
+  String macAddress() => _random
       .numbers(0xff, 6)
       .map((number) => number.toRadixString(16).padLeft(2, '0'))
       .join(':');
@@ -152,7 +152,7 @@ class Internet {
   /// ```dart
   ///   faker.internet.password();
   /// ```
-  String password({int length = 10}) => random.string(length, min: length);
+  String password({int length = 10}) => _random.string(length, min: length);
 
   /// Generates an User Agent from Predefined Dictionary
   /// with the given [osName] if provided.
@@ -163,7 +163,7 @@ class Internet {
   ///   faker.internet.userAgent();
   ///   faker.internet.userAgent(osName:'ios');
   /// ```
-  String userAgent({String osName = ''}) => random
+  String userAgent({String osName = ''}) => _random
       .element(UserAgents.fromJson(userAgentDatas)
           .userAgents!
           .map((e) => e)

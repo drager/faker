@@ -2,9 +2,9 @@ import 'data/conference/conference_names.dart';
 import 'random_generator.dart';
 
 class Conference {
-  const Conference(this.random);
+  const Conference(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
 
   /// Generates a conference name.
   ///
@@ -12,5 +12,5 @@ class Conference {
   /// ```dart
   ///   faker.conference.name();
   /// ```
-  String name() => random.element(conferenceNames);
+  String name() => _random.element(conferenceNames);
 }
