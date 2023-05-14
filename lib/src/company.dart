@@ -30,11 +30,11 @@ class Company {
     'Division'
   ];
 
-  const Company(this.person);
+  const Company(this._person, this._random);
 
-  final Person person;
+  final Person _person;
 
-  RandomGenerator get random => person.random;
+  final RandomGenerator _random;
 
   /// Generates a company name.
   ///
@@ -43,16 +43,16 @@ class Company {
   ///   faker.company.name();
   /// ```
   String name() {
-    switch (random.integer(3)) {
+    switch (_random.integer(3)) {
       case 0:
-        return '${person.lastName()} ${suffix()}';
+        return '${_person.lastName()} ${suffix()}';
       case 1:
-        return '${person.lastName()}-${person.lastName()}';
+        return '${_person.lastName()}-${_person.lastName()}';
       case 2:
-        return '${person.lastName()}, ${person.lastName()} '
-            'and ${person.lastName()}';
+        return '${_person.lastName()}, ${_person.lastName()} '
+            'and ${_person.lastName()}';
       default:
-        return '${person.lastName()} ${suffix()}';
+        return '${_person.lastName()} ${suffix()}';
     }
   }
 
@@ -63,19 +63,19 @@ class Company {
   ///   faker.company.position();
   /// ```
   String position() {
-    switch (random.integer(3)) {
+    switch (_random.integer(3)) {
       case 0:
-        return '${random.element(_positionPrefixes)} '
-            '${random.element(_positions)}';
+        return '${_random.element(_positionPrefixes)} '
+            '${_random.element(_positions)}';
       case 1:
-        return '${random.element(_positionAreas)} '
-            '${random.element(_positions)}';
+        return '${_random.element(_positionAreas)} '
+            '${_random.element(_positions)}';
       case 2:
-        return '${random.element(_positionPrefixes)} '
-            '${random.element(_positionAreas)} ${random.element(_positions)}';
+        return '${_random.element(_positionPrefixes)} '
+            '${_random.element(_positionAreas)} ${_random.element(_positions)}';
       default:
-        return '${random.element(_positionPrefixes)} '
-            '${random.element(_positions)}';
+        return '${_random.element(_positionPrefixes)} '
+            '${_random.element(_positions)}';
     }
   }
 
@@ -85,5 +85,5 @@ class Company {
   /// ```dart
   ///   faker.company.suffix();
   /// ```
-  String suffix() => random.element(_companySuffixes);
+  String suffix() => _random.element(_companySuffixes);
 }

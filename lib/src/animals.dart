@@ -2,9 +2,9 @@ import 'data/animals/animals_names.dart';
 import 'random_generator.dart';
 
 class Animal {
-  const Animal(this.random);
+  const Animal(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
 
   /// Generates an animal name.
   ///
@@ -12,5 +12,5 @@ class Animal {
   /// ```dart
   ///   faker.animal.name();
   /// ```
-  String name() => random.element(animalsNames);
+  String name() => _random.element(animalsNames);
 }

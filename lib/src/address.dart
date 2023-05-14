@@ -12,11 +12,10 @@ class Address {
   static const compassDirections = ['North', 'East', 'West', 'South'];
   static const cityPrefixes = ['New', 'Lake', 'Port'];
 
-  const Address(this.person);
+  const Address(this._person, this._random);
 
-  final Person person;
-
-  RandomGenerator get random => person.random;
+  final Person _person;
+  final RandomGenerator _random;
 
   /// Generates a zip code.
   ///
@@ -24,7 +23,7 @@ class Address {
   /// ```dart
   ///   faker.address.zipCode();
   /// ```
-  String zipCode() => random.fromPattern(['#####', '#####-####']);
+  String zipCode() => _random.fromPattern(['#####', '#####-####']);
 
   /// Generates a city.
   ///
@@ -33,17 +32,17 @@ class Address {
   ///   faker.address.city();
   /// ```
   String city() {
-    switch (random.integer(4)) {
+    switch (_random.integer(4)) {
       case 0:
-        return '${cityPrefix()} ${person.firstName()}${citySuffix()}';
+        return '${cityPrefix()} ${_person.firstName()}${citySuffix()}';
       case 1:
-        return '${cityPrefix()} ${person.firstName()}';
+        return '${cityPrefix()} ${_person.firstName()}';
       case 2:
-        return '${person.firstName()}${citySuffix()}';
+        return '${_person.firstName()}${citySuffix()}';
       case 3:
-        return '${person.lastName()}${citySuffix()}';
+        return '${_person.lastName()}${citySuffix()}';
       default:
-        return '${person.lastName()}${citySuffix()}';
+        return '${_person.lastName()}${citySuffix()}';
     }
   }
 
@@ -54,8 +53,8 @@ class Address {
   ///   faker.address.cityPrefix();
   /// ```
   String cityPrefix() => [
-        random.element(compassDirections),
-        random.element(cityPrefixes)
+        _random.element(compassDirections),
+        _random.element(cityPrefixes)
       ].join(' ');
 
   /// Generates a city suffix.
@@ -64,7 +63,7 @@ class Address {
   /// ```dart
   ///   faker.address.citySuffix();
   /// ```
-  String citySuffix() => random.element(citySuffixes);
+  String citySuffix() => _random.element(citySuffixes);
 
   /// Generates a street name.
   ///
@@ -72,9 +71,9 @@ class Address {
   /// ```dart
   ///   faker.address.streetName();
   /// ```
-  String streetName() => random.integer(2) == 0
-      ? '${person.lastName()} ${streetSuffix()}'
-      : '${person.firstName()} ${streetSuffix()}';
+  String streetName() => _random.integer(2) == 0
+      ? '${_person.lastName()} ${streetSuffix()}'
+      : '${_person.firstName()} ${streetSuffix()}';
 
   /// Generates a street address.
   ///
@@ -90,7 +89,7 @@ class Address {
   /// ```dart
   ///   faker.address.streetSuffix();
   /// ```
-  String streetSuffix() => random.element(streetSuffixes);
+  String streetSuffix() => _random.element(streetSuffixes);
 
   /// Generates a building number.
   ///
@@ -98,7 +97,7 @@ class Address {
   /// ```dart
   ///   faker.address.buildingNumber();
   /// ```
-  String buildingNumber() => random.integer(999999).toString();
+  String buildingNumber() => _random.integer(999999).toString();
 
   /// Generates a neighborhood.
   ///
@@ -106,7 +105,7 @@ class Address {
   /// ```dart
   ///   faker.address.neighborhood();
   /// ```
-  String neighborhood() => random.element(neighborhoods);
+  String neighborhood() => _random.element(neighborhoods);
 
   /// Generates a US state.
   ///
@@ -114,7 +113,7 @@ class Address {
   /// ```dart
   ///   faker.address.state();
   /// ```
-  String state() => random.mapElementValue(states);
+  String state() => _random.mapElementValue(states);
 
   /// Generates a US state abbreviation.
   ///
@@ -122,7 +121,7 @@ class Address {
   /// ```dart
   ///   faker.address.stateAbbreviation();
   /// ```
-  String stateAbbreviation() => random.mapElementKey(states);
+  String stateAbbreviation() => _random.mapElementKey(states);
 
   /// Generates a Map containing a US state and it's abbreviation.
   ///
@@ -131,7 +130,7 @@ class Address {
   ///   faker.address.stateAsMap();
   /// ```
   Map<String, String> stateAsMap() {
-    String key = random.mapElementKey(states);
+    String key = _random.mapElementKey(states);
     String value = states[key]!;
     return {'state': key, 'abbreviation': value};
   }
@@ -142,7 +141,7 @@ class Address {
   /// ```dart
   ///   faker.address.country();
   /// ```
-  String country() => random.element(countries);
+  String country() => _random.element(countries);
 
   /// Generates a country code.
   ///
@@ -150,7 +149,7 @@ class Address {
   /// ```dart
   ///   faker.address.countryCode();
   /// ```
-  String countryCode() => random.element(countryCodes);
+  String countryCode() => _random.element(countryCodes);
 
   /// Generates a continent.
   ///
@@ -158,5 +157,5 @@ class Address {
   /// ```dart
   ///   faker.address.continent();
   /// ```
-  String continent() => random.element(continents);
+  String continent() => _random.element(continents);
 }

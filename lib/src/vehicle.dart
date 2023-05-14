@@ -7,9 +7,9 @@ import 'data/vehicles/vin_years.dart';
 import 'random_generator.dart';
 
 class Vehicle {
-  const Vehicle(this.random);
+  const Vehicle(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
   final _vinChars = "ABCDEFGHJKLMNPRSTUVWXYZ0123456789";
 
   /// Generates a random vehicle as a VehicleYMM object.
@@ -18,7 +18,7 @@ class Vehicle {
   /// ```dart
   ///   faker.vehicle.asVehicle();
   /// ```
-  VehicleYMM asVehicle() => random.element(vehicles);
+  VehicleYMM asVehicle() => _random.element(vehicles);
 
   /// Generates a random vehicle make.
   ///
@@ -26,7 +26,7 @@ class Vehicle {
   /// ```dart
   ///   faker.vehicle.make();
   /// ```
-  String make() => random.element(vehicles).make;
+  String make() => _random.element(vehicles).make;
 
   /// Generates a random vehicle model.
   ///
@@ -34,7 +34,7 @@ class Vehicle {
   /// ```dart
   ///   faker.vehicle.model();
   /// ```
-  String model() => random.element(vehicles).model;
+  String model() => _random.element(vehicles).model;
 
   /// Generates a random vehicle year between 1940 and DateTime.now().year + 1.
   ///
@@ -42,7 +42,7 @@ class Vehicle {
   /// ```dart
   ///   faker.vehicle.year();
   /// ```
-  String year() => random.element(vehicles).year.toString();
+  String year() => _random.element(vehicles).year.toString();
 
   /// Generates a random vehicle's year, make, and model.
   ///
@@ -51,7 +51,7 @@ class Vehicle {
   ///   faker.vehicle.yearMakeModel();
   /// ```
   String yearMakeModel() {
-    VehicleYMM vehicle = random.element(vehicles);
+    VehicleYMM vehicle = _random.element(vehicles);
     return '${vehicle.year.toString()} ${vehicle.make} ${vehicle.model}';
   }
 
@@ -62,8 +62,8 @@ class Vehicle {
   ///   faker.vehicle.colorYearMakeModel();
   /// ```
   String colorYearMakeModel() {
-    VehicleYMM vehicle = random.element(vehicles);
-    String color = random.element(commonColors);
+    VehicleYMM vehicle = _random.element(vehicles);
+    String color = _random.element(commonColors);
     return '$color ${vehicle.year.toString()} ${vehicle.make} ${vehicle.model}';
   }
 
@@ -73,7 +73,7 @@ class Vehicle {
   /// ```dart
   ///   faker.vehicle.vehicle();
   /// ```
-  Map<String, dynamic> vehicle() => random.element(vehicles).toMap();
+  Map<String, dynamic> vehicle() => _random.element(vehicles).toMap();
 
   /// Generates a random (non-valid) vehicle VIN.
   ///
@@ -87,7 +87,7 @@ class Vehicle {
 
   /// Private methods used to generate a VIN in the proper format
   String _generateWmi() {
-    var wmi = random.element(manufacturers);
+    var wmi = _random.element(manufacturers);
 
     if (wmi.length == 2) {
       wmi += '9';
@@ -97,16 +97,16 @@ class Vehicle {
   }
 
   String _generateVds() {
-    var randomVds = random.fromCharSet(_vinChars, 5);
+    var randomVds = _random.fromCharSet(_vinChars, 5);
 
-    randomVds += random.integer(10).toString();
+    randomVds += _random.integer(10).toString();
 
     return randomVds;
   }
 
   String _generateVis() {
-    return random.mapElementKey(yearMap) +
+    return _random.mapElementKey(yearMap) +
         'A' +
-        random.fromCharSet(_vinChars, 6);
+        _random.fromCharSet(_vinChars, 6);
   }
 }

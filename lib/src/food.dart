@@ -4,9 +4,9 @@ import 'data/food/restaurants.dart';
 import 'random_generator.dart';
 
 class Food {
-  const Food(this.random);
+  const Food(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
 
   /// Generates a restaurant.
   ///
@@ -14,7 +14,7 @@ class Food {
   /// ```dart
   ///   faker.food.restaurant();
   /// ```
-  String restaurant() => random.element(restaurants);
+  String restaurant() => _random.element(restaurants);
 
   /// Generates a dish.
   ///
@@ -22,7 +22,7 @@ class Food {
   /// ```dart
   ///   faker.food.dish();
   /// ```
-  String dish() => random.element(dishes);
+  String dish() => _random.element(dishes);
 
   /// Generates a cuisine.
   ///
@@ -30,5 +30,5 @@ class Food {
   /// ```dart
   ///   faker.food.cuisine();
   /// ```
-  String cuisine() => random.element(cuisines);
+  String cuisine() => _random.element(cuisines);
 }

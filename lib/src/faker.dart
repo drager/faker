@@ -23,7 +23,7 @@ import 'random_generator.dart';
 import 'sport.dart';
 import 'vehicle.dart';
 
-final Faker faker = Faker.withGenerator(random);
+final Faker faker = Faker.withGenerator(RandomGenerator());
 
 class Faker {
   final Address address;
@@ -48,10 +48,10 @@ class Faker {
   final Animal animal;
 
   Faker.withGenerator(RandomGenerator random, {FakerDataProvider? provider})
-      : address = Address(Person(random)),
+      : address = Address(Person(random), random),
         conference = Conference(random),
         color = Color(random),
-        company = Company(Person(random)),
+        company = Company(Person(random), random),
         currency = Currency(random),
         food = Food(random),
         geo = Geo(random),

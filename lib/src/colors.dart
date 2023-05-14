@@ -2,9 +2,9 @@ import 'data/colors/colors.dart';
 import 'random_generator.dart';
 
 class Color {
-  const Color(this.random);
+  const Color(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
 
   /// Generates a color name.
   ///
@@ -12,7 +12,7 @@ class Color {
   /// ```dart
   ///   faker.colors.color();
   /// ```
-  String color() => random.element(allColors);
+  String color() => _random.element(allColors);
 
   /// Generates a color name from a smaller list of colors.
   ///
@@ -20,5 +20,5 @@ class Color {
   /// ```dart
   ///   faker.colors.commonColor();
   /// ```
-  String commonColor() => random.element(commonColors);
+  String commonColor() => _random.element(commonColors);
 }

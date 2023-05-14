@@ -2,9 +2,9 @@ import 'data/date_time/time_zones.dart';
 import 'random_generator.dart';
 
 class Date {
-  const Date(this.random);
+  const Date(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
 
   static final _yearSuffixes = [
     'BC',
@@ -42,14 +42,14 @@ class Date {
   /// ```
   DateTime dateTime({int minYear = 0, int maxYear = 10000}) {
     return DateTime(
-      random.integer(maxYear, min: minYear), // year
-      random.integer(13, min: 1), // month
-      random.integer(32, min: 1), // day
-      random.integer(24), // hour
-      random.integer(60), // minute
-      random.integer(60), // second
-      random.integer(1000), // millisecond
-      random.integer(1000), // microsecond
+      _random.integer(maxYear, min: minYear), // year
+      _random.integer(13, min: 1), // month
+      _random.integer(32, min: 1), // day
+      _random.integer(24), // hour
+      _random.integer(60), // minute
+      _random.integer(60), // second
+      _random.integer(1000), // millisecond
+      _random.integer(1000), // microsecond
     );
   }
 
@@ -65,11 +65,11 @@ class Date {
       startDate.year, // year
       startDate.month, // month
       startDate.day, // day
-      startDate.hour + random.integer(hoursInBetween), // hour
-      random.integer(60), // minute
-      random.integer(60), // second
-      random.integer(1000), // millisecond
-      random.integer(1000), // microsecond
+      startDate.hour + _random.integer(hoursInBetween), // hour
+      _random.integer(60), // minute
+      _random.integer(60), // second
+      _random.integer(1000), // millisecond
+      _random.integer(1000), // microsecond
     );
   }
 
@@ -80,7 +80,7 @@ class Date {
   ///   faker.date.month()
   /// ```
   String month() {
-    return random.element(_months);
+    return _random.element(_months);
   }
 
   /// Generates a random year.
@@ -95,12 +95,12 @@ class Date {
     final date = dateTime(minYear: minYear, maxYear: maxYear);
 
     // Just year
-    if (random.boolean()) {
+    if (_random.boolean()) {
       return '${date.year}';
     }
     // Year with suffix
     else {
-      return '${date.year} ${random.element(_yearSuffixes)}';
+      return '${date.year} ${_random.element(_yearSuffixes)}';
     }
   }
 
@@ -115,13 +115,13 @@ class Date {
     final date = dateTime();
 
     var timeSuffix = '';
-    if (random.boolean()) {
-      timeSuffix = '${random.element(_timeSuffixes)} ';
+    if (_random.boolean()) {
+      timeSuffix = '${_random.element(_timeSuffixes)} ';
     }
 
     var timeZone = '';
-    if (random.boolean()) {
-      timeZone = random.element(timeZones);
+    if (_random.boolean()) {
+      timeZone = _random.element(timeZones);
     }
 
     // If we have a time suffix, convert the hour to a 12-hour clock

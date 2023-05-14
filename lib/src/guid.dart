@@ -1,10 +1,10 @@
 import 'random_generator.dart';
 
 class Guid {
-  const Guid(this.random);
+  const Guid(this._random);
 
-  final RandomGenerator random;
+  final RandomGenerator _random;
 
   String guid() =>
-      random.fromPatternToHex(['########-####-####-####-############']);
+      _random.fromPatternToHex(['########-####-####-####-############']);
 }
