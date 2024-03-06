@@ -60,7 +60,7 @@ class Internet {
   ///   faker.internet.safeEmail();
   /// ```
   String safeEmail() =>
-      [userName(), 'example.${random.element(_domainSuffixes)}'].join('@');
+      [userName().replaceAll('\'', '-'), domainName()].join('@');
 
   /// Generates a user name.
   ///
