@@ -6,6 +6,7 @@ export 'src/faker.dart';
 export 'src/random_generator.dart';
 
 export 'src/address.dart';
+export 'src/colors.dart';
 export 'src/conference.dart';
 export 'src/company.dart';
 export 'src/currency.dart';
