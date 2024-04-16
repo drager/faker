@@ -79,6 +79,48 @@ class PhoneNumber {
     '0049 (0)### ######x##',
     '0049 (0)### ######/##',
   ];
+  static const jaPhoneNumberPatterns = [
+    // // Standard non-geographic 10-digit phone number formats
+    '0#########',
+    '0#-####-####',
+    '(0#) ####-####',
+    '0##-###-####',
+    '(0##) ###-####',
+    '0###-##-####',
+    '(0###) ##-####',
+    // // Standard non-geographic 11-digit phone number formats
+    '0##########',
+    '0#-#####-####',
+    '(0#) #####-####',
+    '0##-####-####',
+    '(0##) ####-####',
+    '0###-###-####',
+    '(0###) ###-####',
+    // // Standard non-geographic 10-digit phone number formats with country code
+    '+810#########',
+    '+81-0#########',
+    '+81 0#########',
+    '+81-0#-####-####',
+    '+81 0#-####-####',
+    '+81 (0#) ####-####',
+    '+81-0##-###-####',
+    '+81 0##-###-####',
+    '+81 (0##) ###-####',
+    '+81-0###-##-####',
+    '+81 0###-##-####',
+    '+81 (0###) ##-####',
+    // // Standard non-geographic 11-digit phone number formats with country code
+    '+810##########',
+    '+81-0#-#####-####',
+    '+81 0#-#####-####',
+    '+81 (0#) #####-####',
+    '+81-0##-####-####',
+    '+81 0##-####-####',
+    '+81 (0##) ####-####',
+    '+81-0###-###-####',
+    '+81 0###-###-####',
+    '+81 (0###) ###-####',
+  ];
 
   const PhoneNumber(this.random);
 
@@ -87,4 +129,6 @@ class PhoneNumber {
   String us() => random.fromPattern(usPhoneNumberPatterns);
 
   String de() => random.fromPattern(dePhoneNumberPatterns);
+
+  String ja() => random.fromPattern(jaPhoneNumberPatterns);
 }
