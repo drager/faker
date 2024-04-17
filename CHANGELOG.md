@@ -1,5 +1,24 @@
 # Changelog
 
+## 2.2.0
+
+### Features
+
+- Add `rgbColor` method to colors faker.
+```dart
+faker.colors.rgbColor();
+faker.colors.rgbColor(prefix: '0x');
+faker.colors.rgbColor(casing: Casing.upper);
+faker.colors.rgbColor(format: Format.css);
+faker.colors.rgbColor(includeAlpha: true);
+```
+
+### Fixes
+- Fix safe email method by removing apostrophe. [PR #70](https://github.com/drager/faker/pull/70)
+
+### Maintenance
+- Update lints package. [PR #71](https://github.com/drager/faker/pull/71)
+
 ## 2.1.0
 
 ### Features
