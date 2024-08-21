@@ -4,7 +4,7 @@
 
 ### Features
 
-- Add `rgbColor` method to colors faker.
+- Add `rgbColor` method to colors faker. [PR #72](https://github.com/drager/faker/pull/72)
 ```dart
 faker.colors.rgbColor();
 faker.colors.rgbColor(prefix: '0x');
@@ -12,6 +12,9 @@ faker.colors.rgbColor(casing: Casing.upper);
 faker.colors.rgbColor(format: Format.css);
 faker.colors.rgbColor(includeAlpha: true);
 ```
+
+- Add Japanese phone number support. [PR #73](https://github.com/drager/faker/pull/73)
+- Move image from Unsplash to Lorem Picsum. [PR #74](https://github.com/drager/faker/pull/74)
 
 ### Fixes
 - Fix safe email method by removing apostrophe. [PR #70](https://github.com/drager/faker/pull/70)
