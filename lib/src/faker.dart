@@ -3,7 +3,9 @@ import 'package:faker/src/geo.dart';
 import 'package:faker/src/lorem.dart';
 import 'package:faker/src/phone_number.dart';
 import 'package:faker/src/providers/default_providers.dart';
+import 'package:faker/src/providers/base_providers.dart';
 import 'package:faker/src/providers/fa_providers.dart';
+import 'package:faker/src/providers/kr_providers.dart';
 
 import 'address.dart';
 import 'animals.dart';
@@ -18,7 +20,6 @@ import 'internet.dart';
 import 'job.dart';
 import 'jwt.dart';
 import 'person.dart';
-import 'providers/base_providers.dart';
 import 'random_generator.dart';
 import 'sport.dart';
 import 'vehicle.dart';
@@ -68,18 +69,27 @@ class Faker {
         phoneNumber = PhoneNumber(random),
         vehicle = Vehicle(random),
         randomGenerator = random,
-        animal = Animal(random);
+        animal = Animal(random,
+            provider?.animalsDataProvider ?? DefaultAnimalsDataProvider());
 
   factory Faker({int? seed, FakerDataProvider? provider}) =>
       Faker.withGenerator(RandomGenerator(seed: seed), provider: provider);
 }
 
 class FakerDataProvider {
+  final AnimalsDataProvider? animalsDataProvider;
   final LoremDataProvider? loremDataProvider;
 
-  FakerDataProvider({this.loremDataProvider});
+  FakerDataProvider({
+    this.animalsDataProvider,
+    this.loremDataProvider,
+  });
 }
 
 class FakerDataProviderFa extends FakerDataProvider {
   FakerDataProviderFa() : super(loremDataProvider: LoremDataProviderFa());
+}
+
+class FakerDataProviderKr extends FakerDataProvider {
+  FakerDataProviderKr() : super(animalsDataProvider: AnimalsDataProviderKr());
 }

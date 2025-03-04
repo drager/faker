@@ -1,10 +1,11 @@
-import 'data/animals/animals_names.dart';
+import 'package:faker/src/providers/base_providers.dart';
 import 'random_generator.dart';
 
 class Animal {
-  const Animal(this.random);
+  const Animal(this.random, this._provider);
 
   final RandomGenerator random;
+  final AnimalsDataProvider _provider;
 
   /// Generates an animal name.
   ///
@@ -12,5 +13,5 @@ class Animal {
   /// ```dart
   ///   faker.animal.name();
   /// ```
-  String name() => random.element(animalsNames);
+  String name() => random.element(_provider.animalsList());
 }

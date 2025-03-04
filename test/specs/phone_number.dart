@@ -181,4 +181,30 @@ void main() {
       }
     });
   });
+  group('kr', () {
+    test('should be able to generate kr phone number', () {
+      for (var i = 0; i < 20; i++) {
+        expect(
+          faker.phoneNumber.kr(),
+          anyOf([
+            // Standard 10-digit phone number formats
+            matches(r'010\d{8}'),
+            matches(r'010-\d{4}-\d{4}'),
+            matches(r'010\.\d{4}\.\d{4}'),
+
+            // Standard 11-digit phone number formats
+            matches(r'01\d{9}'),
+            matches(r'01\d-\d{3}-\d{4}'),
+            matches(r'01\d\.\d{3}\.\d{4}'),
+
+            // Standard 11-digit phone number formats with country code
+            matches(r'\+82-10-\d{4}-\d{4}'),
+            matches(r'\+82 10 \d{4} \d{4}'),
+            matches(r'\+82-1\d-\d{3}-\d{4}'),
+            matches(r'\+82 1\d \d{3} \d{4}'),
+          ]),
+        );
+      }
+    });
+  });
 }
