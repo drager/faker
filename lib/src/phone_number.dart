@@ -121,6 +121,21 @@ class PhoneNumber {
     '+81 0###-###-####',
     '+81 (0###) ###-####',
   ];
+  static const krPhoneNumberPatterns = [
+    // Standard 10-digit phone number formats
+    '010########',
+    '010-####-####',
+    '010.####.####',
+    // Standard 11-digit phone number formats
+    '01#########',
+    '01#-###-####',
+    '01#.###.####',
+    // Standard 11-digit phone number formats with country code
+    '+82-10-####-####',
+    '+82 10 #### ####',
+    '+82-1#-###-####',
+    '+82 1# ### ####',
+  ];
 
   const PhoneNumber(this.random);
 
@@ -131,4 +146,6 @@ class PhoneNumber {
   String de() => random.fromPattern(dePhoneNumberPatterns);
 
   String ja() => random.fromPattern(jaPhoneNumberPatterns);
+
+  String kr() => random.fromPattern(krPhoneNumberPatterns);
 }
