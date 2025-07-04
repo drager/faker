@@ -1,12 +1,13 @@
-import 'data/food/cuisines.dart';
-import 'data/food/dishes.dart';
-import 'data/food/restaurants.dart';
+import 'package:faker/src/providers/base_providers.dart';
+
 import 'random_generator.dart';
 
 class Food {
-  const Food(this.random);
+  const Food(this.random, this.dataProvider);
 
   final RandomGenerator random;
+
+  final FoodDataProvider dataProvider;
 
   /// Generates a restaurant.
   ///
@@ -14,7 +15,7 @@ class Food {
   /// ```dart
   ///   faker.food.restaurant();
   /// ```
-  String restaurant() => random.element(restaurants);
+  String restaurant() => random.element(dataProvider.restaurants());
 
   /// Generates a dish.
   ///
@@ -22,7 +23,7 @@ class Food {
   /// ```dart
   ///   faker.food.dish();
   /// ```
-  String dish() => random.element(dishes);
+  String dish() => random.element(dataProvider.dishes());
 
   /// Generates a cuisine.
   ///
@@ -30,5 +31,5 @@ class Food {
   /// ```dart
   ///   faker.food.cuisine();
   /// ```
-  String cuisine() => random.element(cuisines);
+  String cuisine() => random.element(dataProvider.cuisines());
 }

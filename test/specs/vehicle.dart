@@ -1,6 +1,6 @@
+import 'package:faker/faker.dart';
 import 'package:faker/src/data/vehicles/models/vehicle.dart';
 import 'package:test/test.dart';
-import 'package:faker/faker.dart';
 
 void main() {
   group('vehicle', () {
@@ -14,6 +14,7 @@ void main() {
     test(
         'should be able to generete year, make, model independently and as one',
         () {
+      expect(faker.vehicle.name().isNotEmpty, true);
       expect(faker.vehicle.year().isNotEmpty, true);
       expect(faker.vehicle.make().isNotEmpty, true);
       expect(faker.vehicle.model().isNotEmpty, true);

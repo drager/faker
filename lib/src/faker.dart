@@ -7,8 +7,8 @@ import 'package:faker/src/providers/fa_providers.dart';
 
 import 'address.dart';
 import 'animals.dart';
-import 'company.dart';
 import 'colors.dart';
+import 'company.dart';
 import 'conference.dart';
 import 'currency.dart';
 import 'food.dart';
@@ -48,25 +48,36 @@ class Faker {
   final Animal animal;
 
   Faker.withGenerator(RandomGenerator random, {FakerDataProvider? provider})
-      : address = Address(Person(random)),
-        conference = Conference(random),
+      : address = Address(Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider())),
+        conference = Conference(
+            random,
+            provider?.conferenceDataProvider ??
+                DefaultConferenceDataProvider()),
         color = Color(random),
-        company = Company(Person(random)),
-        currency = Currency(random),
-        food = Food(random),
+        company = Company(Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider())),
+        currency = Currency(random,
+            provider?.currencyDataProvider ?? DefaultCurrencyDataProvider()),
+        food = Food(
+            random, provider?.foodDataProvider ?? DefaultFoodDataProvider()),
         geo = Geo(random),
         guid = Guid(random),
         image = Image(),
         internet = Internet(random),
-        job = Job(random),
+        job =
+            Job(random, provider?.jobDataProvider ?? DefaultJobDataProvider()),
         jwt = Jwt(),
         lorem = Lorem(
             random, provider?.loremDataProvider ?? DefaultLoremDataProvider()),
-        person = Person(random),
-        sport = Sport(random),
+        person = Person(random,
+            provider?.personDataProvider ?? DefaultPersonDataProvider()),
+        sport = Sport(random,
+            provider?.sportsDataProvider ?? DefaultSportsDataProvider()),
         date = Date(random),
         phoneNumber = PhoneNumber(random),
-        vehicle = Vehicle(random),
+        vehicle = Vehicle(random,
+            provider?.vehicleDataProvider ?? DefaultVehicleDataProvider()),
         randomGenerator = random,
         animal = Animal(random);
 
@@ -75,9 +86,25 @@ class Faker {
 }
 
 class FakerDataProvider {
+  final PersonDataProvider? personDataProvider;
+  final ConferenceDataProvider? conferenceDataProvider;
+  final CurrencyDataProvider? currencyDataProvider;
+  final FoodDataProvider? foodDataProvider;
+  final JobDataProvider? jobDataProvider;
   final LoremDataProvider? loremDataProvider;
+  final SportsDataProvider? sportsDataProvider;
+  final VehicleDataProvider? vehicleDataProvider;
 
-  FakerDataProvider({this.loremDataProvider});
+  FakerDataProvider({
+    this.personDataProvider,
+    this.conferenceDataProvider,
+    this.currencyDataProvider,
+    this.foodDataProvider,
+    this.jobDataProvider,
+    this.loremDataProvider,
+    this.sportsDataProvider,
+    this.vehicleDataProvider,
+  });
 }
 
 class FakerDataProviderFa extends FakerDataProvider {
